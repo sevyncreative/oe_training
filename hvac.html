@@ -1490,9 +1490,8 @@ function renderQ(){
   if(qIdx>=qOrder.length){showScore();return;}
   const q=filteredQ[qOrder[qIdx]];
   answered=false;selOpt=null;
-  document.getElementById('sub-btn').disabled=true;
-  document.getElementById('sub-btn').style.display='inline-flex';
-  document.getElementById('nxt-btn').style.display='none';
+  setAllById('sub-btn',el=>{el.disabled=true;el.style.display='inline-flex';});
+  setAllById('nxt-btn',el=>el.style.display='none');
   const dl={easy:'easy',medium:'medium',hard:'hard'};
   const dlab={easy:'Easy',medium:'Medium',hard:'Hard'};
   const math=q.ismath?'<span class="qmath">⚡ MATH</span>':'';
@@ -1525,11 +1524,13 @@ function renderQ(){
   updateMeta();
 }
 
+function setAllById(id,fn){document.querySelectorAll('#'+id).forEach(fn);}
+
 function selOption(i){
   if(answered)return;
   selOpt=i;
   document.querySelectorAll('.opt').forEach((o,idx)=>o.classList.toggle('selected',idx===i));
-  document.getElementById('sub-btn').disabled=false;
+  setAllById('sub-btn',el=>el.disabled=false);
 }
 
 function submitAnswer(){
@@ -1546,8 +1547,8 @@ function submitAnswer(){
   });
   if(selOpt===q.ans)score++;
   document.getElementById('expl').classList.add('show');
-  document.getElementById('sub-btn').style.display='none';
-  document.getElementById('nxt-btn').style.display='inline-flex';
+  setAllById('sub-btn',el=>el.style.display='none');
+  setAllById('nxt-btn',el=>el.style.display='inline-flex');
   updateMeta();updateGP();
 }
 
