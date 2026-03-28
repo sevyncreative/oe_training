@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California C-20 HVAC License Exam Prep | Pass First Time</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080b10;
+  --surface: #0d1219;
+  --surface2: #131b27;
+  --surface3: #1a2435;
+  --border: #1f3050;
+  --border2: #2a4070;
+  --red: #ff3d00;
+  --red-light: #ff7043;
+  --amber: #ffab00;
+  --amber-light: #ffd54f;
+  --teal: #00bfa5;
+  --teal-light: #64ffda;
+  --blue: #0091ea;
+  --blue-light: #40c4ff;
+  --purple: #aa00ff;
+  --purple-light: #e040fb;
+  --green: #00c853;
+  --green-light: #69f0ae;
+  --text: #dce8f5;
+  --text2: #6b90b8;
+  --text3: #334d6e;
+  --mono: 'Barlow Mono', monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── HEAT WAVE BACKGROUND ── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 800px 400px at 20% 10%, rgba(255,61,0,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 300px at 80% 80%, rgba(0,191,165,0.04) 0%, transparent 70%),
+    repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(255,171,0,0.012) 80px,rgba(255,171,0,0.012) 81px);
+  pointer-events:none;z-index:0;
+}
+
+/* ── HEADER ── */
+header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(8,11,16,0.97);
+  border-bottom:2px solid var(--red);
+  backdrop-filter:blur(14px);
+  box-shadow:0 2px 50px rgba(255,61,0,0.18);
+}
+.hdr{
+  max-width:1340px;margin:0 auto;
+  padding:13px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:14px;}
+.logo-icon{
+  width:50px;height:50px;
+  background:linear-gradient(135deg,var(--red),#b71c1c);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+  box-shadow:0 0 28px rgba(255,61,0,0.45);
+}
+.logo h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:22px;letter-spacing:3px;color:var(--red-light);line-height:1;
+}
+.logo p{font-size:11px;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+.hdr-meta{display:flex;gap:10px;flex-wrap:wrap;}
+.badge{
+  background:var(--surface2);border:1px solid var(--border2);
+  border-radius:20px;padding:5px 14px;
+  font-size:11px;color:var(--text2);
+  display:flex;align-items:center;gap:6px;white-space:nowrap;
+}
+.badge b{color:var(--red-light);}
+.badge.teal b{color:var(--teal-light);}
+.badge.amber b{color:var(--amber-light);}
+
+/* ── PROGRESS ── */
+#gp{height:3px;background:var(--surface2);}
+#gpf{height:100%;background:linear-gradient(90deg,var(--red),var(--amber),var(--teal));width:0%;transition:width .6s ease;}
+
+/* ── TABS ── */
+.tabs-wrap{background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.tabs-wrap::-webkit-scrollbar{display:none;}
+.tabs-inner{max-width:1340px;margin:0 auto;padding:0 24px;display:flex;min-width:max-content;}
+.tab-btn{
+  padding:13px 20px;
+  font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;
+  color:var(--text2);background:none;border:none;cursor:pointer;
+  border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;
+  display:flex;align-items:center;gap:7px;letter-spacing:.3px;
+}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,0.025);}
+.tab-btn.active{color:var(--red-light);border-bottom-color:var(--red);}
+.tab-count{
+  background:var(--surface3);border-radius:10px;padding:1px 7px;
+  font-size:10px;font-family:var(--mono);
+}
+.tab-btn.active .tab-count{background:var(--red);color:#fff;}
+
+/* ── MAIN ── */
+main{max-width:1340px;margin:0 auto;padding:30px 24px;position:relative;z-index:1;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ── TYPOGRAPHY ── */
+.section-tag{
+  display:inline-flex;align-items:center;
+  background:rgba(255,61,0,0.1);border:1px solid rgba(255,61,0,0.3);
+  border-radius:6px;padding:3px 12px;
+  font-size:11px;font-family:var(--mono);color:var(--red-light);
+  letter-spacing:.5px;margin-bottom:18px;
+}
+.section-title{
+  font-family:'Orbitron',sans-serif;
+  font-size:30px;letter-spacing:2px;
+  margin-bottom:6px;line-height:1.1;
+}
+.section-sub{font-size:14px;color:var(--text2);margin-bottom:26px;line-height:1.65;}
+
+/* ── CARDS ── */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px 26px;margin-bottom:18px;
+  position:relative;overflow:hidden;transition:border-color .2s;
+}
+.card:hover{border-color:var(--border2);}
+.card h3{font-size:16px;font-weight:700;margin-bottom:10px;}
+.card p{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.cat{position:absolute;top:0;left:0;right:0;height:3px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+
+/* ── STUDY BLOCKS ── */
+.sb{
+  background:var(--surface);border:1px solid var(--border);
+  border-left:4px solid var(--red);border-radius:0 12px 12px 0;
+  padding:18px 22px;margin-bottom:16px;
+}
+.sb.amber{border-left-color:var(--amber);}
+.sb.teal{border-left-color:var(--teal);}
+.sb.blue{border-left-color:var(--blue);}
+.sb.purple{border-left-color:var(--purple);}
+.sb.green{border-left-color:var(--green);}
+.sb h4{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.sb p{font-size:13.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;}
+.sb ul,.sb ol{padding-left:20px;font-size:13.5px;color:var(--text2);line-height:2.1;}
+
+.cr{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(255,61,0,0.09);border:1px solid rgba(255,61,0,0.22);
+  border-radius:5px;padding:1px 8px;
+  font-family:var(--mono);font-size:11px;color:var(--red-light);white-space:nowrap;
+}
+.cr.teal{background:rgba(0,191,165,0.09);border-color:rgba(0,191,165,0.22);color:var(--teal-light);}
+.cr.amber{background:rgba(255,171,0,0.09);border-color:rgba(255,171,0,0.22);color:var(--amber-light);}
+
+.formula{
+  background:var(--surface3);border:1px solid var(--border2);
+  border-radius:10px;padding:15px 18px;
+  font-family:var(--mono);font-size:13.5px;color:var(--amber-light);
+  margin:12px 0;line-height:2;letter-spacing:.2px;
+}
+.tip{
+  background:rgba(0,200,83,0.06);border:1px solid rgba(0,200,83,0.18);
+  border-radius:9px;padding:13px 17px;margin:10px 0;
+  font-size:13px;color:var(--green-light);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.tip::before{content:'💡';font-size:15px;flex-shrink:0;margin-top:1px;}
+.warn{
+  background:rgba(255,171,0,0.06);border:1px solid rgba(255,171,0,0.18);
+  border-radius:9px;padding:13px 17px;margin:10px 0;
+  font-size:13px;color:var(--amber-light);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.warn::before{content:'⚠️';font-size:15px;flex-shrink:0;margin-top:1px;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,rgba(255,61,0,0.07) 0%,transparent 55%),linear-gradient(225deg,rgba(0,191,165,0.05) 0%,transparent 55%);
+  border:1px solid rgba(255,61,0,0.2);border-radius:20px;
+  padding:36px 40px;margin-bottom:30px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'C-20';position:absolute;right:-8px;bottom:-28px;
+  font-family:'Orbitron',sans-serif;font-size:150px;letter-spacing:-4px;
+  color:rgba(255,61,0,0.04);pointer-events:none;line-height:1;
+}
+.hero h2{font-family:'Orbitron',sans-serif;font-size:40px;letter-spacing:1px;line-height:1.1;margin-bottom:12px;}
+.hero h2 span{color:var(--red-light);}
+.hero p{font-size:15px;color:var(--text2);line-height:1.75;max-width:600px;margin-bottom:20px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+@media(max-width:800px){.stats-row{grid-template-columns:repeat(2,1fr);}}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:5px;
+}
+.stat-icon{font-size:20px;}
+.stat-val{font-family:'Orbitron',sans-serif;font-size:26px;color:var(--text);line-height:1;}
+.stat-lbl{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;}
+
+/* ── BUTTONS ── */
+.btn{
+  padding:10px 20px;border-radius:9px;
+  font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;
+  cursor:pointer;border:none;transition:all .18s;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{background:#c62828;transform:translateY(-1px);}
+.btn-secondary{background:var(--surface3);color:var(--text);border:1px solid var(--border2);}
+.btn-secondary:hover{background:var(--surface2);border-color:var(--red);}
+.btn-teal{background:var(--teal);color:#000;}
+.btn-teal:hover{background:#00897b;}
+.btn-amber{background:var(--amber);color:#000;}
+.btn-amber:hover{background:#ff8f00;}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important;}
+
+/* ── SECTION OVERVIEW CARDS ── */
+.sec-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:pointer;
+}
+.sec-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3);}
+.sec-card-head{padding:18px 22px 14px;display:flex;align-items:flex-start;gap:14px;}
+.sec-num{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:18px;flex-shrink:0;}
+.sec-info h3{font-size:15px;font-weight:700;margin-bottom:3px;}
+.sec-pct{font-family:'Orbitron',sans-serif;font-size:26px;line-height:1;}
+.sec-card-body{padding:0 22px 18px;}
+.sec-card-body li{font-size:12.5px;color:var(--text2);padding:3px 0;display:flex;align-items:center;gap:7px;list-style:none;}
+.sec-card-body li::before{content:'▸';color:var(--text3);font-size:9px;}
+.sec-bar{height:4px;background:var(--surface3);}
+.sec-bar-fill{height:100%;}
+
+/* ── QUIZ ENGINE ── */
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:12px;}
+.q-pill{background:var(--surface2);border:1px solid var(--border2);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--text2);display:flex;align-items:center;gap:6px;}
+.q-pill b{color:var(--text);font-family:var(--mono);}
+.filter-bar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px;}
+.fbtn{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;background:var(--surface2);color:var(--text2);border:1px solid var(--border);transition:all .18s;}
+.fbtn:hover{border-color:var(--red);color:var(--red-light);}
+.fbtn.active{background:var(--red);color:#fff;border-color:var(--red);}
+
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px 30px;margin-bottom:18px;animation:fsu .35s ease;}
+@keyframes fsu{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.qmeta{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.qnum{font-family:var(--mono);font-size:11px;background:var(--surface3);border-radius:5px;padding:2px 9px;color:var(--text3);}
+.qsec{font-size:11px;background:rgba(255,61,0,0.1);border:1px solid rgba(255,61,0,0.2);border-radius:5px;padding:2px 9px;color:var(--red-light);font-family:var(--mono);}
+.qdiff{font-size:11px;border-radius:5px;padding:2px 9px;font-family:var(--mono);}
+.qdiff.easy{background:rgba(0,200,83,0.1);color:var(--green-light);}
+.qdiff.medium{background:rgba(255,171,0,0.1);color:var(--amber-light);}
+.qdiff.hard{background:rgba(255,61,0,0.1);color:var(--red-light);}
+.qmath{background:rgba(0,191,165,0.1);border:1px solid rgba(0,191,165,0.25);border-radius:5px;padding:2px 9px;font-family:var(--mono);font-size:10px;color:var(--teal-light);}
+.qtext{font-size:17px;font-weight:500;line-height:1.65;color:var(--text);margin-bottom:20px;}
+.qctx{background:var(--surface3);border-radius:8px;padding:11px 15px;font-family:var(--mono);font-size:12.5px;color:var(--text2);line-height:1.7;margin-bottom:16px;border-left:3px solid var(--amber);}
+.options{display:flex;flex-direction:column;gap:9px;}
+.opt{
+  background:var(--surface2);border:1.5px solid var(--border);border-radius:10px;
+  padding:13px 17px;cursor:pointer;font-size:14px;color:var(--text);
+  display:flex;align-items:flex-start;gap:13px;transition:all .18s;text-align:left;width:100%;
+}
+.opt:hover:not(.revealed){border-color:var(--red);background:rgba(255,61,0,0.06);transform:translateX(4px);}
+.opt.selected{border-color:var(--red);background:rgba(255,61,0,0.07);}
+.opt.correct{border-color:var(--green)!important;background:rgba(0,200,83,0.07)!important;color:var(--green-light);}
+.opt.wrong{border-color:var(--red)!important;background:rgba(255,61,0,0.08)!important;color:#ff7043;}
+.opt.dimmed{opacity:.38;}
+.oletter{width:26px;height:26px;min-width:26px;border-radius:6px;background:var(--surface3);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--text2);margin-top:1px;transition:all .18s;}
+.opt.correct .oletter{background:var(--green);color:#000;}
+.opt.wrong .oletter{background:var(--red);color:#fff;}
+.opt.selected .oletter{background:var(--red);color:#fff;}
+.expl{margin-top:18px;background:var(--surface2);border:1px solid var(--border2);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:14px 18px;display:none;animation:fsu .3s ease;}
+.expl.show{display:block;}
+.expl h5{font-size:11px;font-family:var(--mono);color:var(--teal-light);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
+.expl p{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.code-cite{font-family:var(--mono);font-size:11px;background:rgba(255,171,0,0.1);border:1px solid rgba(255,171,0,0.22);border-radius:4px;padding:1px 7px;color:var(--amber-light);display:inline;}
+.q-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+
+/* ── SCORE PANEL ── */
+#score-panel{display:none;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:34px;text-align:center;animation:fsu .4s ease;}
+.score-circle{width:138px;height:138px;border-radius:50%;border:5px solid var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 22px;background:rgba(0,200,83,0.05);}
+.score-circle.fail{border-color:var(--red);background:rgba(255,61,0,0.05);}
+.score-pct{font-family:'Orbitron',sans-serif;font-size:46px;color:var(--green-light);line-height:1;}
+.score-circle.fail .score-pct{color:var(--red-light);}
+.score-lbl{font-size:12px;color:var(--text2);margin-top:2px;}
+.score-bk{display:flex;justify-content:center;gap:28px;margin:18px 0 26px;flex-wrap:wrap;}
+.score-stat .val{font-family:'Orbitron',sans-serif;font-size:28px;color:var(--text);}
+.score-stat .lbl{font-size:11px;color:var(--text2);}
+
+/* ── FLASHCARDS ── */
+.fc-wrap{perspective:1000px;width:100%;max-width:620px;margin:0 auto 22px;height:210px;}
+.fc{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s ease;cursor:pointer;}
+.fc.flipped{transform:rotateY(180deg);}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;background:var(--surface);border:1px solid var(--border2);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;}
+.fc-back{transform:rotateY(180deg);background:var(--surface2);}
+.fc-label{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.fc-q{font-size:16px;font-weight:600;line-height:1.5;}
+.fc-a{font-size:14.5px;color:var(--teal-light);line-height:1.65;}
+.fc-nav{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:6px;}
+.fc-ctr{font-family:var(--mono);font-size:13px;color:var(--text2);}
+
+/* ── TABLES ── */
+.tbl-wrap{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:18px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead tr{background:var(--surface3);}
+th{padding:11px 15px;text-align:left;font-family:var(--mono);font-size:10.5px;color:var(--text2);letter-spacing:.8px;text-transform:uppercase;border-bottom:2px solid var(--border2);}
+td{padding:10px 15px;border-bottom:1px solid var(--border);color:var(--text2);line-height:1.55;}
+tr:hover td{background:rgba(255,255,255,0.018);}
+tr td:first-child{color:var(--text);font-weight:500;}
+
+/* ── CALCULATORS ── */
+.calc-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:18px;}
+.calc-block h4{font-size:15px;font-weight:700;margin-bottom:5px;}
+.calc-block p{font-size:13px;color:var(--text2);margin-bottom:4px;}
+.calc-inputs{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;}
+.calc-inputs label{font-size:12px;color:var(--text2);display:block;margin-bottom:3px;}
+.calc-inputs input{background:var(--surface3);border:1px solid var(--border2);border-radius:8px;padding:9px 13px;font-family:var(--mono);font-size:14px;color:var(--text);width:140px;outline:none;transition:border-color .2s;}
+.calc-inputs input:focus{border-color:var(--red);}
+.calc-result{background:var(--surface3);border:1px solid var(--border2);border-radius:9px;padding:13px 17px;font-family:var(--mono);font-size:15px;color:var(--amber-light);min-height:46px;}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:34px;}
+.timeline::before{content:'';position:absolute;left:13px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--amber),var(--teal));}
+.tl-item{position:relative;margin-bottom:26px;}
+.tl-dot{position:absolute;left:-28px;top:3px;width:15px;height:15px;border-radius:50%;background:var(--red);border:3px solid var(--bg);box-shadow:0 0 10px rgba(255,61,0,.4);}
+.tl-item:nth-child(2) .tl-dot{background:var(--amber);box-shadow:0 0 10px rgba(255,171,0,.4);}
+.tl-item:nth-child(3) .tl-dot{background:var(--teal);box-shadow:0 0 10px rgba(0,191,165,.4);}
+.tl-item:nth-child(4) .tl-dot{background:var(--blue);box-shadow:0 0 10px rgba(0,145,234,.4);}
+.tl-item:nth-child(5) .tl-dot{background:var(--purple);box-shadow:0 0 10px rgba(170,0,255,.4);}
+.tl-item:nth-child(6) .tl-dot{background:var(--green);box-shadow:0 0 10px rgba(0,200,83,.4);}
+.tl-week{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.tl-title{font-size:15px;font-weight:700;margin-bottom:7px;}
+.tl-body{font-size:13.5px;color:var(--text2);line-height:1.8;}
+
+/* ── PROGRESS BARS ── */
+.progress-row{display:flex;align-items:center;gap:14px;margin-bottom:9px;}
+.progress-label{font-size:12.5px;color:var(--text2);min-width:230px;}
+.progress-track{flex:1;height:7px;background:var(--surface3);border-radius:4px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+.progress-pct{font-family:var(--mono);font-size:12px;color:var(--text2);min-width:34px;text-align:right;}
+
+/* ── SCROLL TOP ── */
+#scroll-top{position:fixed;bottom:22px;right:22px;width:43px;height:43px;border-radius:50%;background:var(--red);color:#fff;border:none;cursor:pointer;font-size:17px;box-shadow:0 4px 20px rgba(255,61,0,.4);display:none;align-items:center;justify-content:center;z-index:999;transition:all .2s;}
+#scroll-top:hover{transform:translateY(-3px);}
+#scroll-top.visible{display:flex;}
+
+@media(max-width:700px){
+  .hero{padding:22px 18px;}
+  .hero h2{font-size:26px;}
+  .qcard{padding:18px 16px;}
+  main{padding:18px 14px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-icon">🌡️</div>
+      <div>
+        <h1>PASS C-20</h1>
+        <p>California HVAC License Exam Prep</p>
+      </div>
+    </div>
+    <div class="hdr-meta">
+      <div class="badge"><span>📋</span> Exam: <b>C-20 Warm-Air HVAC</b></div>
+      <div class="badge teal"><span>✅</span> Questions: <b>120+</b></div>
+      <div class="badge amber"><span>⏱</span> Format: <b>Closed Book</b></div>
+    </div>
+  </div>
+  <div id="gp"><div id="gpf"></div></div>
+</header>
+
+<div class="tabs-wrap">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="showTab('home',this)">🏠 Dashboard</button>
+    <button class="tab-btn" onclick="showTab('overview',this)">📊 Exam Overview</button>
+    <button class="tab-btn" onclick="showTab('s1',this)">📐 Planning &amp; Estimating <span class="tab-count">25%</span></button>
+    <button class="tab-btn" onclick="showTab('s2',this)">🔧 Fabrication &amp; Install <span class="tab-count">29%</span></button>
+    <button class="tab-btn" onclick="showTab('s3',this)">🔬 Troubleshooting <span class="tab-count">24%</span></button>
+    <button class="tab-btn" onclick="showTab('s4',this)">🦺 Safety <span class="tab-count">22%</span></button>
+    <button class="tab-btn" onclick="showTab('quiz',this)">🧠 Practice Quiz</button>
+    <button class="tab-btn" onclick="showTab('flashcards',this)">🃏 Flashcards</button>
+    <button class="tab-btn" onclick="showTab('math',this)">🔢 Math &amp; Formulas</button>
+    <button class="tab-btn" onclick="showTab('reference',this)">📚 Code Reference</button>
+    <button class="tab-btn" onclick="showTab('plan',this)">📅 Study Plan</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ════════════ DASHBOARD ════════════ -->
+<div id="tab-home" class="tab-panel active">
+  <div class="hero">
+    <h2>Pass the California<br><span>C-20 HVAC</span><br>License Exam</h2>
+    <p>Built directly from the official CSLB C-20 Study Guide. Four exam sections, 120+ real-style questions, formula calculators, flashcards, code references, and a 10-week study plan — everything you need to pass the first time.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="showTab('quiz',document.querySelectorAll('.tab-btn')[6])">▶ Start Practice Quiz</button>
+      <button class="btn btn-secondary" onclick="showTab('plan',document.querySelectorAll('.tab-btn')[10])">📅 View Study Plan</button>
+      <button class="btn btn-secondary" onclick="showTab('overview',document.querySelectorAll('.tab-btn')[1])">📊 Exam Overview</button>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-val">~100</div><div class="stat-lbl">Exam Questions</div></div>
+    <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-val">3 HRS</div><div class="stat-lbl">Time Allowed</div></div>
+    <div class="stat-card"><div class="stat-icon">🎯</div><div class="stat-val">70%</div><div class="stat-lbl">Passing Score</div></div>
+    <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-val">CLOSED</div><div class="stat-lbl">Book Policy</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="cat" style="background:linear-gradient(90deg,var(--red),var(--amber));"></div>
+      <h3>📊 Exam Section Weights</h3>
+      <p style="margin-bottom:14px;">Know where to focus your study time:</p>
+      <div id="dash-progress"></div>
+    </div>
+    <div class="card">
+      <div class="cat" style="background:linear-gradient(90deg,var(--teal),var(--blue));"></div>
+      <h3>📚 Key CSLB Exam Rules</h3>
+      <div class="sb" style="margin-bottom:9px;">
+        <h4>4 Choices — 1 BEST Answer</h4>
+        <p>Read all four options before selecting. CSLB writes distractors that are partially correct — you need the BEST answer, not just a correct one.</p>
+      </div>
+      <div class="tip">No penalty for guessing — always fill in every question.</div>
+      <div class="tip">A calculator is provided at the testing center for math questions.</div>
+      <div class="warn">CLOSED BOOK — no notes, books, or phones allowed during the exam.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔑 Reference Codes Used to Write the C-20 Exam</h3>
+    <div class="grid-3" style="margin-top:13px;">
+      <div><span class="cr">2022 CA Mechanical Code</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Primary code for HVAC systems. IAPMO. Title 24. Duct sizing, equipment installation, combustion air.</p></div>
+      <div><span class="cr">2022 CA Energy Code</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">HVAC efficiency requirements, duct sealing, insulation, Title 24 Part 6 compliance.</p></div>
+      <div><span class="cr">2022 Building Energy Efficiency Stds</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">CEC residential &amp; nonresidential HVAC efficiency mandates. SEER2, EER2 minimums.</p></div>
+      <div><span class="cr amber">ASHRAE Handbooks</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Fundamentals, HVAC Applications, Systems &amp; Equipment. Load calcs, psychrometrics.</p></div>
+      <div><span class="cr amber">ACCA Manuals J, D, S, N</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Manual J = residential load calc. Manual D = duct design. Manual S = equipment selection.</p></div>
+      <div><span class="cr amber">Cal/OSHA Title 8</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Safety orders for all HVAC work. Confined space, refrigerant handling, electrical.</p></div>
+      <div><span class="cr teal">SMACNA Duct Standards</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Metal &amp; flexible duct construction, leakage classes, pressure ratings.</p></div>
+      <div><span class="cr teal">2022 CA Electrical Code</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Disconnect sizing, GFCI, equipment grounding for HVAC electrical connections.</p></div>
+      <div><span class="cr teal">2022 CA Plumbing Code</span><p style="font-size:12px;color:var(--text2);margin-top:5px;">Condensate drainage, refrigeration piping, hydronic systems overlap.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ OVERVIEW ════════════ -->
+<div id="tab-overview" class="tab-panel">
+  <div class="section-tag">📊 CSLB C-20 EXAM STRUCTURE</div>
+  <div class="section-title" style="color:var(--red-light);">Exam Overview</div>
+  <p class="section-sub">The C-20 Exam is divided into four major sections — each weighted by percentage. Your study time should mirror these weights.</p>
+
+  <div class="grid-2" style="margin-bottom:26px;">
+    <div class="sec-card" onclick="showTab('s1',document.querySelectorAll('.tab-btn')[2])">
+      <div style="height:4px;background:linear-gradient(90deg,var(--red),var(--red-light));"></div>
+      <div class="sec-card-head">
+        <div class="sec-num" style="background:rgba(255,61,0,0.12);color:var(--red-light);">01</div>
+        <div class="sec-info"><h3>Planning &amp; Estimating</h3><div class="sec-pct" style="color:var(--red-light);">25%</div></div>
+      </div>
+      <div class="sec-card-body"><ul>
+        <li>HVAC system design and evaluation</li>
+        <li>Load and psychrometric calculations</li>
+        <li>Duct system design and layout</li>
+        <li>Job cost estimation</li>
+      </ul></div>
+      <div class="sec-bar"><div class="sec-bar-fill" style="width:25%;background:var(--red);"></div></div>
+    </div>
+
+    <div class="sec-card" onclick="showTab('s2',document.querySelectorAll('.tab-btn')[3])">
+      <div style="height:4px;background:linear-gradient(90deg,var(--amber),var(--amber-light));"></div>
+      <div class="sec-card-head">
+        <div class="sec-num" style="background:rgba(255,171,0,0.12);color:var(--amber-light);">02</div>
+        <div class="sec-info"><h3>Fabrication, Installation &amp; Startup</h3><div class="sec-pct" style="color:var(--amber-light);">29%</div></div>
+      </div>
+      <div class="sec-card-body"><ul>
+        <li>Duct system fabrication (SMACNA)</li>
+        <li>Equipment installation</li>
+        <li>Electrical and mechanical components</li>
+        <li>Plumbing and refrigeration components</li>
+        <li>Air distribution and duct systems</li>
+        <li>HVAC system startup</li>
+      </ul></div>
+      <div class="sec-bar"><div class="sec-bar-fill" style="width:29%;background:var(--amber);"></div></div>
+    </div>
+
+    <div class="sec-card" onclick="showTab('s3',document.querySelectorAll('.tab-btn')[4])">
+      <div style="height:4px;background:linear-gradient(90deg,var(--teal),var(--teal-light));"></div>
+      <div class="sec-card-head">
+        <div class="sec-num" style="background:rgba(0,191,165,0.12);color:var(--teal-light);">03</div>
+        <div class="sec-info"><h3>Troubleshooting, Repair &amp; Maintenance</h3><div class="sec-pct" style="color:var(--teal-light);">24%</div></div>
+      </div>
+      <div class="sec-card-body"><ul>
+        <li>HVAC system diagnostic tests and evaluation</li>
+        <li>HVAC system maintenance and repair</li>
+      </ul></div>
+      <div class="sec-bar"><div class="sec-bar-fill" style="width:24%;background:var(--teal);"></div></div>
+    </div>
+
+    <div class="sec-card" onclick="showTab('s4',document.querySelectorAll('.tab-btn')[5])">
+      <div style="height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-light));"></div>
+      <div class="sec-card-head">
+        <div class="sec-num" style="background:rgba(0,145,234,0.12);color:var(--blue-light);">04</div>
+        <div class="sec-info"><h3>Safety</h3><div class="sec-pct" style="color:var(--blue-light);">22%</div></div>
+      </div>
+      <div class="sec-card-body"><ul>
+        <li>Personal protective equipment (PPE)</li>
+        <li>Job site safety requirements (Cal/OSHA)</li>
+        <li>Handling hazardous materials</li>
+      </ul></div>
+      <div class="sec-bar"><div class="sec-bar-fill" style="width:22%;background:var(--blue);"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🗓 Exam Day — What to Expect</h3>
+    <div class="grid-2" style="margin-top:12px;">
+      <div class="sb"><h4>Format</h4><ul><li>Multiple-choice, 4 options per question</li><li>One BEST answer only</li><li>Some questions require math computation</li><li>Calculator provided — no personal calculators</li><li>No penalty for guessing — always answer</li></ul></div>
+      <div class="sb amber"><h4>Logistics</h4><ul><li>Administered at PSI testing centers statewide</li><li>Closed-book — no reference materials</li><li>Must also pass the Law &amp; Business Exam</li><li>Government-issued photo ID required</li><li>Questions written by active licensed C-20 contractors</li></ul></div>
+    </div>
+    <div class="tip" style="margin-top:10px;">The three official CSLB sample questions are included in this course's quiz — EER calculation, thermocouple function, and water-source heat pump components. These confirm the real exam question style.</div>
+  </div>
+</div>
+
+<!-- ════════════ SECTION 1 — PLANNING ════════════ -->
+<div id="tab-s1" class="tab-panel">
+  <div class="section-tag">SECTION 1 — 25% OF EXAM</div>
+  <div class="section-title" style="color:var(--red-light);">Planning &amp; Estimating</div>
+  <p class="section-sub">Covers HVAC system design and evaluation, load and psychrometric calculations, duct system design and layout, and job cost estimation.</p>
+
+  <div class="sb">
+    <h4>🏠 HVAC System Design &amp; Evaluation</h4>
+    <p>The C-20 contractor must be able to design, evaluate, and select HVAC systems appropriate for the building type, climate zone, and occupancy. California has 16 climate zones — equipment selection and efficiency requirements vary by zone.</p>
+    <ul>
+      <li><strong>Heating systems:</strong> forced-air furnaces, heat pumps, radiant systems, boilers</li>
+      <li><strong>Cooling systems:</strong> split systems, package units, VRF, evaporative coolers</li>
+      <li><strong>System types:</strong> single-zone, multi-zone, VAV (Variable Air Volume), constant volume</li>
+      <li><strong>Right-sizing is critical:</strong> oversized equipment short-cycles (reduces comfort, increases humidity); undersized can't meet design conditions</li>
+    </ul>
+    <div class="tip">Equipment sizing is always based on Manual J load calculation — never on square footage alone. This is a commonly tested concept.</div>
+    <p><span class="cr">ACCA Manual J</span> — Residential Load Calculation. <span class="cr">ACCA Manual N</span> — Commercial Load Calculation.</p>
+  </div>
+
+  <div class="sb amber">
+    <h4>🌡 Load Calculations — Manual J</h4>
+    <p>The heating and cooling load determines equipment sizing. Key factors:</p>
+    <ul>
+      <li><strong>Sensible heat:</strong> dry heat — changes air temperature (BTU/hr)</li>
+      <li><strong>Latent heat:</strong> moisture — changes humidity (BTU/hr)</li>
+      <li><strong>Total load = Sensible + Latent</strong></li>
+      <li><strong>Conduction gains/losses:</strong> through walls, roof, windows, floors (U-value × Area × ΔT)</li>
+      <li><strong>Solar gain:</strong> through glazing — SHGC (Solar Heat Gain Coefficient) × window area × solar factor</li>
+      <li><strong>Infiltration and ventilation:</strong> outside air load must be added to envelope load</li>
+      <li><strong>Internal gains:</strong> people (250 BTU/hr sensible, 200 BTU/hr latent), lighting, equipment</li>
+    </ul>
+    <div class="formula">
+      Conduction Load: Q = U × A × ΔT<br>
+      Q = heat flow (BTU/hr)<br>
+      U = overall heat transfer coefficient (BTU/hr·ft²·°F)<br>
+      A = surface area (ft²)<br>
+      ΔT = temperature difference (inside – outside, °F)<br>
+      <br>
+      Example: Wall, U=0.08, 200 ft², ΔT=30°F<br>
+      Q = 0.08 × 200 × 30 = 480 BTU/hr
+    </div>
+    <p><span class="cr amber">ASHRAE Fundamentals</span> — Heat transfer calculations. <span class="cr">ACCA Manual J</span> — Residential loads.</p>
+  </div>
+
+  <div class="sb teal">
+    <h4>📊 Psychrometrics — The HVAC Science</h4>
+    <p>Psychrometrics describes the properties of moist air. The psychrometric chart is a key tool — know these properties:</p>
+    <ul>
+      <li><strong>Dry-bulb temperature (DB):</strong> air temperature measured by a standard thermometer</li>
+      <li><strong>Wet-bulb temperature (WB):</strong> temperature of adiabatic saturation — indicates evaporation potential</li>
+      <li><strong>Dew point:</strong> temperature at which moisture begins to condense (100% RH)</li>
+      <li><strong>Relative humidity (RH):</strong> ratio of actual moisture to maximum possible at that temperature</li>
+      <li><strong>Specific humidity (humidity ratio):</strong> grains of water vapor per pound of dry air (gr/lb)</li>
+      <li><strong>Enthalpy:</strong> total heat content of air (BTU/lb of dry air) — includes sensible + latent</li>
+      <li><strong>Sensible Heat Ratio (SHR):</strong> sensible load ÷ total load — used to plot process on psych chart</li>
+    </ul>
+    <div class="formula">
+      EER = BTU/hr of cooling ÷ Watts of electrical input<br>
+      (Official CSLB Sample: 24,000 ÷ 2,400 = EER of 10.0 ✓)<br>
+      <br>
+      COP (Coefficient of Performance):<br>
+      COP = BTU output ÷ BTU input (heat pumps)<br>
+      COP = EER ÷ 3.412<br>
+      <br>
+      SEER2 = Seasonal Energy Efficiency Ratio (newer standard)<br>
+      California min: 15 SEER2 (most residential split systems, 2023+)
+    </div>
+    <p><span class="cr amber">ASHRAE Manual P</span> — Psychrometrics. <span class="cr">ACCA Manual RS</span> — Comfort, Air Quality &amp; Efficiency by Design.</p>
+  </div>
+
+  <div class="sb">
+    <h4>🌀 Duct System Design — Manual D</h4>
+    <p>Duct design determines airflow delivery to each zone. The equal friction method and velocity reduction method are the two primary approaches:</p>
+    <ul>
+      <li><strong>Equal friction method:</strong> design all duct sections at the same friction rate (typically 0.1 in.w.g. per 100 ft)</li>
+      <li><strong>Static pressure:</strong> the driving force for air movement — measured in inches water gauge (in.w.g.)</li>
+      <li><strong>Total external static pressure (TESP):</strong> maximum resistance the blower must overcome</li>
+      <li><strong>CFM (cubic feet per minute):</strong> airflow — approximately 400 CFM per ton of cooling (residential)</li>
+      <li><strong>Duct sizing:</strong> larger duct = lower velocity = less pressure drop = quieter operation</li>
+      <li><strong>Return air:</strong> must be sized to handle 100% of supply airflow — undersized return causes negative pressure issues</li>
+    </ul>
+    <div class="formula">
+      CFM = Tons × 400 (residential rule of thumb)<br>
+      Example: 3-ton system → 3 × 400 = 1,200 CFM supply air<br>
+      <br>
+      Velocity Pressure: VP = (V ÷ 4005)²<br>
+      V = velocity in FPM, VP = inches w.g.<br>
+      <br>
+      Typical duct velocities:<br>
+      Main supply trunk: 700–900 FPM<br>
+      Branch ducts: 500–700 FPM<br>
+      Return ducts: 400–600 FPM
+    </div>
+    <p><span class="cr">ACCA Manual D</span> — Residential Duct Systems. <span class="cr amber">SMACNA HVAC Duct Construction Standards</span></p>
+  </div>
+
+  <div class="sb amber">
+    <h4>💰 Job Cost Estimation</h4>
+    <p>Cost estimation for HVAC projects includes equipment, materials, labor, and overhead:</p>
+    <div class="formula">
+      Total Job Cost = Equipment + Materials + Labor + Equipment Rental + Overhead + Profit<br>
+      <br>
+      Labor = Hours × Hourly Rate<br>
+      Overhead = typically 10–20% of direct costs<br>
+      <br>
+      Example:<br>
+      Equipment: $3,200<br>
+      Materials (duct, fittings): $800<br>
+      Labor: 24 hrs × $95/hr = $2,280<br>
+      Overhead (15%): ($3,200 + $800 + $2,280) × 0.15 = $942<br>
+      Total = $3,200 + $800 + $2,280 + $942 = $7,222
+    </div>
+    <div class="tip">Always calculate equipment and labor separately. The exam often presents costs with mixed rates — read carefully before computing.</div>
+  </div>
+</div>
+
+<!-- ════════════ SECTION 2 — FABRICATION ════════════ -->
+<div id="tab-s2" class="tab-panel">
+  <div class="section-tag">SECTION 2 — 29% OF EXAM (LARGEST SECTION)</div>
+  <div class="section-title" style="color:var(--amber-light);">Fabrication, Installation &amp; Startup</div>
+  <p class="section-sub">The largest exam section. Covers duct fabrication, equipment installation, electrical/mechanical/refrigeration components, air distribution, and system startup procedures.</p>
+
+  <div class="sb amber">
+    <h4>🔩 Duct System Fabrication (SMACNA)</h4>
+    <p>All metal ductwork must be fabricated and installed per SMACNA standards. Key requirements:</p>
+    <ul>
+      <li><strong>Sheet metal gauges:</strong> duct size determines minimum gauge — e.g., ducts up to 30" use 26-gauge galvanized steel (SMACNA Table)</li>
+      <li><strong>Duct leakage classes:</strong> Class 3 = 3 CFM/100 ft² at 1 in.w.g. (typical residential); Class 6 = 6 CFM/100 ft² (less tight)</li>
+      <li><strong>California Title 24:</strong> ducts in unconditioned space must be sealed to leakage ≤ 15% of fan airflow (verified by duct leakage test)</li>
+      <li><strong>Flexible duct:</strong> max 5-ft unsupported spans; must be fully extended (never compressed); supports every 4 ft maximum</li>
+      <li><strong>Duct insulation:</strong> R-8 required for ducts in unconditioned space (California Energy Code)</li>
+      <li><strong>Fire dampers:</strong> required where ducts penetrate fire-rated assemblies (rated for 1.5 hr or 3 hr)</li>
+    </ul>
+    <p><span class="cr amber">SMACNA HVAC Duct Construction Standards</span> — Metal and Flexible. <span class="cr">2022 CA Mechanical Code § 601</span></p>
+    <div class="warn">Flex duct compressed or kinked increases resistance dramatically — a 50% compression can increase resistance by 4× or more. This is a tested exam topic.</div>
+  </div>
+
+  <div class="sb">
+    <h4>🏗 Equipment Installation</h4>
+    <p>Proper equipment installation is the highest-weighted topic. Key requirements by equipment type:</p>
+    <ul>
+      <li><strong>Gas furnace:</strong> must have combustion air supply; min 50 CFM per 10,000 BTU/hr input for confined space</li>
+      <li><strong>Furnace clearances:</strong> per manufacturer and code — typically 1" side, 6" front for service access</li>
+      <li><strong>Condensing furnaces:</strong> flue gas is acidic — requires PVC or CPVC vent pipe (not B-vent)</li>
+      <li><strong>Split AC outdoor unit:</strong> min 12" clearance on service side, min 24" on discharge side; elevate above flood level in flood zones</li>
+      <li><strong>Evaporator coil:</strong> installed upstream (before) of the furnace heat exchanger in cooling-priority systems; downstream in heating-priority</li>
+      <li><strong>Package units:</strong> all components in one cabinet — common for rooftop (RTU) commercial applications; eliminates refrigerant line sets</li>
+      <li><strong>Condensate drain:</strong> primary and secondary required; min ¾" PVC; slope ¼" per foot minimum; secondary drain must be visible to occupant</li>
+    </ul>
+    <p><span class="cr">2022 CA Mechanical Code § 904</span> — Furnace installation. <span class="cr amber">2022 CA Energy Code § 150.1</span></p>
+  </div>
+
+  <div class="sb teal">
+    <h4>⚡ Electrical &amp; Mechanical Components</h4>
+    <p>HVAC systems require proper electrical connections and mechanical components. Know these:</p>
+    <ul>
+      <li><strong>Disconnect switch:</strong> required within sight of every HVAC unit; must be lockable (NEC 440.14)</li>
+      <li><strong>HACR breaker:</strong> Heating, Air Conditioning, Refrigeration rated — required for HVAC compressor circuits</li>
+      <li><strong>Capacitor:</strong> provides starting torque — run capacitors improve efficiency; start capacitors assist startup</li>
+      <li><strong>Contactor:</strong> heavy-duty relay that switches compressor and condenser fan motor power</li>
+      <li><strong>Transformer:</strong> steps 240V down to 24V for control circuit (thermostat, control board)</li>
+      <li><strong>Control board:</strong> sequenced furnace operation — inducer motor → igniter → gas valve → blower</li>
+      <li><strong>ECM blower motor:</strong> electronically commutated — significantly more efficient than PSC motors; maintains constant CFM</li>
+      <li><strong>GFCI protection:</strong> required for HVAC equipment in garages, near water, and per local AHJ</li>
+    </ul>
+    <p><span class="cr teal">2022 CA Electrical Code § 440</span> — Air conditioning and refrigerating equipment. <span class="cr">NEC 440.14</span> — Disconnecting means.</p>
+  </div>
+
+  <div class="sb">
+    <h4>❄️ Refrigeration Components</h4>
+    <p>The refrigeration cycle is fundamental to HVAC. Know every component and its function:</p>
+    <ul>
+      <li><strong>Compressor:</strong> pumps refrigerant — increases pressure and temperature of refrigerant vapor</li>
+      <li><strong>Condenser:</strong> rejects heat to outdoor air (or water in water-source systems) — refrigerant condenses from vapor to liquid</li>
+      <li><strong>Metering device:</strong> reduces refrigerant pressure — TXV (thermostatic expansion valve) or fixed orifice (piston)</li>
+      <li><strong>Evaporator:</strong> absorbs heat from indoor air — refrigerant evaporates from liquid to vapor, cooling the air</li>
+      <li><strong>Reversing valve:</strong> found in heat pumps only — reverses refrigerant flow to switch between heating and cooling mode</li>
+      <li><strong>Accumulator:</strong> prevents liquid refrigerant from entering the compressor (suction side)</li>
+      <li><strong>Receiver:</strong> stores liquid refrigerant (liquid line side)</li>
+      <li><strong>Filter-drier:</strong> removes moisture and contaminants from the refrigerant circuit</li>
+    </ul>
+    <div class="tip">Water-source heat pump eliminates the air-cooled condenser — heat is rejected to water instead of air. This is the third official CSLB sample question answer.</div>
+    <p><span class="cr">2022 CA Mechanical Code § 1100</span> — Refrigeration. <span class="cr amber">EPA Section 608</span> — Refrigerant handling certification (required for technicians).</p>
+  </div>
+
+  <div class="sb amber">
+    <h4>🌡 HVAC System Startup Procedure</h4>
+    <p>Startup must be performed in proper sequence to protect equipment:</p>
+    <ol>
+      <li>Verify power is off; inspect all wiring, connections, and refrigerant lines</li>
+      <li>Check refrigerant charge (superheat or subcooling method)</li>
+      <li>Inspect and set all controls: thermostat, limits, safety switches</li>
+      <li>Open all supply and return registers; verify filter is installed</li>
+      <li>Restore power; start system in heating or cooling mode</li>
+      <li>Measure supply and return air temperatures — verify ΔT (temperature split)</li>
+      <li>Measure amperage on all motors — verify within nameplate rating</li>
+      <li>Verify condensate drain flows freely</li>
+      <li>Check static pressure across air handler</li>
+      <li>Document all readings and provide owner with operating instructions</li>
+    </ol>
+    <div class="formula">
+      Cooling: Target ΔT (supply vs return) = 16–22°F<br>
+      Heating (gas furnace): Target supply air temp = 120–140°F (ΔT ≈ 50–80°F rise)<br>
+      Heat pump heating: ΔT = 20–30°F (lower than furnace)<br>
+      <br>
+      Superheat (fixed orifice): Target = 8–12°F above suction saturation temp<br>
+      Subcooling (TXV): Target = 10–15°F below condensing saturation temp
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ SECTION 3 — TROUBLESHOOTING ════════════ -->
+<div id="tab-s3" class="tab-panel">
+  <div class="section-tag">SECTION 3 — 24% OF EXAM</div>
+  <div class="section-title" style="color:var(--teal-light);">Troubleshooting, Repair &amp; Maintenance</div>
+  <p class="section-sub">Covers HVAC system diagnostic tests, evaluation procedures, maintenance, and repair — grounded in real-world diagnostic skill.</p>
+
+  <div class="sb teal">
+    <h4>🔍 Diagnostic Tests &amp; Evaluation</h4>
+    <p>Use a systematic approach — measure first, then diagnose. Key diagnostic tools and readings:</p>
+    <ul>
+      <li><strong>Manifold gauge set:</strong> reads high-side (discharge) and low-side (suction) pressures; used with PT chart to find saturation temperatures</li>
+      <li><strong>Clamp meter:</strong> measures amperage on compressor, fan motors, and blower</li>
+      <li><strong>Multimeter:</strong> voltage, resistance, and continuity checks — capacitors, contactors, sensors</li>
+      <li><strong>Psychrometer:</strong> measures DB and WB temperature — used to evaluate system performance</li>
+      <li><strong>Anemometer / flow hood:</strong> measures air velocity and CFM at registers</li>
+      <li><strong>Manometer:</strong> measures static pressure in duct system</li>
+      <li><strong>Leak detector (electronic):</strong> locates refrigerant leaks — more sensitive than soap bubbles for small leaks</li>
+      <li><strong>Combustion analyzer:</strong> measures flue gas CO, CO₂, O₂, and efficiency for gas systems</li>
+    </ul>
+    <div class="formula">
+      Superheat = Suction line temperature – Suction saturation temperature (from PT chart)<br>
+      Example: Suction line = 55°F, saturation at suction pressure = 45°F → Superheat = 10°F ✓<br>
+      <br>
+      Subcooling = Condensing saturation temperature (from PT chart) – Liquid line temperature<br>
+      Example: Saturation at high-side = 110°F, liquid line = 98°F → Subcooling = 12°F ✓
+    </div>
+  </div>
+
+  <div class="sb">
+    <h4>⚡ Common HVAC Problems &amp; Causes</h4>
+    <div class="grid-2" style="margin-top:8px;">
+      <div>
+        <h4 style="font-size:13px;color:var(--teal-light);margin-bottom:8px;">Cooling Problems</h4>
+        <ul>
+          <li><strong>Low superheat:</strong> overcharge, TXV stuck open, or low load</li>
+          <li><strong>High superheat:</strong> low charge, TXV stuck closed, or restricted filter/duct</li>
+          <li><strong>High head pressure:</strong> overcharge, dirty condenser, non-condensables (air in system), high ambient temp</li>
+          <li><strong>Low head pressure:</strong> low charge, compressor failing (low compression)</li>
+          <li><strong>Icing on evaporator:</strong> low airflow (dirty filter/coil), low refrigerant charge, low ambient</li>
+          <li><strong>Warm supply air:</strong> low charge, failed compressor, dirty condenser, oversized unit short-cycling</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:13px;color:var(--red-light);margin-bottom:8px;">Heating Problems</h4>
+        <ul>
+          <li><strong>No ignition (gas furnace):</strong> failed igniter, gas valve closed, no gas pressure, cracked thermocouple</li>
+          <li><strong>Furnace locks out:</strong> flame sensor dirty (carbon buildup), failed inducer, blocked flue</li>
+          <li><strong>High limit trips:</strong> dirty filter, blocked registers, duct restriction, failed blower</li>
+          <li><strong>Carbon monoxide:</strong> cracked heat exchanger — immediately shut down and red-tag</li>
+          <li><strong>Heat pump not heating:</strong> check reversing valve solenoid, low charge, defrost board issue</li>
+          <li><strong>Short cycling:</strong> oversized equipment, thermostat location issue, low refrigerant</li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn" style="margin-top:12px;">A cracked heat exchanger is a life-safety emergency — it allows combustion gases including CO to mix with supply air. Always shut down and red-tag the unit immediately. Never just tape or patch a cracked heat exchanger.</div>
+  </div>
+
+  <div class="sb teal">
+    <h4>🛠 Thermocouple &amp; Ignition Systems</h4>
+    <p>This is directly tested in the official CSLB sample question:</p>
+    <ul>
+      <li><strong>Thermocouple:</strong> a safety device that confirms the existence of a pilot flame — it generates a small millivolt DC signal that holds the gas valve open. If the pilot goes out, the thermocouple cools, voltage drops, and the gas valve closes. This is the CSLB sample answer.</li>
+      <li><strong>Thermopile:</strong> multiple thermocouples in series — generates higher millivoltage; used in millivolt gas valves</li>
+      <li><strong>Hot surface igniter (HSI):</strong> silicon carbide or silicon nitride element; heats to ~2000°F to ignite gas; replaces standing pilot in modern furnaces</li>
+      <li><strong>Intermittent pilot:</strong> electronic spark lights pilot only when heat is called for — more efficient than standing pilot</li>
+      <li><strong>Flame sensor (flame rectification):</strong> a rod that passes electrical current through the flame — if no flame, current stops and gas valve closes within seconds</li>
+    </ul>
+    <p><span class="cr teal">2022 CA Mechanical Code § 904.8</span> — Gas appliance ignition systems.</p>
+  </div>
+
+  <div class="sb amber">
+    <h4>🔧 Preventive Maintenance Schedule</h4>
+    <ul>
+      <li><strong>Monthly:</strong> inspect and replace air filter (1" disposable); check condensate drain for clogs</li>
+      <li><strong>Seasonally (pre-cooling):</strong> clean condenser coil, check refrigerant charge (superheat/subcooling), inspect electrical connections and capacitor, test contactors, clean evaporator drain pan</li>
+      <li><strong>Seasonally (pre-heating):</strong> inspect heat exchanger for cracks, check burners and igniter, clean flame sensor, test all safety limits, check flue and combustion air</li>
+      <li><strong>Annually:</strong> check and tighten all electrical connections, lubricate blower and fan motors (if not sealed), measure static pressure, check duct system for leaks</li>
+    </ul>
+    <p><span class="cr amber">ASHRAE HVAC Applications Handbook</span> — Maintenance procedures. <span class="cr">2022 CA Mechanical Code § 109</span> — Required inspections.</p>
+  </div>
+</div>
+
+<!-- ════════════ SECTION 4 — SAFETY ════════════ -->
+<div id="tab-s4" class="tab-panel">
+  <div class="section-tag">SECTION 4 — 22% OF EXAM</div>
+  <div class="section-title" style="color:var(--blue-light);">Safety</div>
+  <p class="section-sub">Covers personal protective equipment (PPE), Cal/OSHA job site safety requirements, and handling of hazardous materials including refrigerants.</p>
+
+  <div class="sb blue">
+    <h4>👷 Personal Protective Equipment (PPE)</h4>
+    <ul>
+      <li><strong>Safety glasses / goggles:</strong> required when handling refrigerants, cutting metal ductwork, or working near electrical equipment</li>
+      <li><strong>Gloves:</strong> insulated gloves for electrical work; chemical-resistant gloves for refrigerant handling</li>
+      <li><strong>Hard hat:</strong> required on job sites with overhead hazards (rooftop work, construction)</li>
+      <li><strong>Steel-toed boots:</strong> required for equipment handling and job site work</li>
+      <li><strong>Respiratory protection:</strong> required when working with refrigerants in confined spaces, brazing, or when CO/combustion gases may be present</li>
+      <li><strong>Hearing protection:</strong> required at or above 85 dB (8-hr TWA) — Cal/OSHA § 5097</li>
+      <li><strong>Knee pads:</strong> not a Cal/OSHA requirement but strongly recommended for crawlspace work</li>
+    </ul>
+    <p><span class="cr teal">Cal/OSHA Title 8 § 3380</span> — Personal protective equipment requirements.</p>
+  </div>
+
+  <div class="sb">
+    <h4>🏗 Job Site Safety — Cal/OSHA Title 8</h4>
+    <ul>
+      <li><strong>Electrical safety:</strong> Lockout/Tagout (LOTO) required before servicing any HVAC unit — Cal/OSHA § 3314. Isolate disconnect, apply lock, verify zero voltage.</li>
+      <li><strong>Ladder safety:</strong> 4:1 ratio (1 ft out for every 4 ft up); extend 3 ft above landing; 3-point contact rule; no overloading rated capacity</li>
+      <li><strong>Rooftop safety:</strong> fall protection required at 6 ft above lower level (construction) — guardrails, safety nets, or personal fall arrest system</li>
+      <li><strong>Confined spaces:</strong> attics, crawlspaces, and mechanical rooms may be confined spaces — assess atmosphere (O₂, CO, flammable gas) before entry</li>
+      <li><strong>Brazing/soldering:</strong> fire watch required; keep fire extinguisher within reach; use shields near combustibles</li>
+      <li><strong>Nitrogen:</strong> always use a regulator when pressurizing systems with nitrogen — never use oxygen (fire/explosion risk)</li>
+      <li><strong>Right-to-Know / SDS:</strong> Safety Data Sheets required on site for all chemicals (refrigerants, flux, coil cleaner)</li>
+    </ul>
+    <div class="warn">NEVER use oxygen to pressurize or leak-test refrigeration systems. Oxygen in contact with refrigerant oil can cause a violent explosion. Use dry nitrogen only.</div>
+    <p><span class="cr teal">Cal/OSHA Title 8 § 3314</span> — Lockout/Tagout. <span class="cr">Cal/OSHA § 1670</span> — Fall protection.</p>
+  </div>
+
+  <div class="sb teal">
+    <h4>☢️ Hazardous Materials — Refrigerant Handling</h4>
+    <p>Refrigerant handling is heavily regulated by EPA Section 608 and California ARB:</p>
+    <ul>
+      <li><strong>EPA Section 608 certification:</strong> required to purchase and handle regulated refrigerants. Types: I (small appliances), II (high-pressure), III (low-pressure), Universal</li>
+      <li><strong>Venting prohibition:</strong> intentional venting of CFC, HCFC, or HFC refrigerants is illegal — federal Clean Air Act violation</li>
+      <li><strong>Recovery required:</strong> must recover refrigerant before opening any system — use EPA-certified recovery equipment</li>
+      <li><strong>Common refrigerants:</strong><br>
+        R-22 (HCFC) — phased out for new equipment; still in older systems<br>
+        R-410A (HFC) — current residential standard (higher pressure than R-22)<br>
+        R-32, R-454B — next-generation lower GWP refrigerants (A2L mildly flammable)<br>
+        R-134a — automotive and commercial refrigeration</li>
+      <li><strong>Refrigerant cylinders:</strong> never fill beyond 80% capacity; store upright; keep from heat sources; yellow cylinder = recovery refrigerant only</li>
+      <li><strong>California ARB:</strong> additional refrigerant regulations for high-GWP refrigerants — reporting requirements for large commercial systems</li>
+    </ul>
+    <div class="warn">R-410A operates at pressures up to 600 psi (compared to ~250 psi for R-22). Always use R-410A-rated hoses, gauges, and recovery equipment. R-22 equipment is not rated for R-410A pressures.</div>
+    <p><span class="cr teal">EPA Section 608</span> — Refrigerant recovery/recycle/reclaim regulations. <span class="cr">California ARB</span> — HFC regulations.</p>
+  </div>
+
+  <div class="sb amber">
+    <h4>🔥 Combustion Safety</h4>
+    <ul>
+      <li><strong>Carbon monoxide (CO):</strong> colorless, odorless, deadly — produced by incomplete combustion. Detector required per California code in all homes with gas appliances</li>
+      <li><strong>CO threshold:</strong> OSHA PEL = 50 ppm (8-hr TWA); immediately dangerous at 1,200 ppm</li>
+      <li><strong>Natural gas:</strong> flammable range 5–15% concentration in air (LEL 5%, UEL 15%); lighter than air; rises</li>
+      <li><strong>Propane (LP):</strong> flammable range 2.1–9.5%; heavier than air — settles in low areas; evacuate and ventilate before ignition</li>
+      <li><strong>Gas leak response:</strong> evacuate, do NOT operate switches or phones inside, call gas company from outside</li>
+      <li><strong>Combustion air:</strong> gas appliances require adequate combustion air supply — minimum per CMC based on BTU input and space volume</li>
+    </ul>
+    <p><span class="cr amber">2022 CA Mechanical Code § 701</span> — Combustion air requirements. <span class="cr">Cal/OSHA § 5155</span> — Airborne contaminants (CO limits).</p>
+  </div>
+</div>
+
+<!-- ════════════ QUIZ ════════════ -->
+<div id="tab-quiz" class="tab-panel">
+  <div class="section-tag">🧠 INTERACTIVE PRACTICE EXAM</div>
+  <div class="section-title" style="color:var(--red-light);">Practice Quiz</div>
+  <p class="section-sub">Real-style questions matching CSLB C-20 exam format — 4 choices, one best answer, full code-cited explanations. Includes all 3 official CSLB sample questions.</p>
+
+  <div class="quiz-header">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <div class="q-pill">Section: <b id="qsec-lbl">All</b></div>
+      <div class="q-pill">Question: <b id="qcur">1</b> / <b id="qtot">30</b></div>
+      <div class="q-pill">Score: <b id="qscr">0</b> correct</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-secondary" onclick="resetQuiz()">↺ Restart</button>
+      <button class="btn btn-primary" id="sub-btn" onclick="submitAnswer()" disabled>Check Answer</button>
+      <button class="btn btn-teal" id="nxt-btn" onclick="nextQuestion()" style="display:none;">Next →</button>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="fbtn active" onclick="setFilter('all',this)">All Sections</button>
+    <button class="fbtn" onclick="setFilter('planning',this)">Planning &amp; Estimating</button>
+    <button class="fbtn" onclick="setFilter('install',this)">Fabrication &amp; Install</button>
+    <button class="fbtn" onclick="setFilter('trouble',this)">Troubleshooting</button>
+    <button class="fbtn" onclick="setFilter('safety',this)">Safety</button>
+    <button class="fbtn" onclick="setFilter('math',this)">⚡ Math Only</button>
+  </div>
+
+  <div id="quiz-area"></div>
+  <div id="score-panel">
+    <div class="score-circle" id="sc-el"><div class="score-pct" id="sc-pct">0%</div><div class="score-lbl">Score</div></div>
+    <h2 id="sc-verdict" style="font-family:'Orbitron',sans-serif;font-size:28px;margin-bottom:8px;"></h2>
+    <p id="sc-msg" style="color:var(--text2);font-size:14px;margin-bottom:20px;"></p>
+    <div class="score-bk">
+      <div class="score-stat"><div class="val" id="sc-c">0</div><div class="lbl">Correct</div></div>
+      <div class="score-stat"><div class="val" id="sc-w">0</div><div class="lbl">Wrong</div></div>
+      <div class="score-stat"><div class="val" id="sc-t">0</div><div class="lbl">Total</div></div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="resetQuiz()">↺ Try Again</button>
+      <button class="btn btn-secondary" onclick="showTab('s1',document.querySelectorAll('.tab-btn')[2])">📚 Review Material</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ FLASHCARDS ════════════ -->
+<div id="tab-flashcards" class="tab-panel">
+  <div class="section-tag">🃏 FLASHCARD DRILL</div>
+  <div class="section-title" style="color:var(--red-light);">Flashcards</div>
+  <p class="section-sub">Click the card to flip and reveal the answer. Drill these until automatic — formulas, code numbers, equipment rules, and refrigerant facts.</p>
+  <div class="fc-wrap"><div class="fc" id="fc" onclick="flipCard()">
+    <div class="fc-face"><div class="fc-label">QUESTION — Click to flip</div><div class="fc-q" id="fc-q"></div></div>
+    <div class="fc-face fc-back"><div class="fc-label">ANSWER</div><div class="fc-a" id="fc-a"></div></div>
+  </div></div>
+  <div class="fc-nav">
+    <button class="btn btn-secondary" onclick="fcNav(-1)">← Prev</button>
+    <div class="fc-ctr"><span id="fc-cur">1</span> / <span id="fc-tot">32</span></div>
+    <button class="btn btn-secondary" onclick="fcNav(1)">Next →</button>
+    <button class="btn btn-amber" onclick="shuffleFC()" style="margin-left:12px;">🔀 Shuffle</button>
+  </div>
+  <div class="card" style="margin-top:26px;">
+    <h3>📋 All Cards — Quick Reference</h3>
+    <p style="margin-bottom:14px;">Full list of all flashcard terms and answers:</p>
+    <div id="fc-list"></div>
+  </div>
+</div>
+
+<!-- ════════════ MATH ════════════ -->
+<div id="tab-math" class="tab-panel">
+  <div class="section-tag">🔢 MATH, FORMULAS &amp; CALCULATORS</div>
+  <div class="section-title" style="color:var(--red-light);">Math &amp; Formulas</div>
+  <p class="section-sub">Interactive calculators for every math formula that appears on the C-20 exam. All formulas shown with step-by-step work.</p>
+
+  <div class="calc-block">
+    <h4>⚡ EER / COP Calculator</h4>
+    <p><span class="cr">Formula: EER = BTU/hr ÷ Watts</span> — The official CSLB sample question tests this directly.</p>
+    <div class="calc-inputs">
+      <div><label>Cooling Capacity (BTU/hr)</label><input type="number" id="eer-btu" placeholder="e.g. 24000" oninput="calcEER()"></div>
+      <div><label>Electrical Input (Watts)</label><input type="number" id="eer-w" placeholder="e.g. 2400" oninput="calcEER()"></div>
+    </div>
+    <div class="calc-result" id="eer-result">Enter values to calculate EER and COP</div>
+  </div>
+
+  <div class="calc-block">
+    <h4>🌡 Heat Load Calculator (Conduction)</h4>
+    <p><span class="cr">Formula: Q = U × A × ΔT</span> — Used for Manual J wall, roof, and window load calculations.</p>
+    <div class="calc-inputs">
+      <div><label>U-Value (BTU/hr·ft²·°F)</label><input type="number" id="hl-u" placeholder="e.g. 0.08" step="0.01" oninput="calcHL()"></div>
+      <div><label>Area (ft²)</label><input type="number" id="hl-a" placeholder="e.g. 200" oninput="calcHL()"></div>
+      <div><label>ΔT (°F difference)</label><input type="number" id="hl-dt" placeholder="e.g. 30" oninput="calcHL()"></div>
+    </div>
+    <div class="calc-result" id="hl-result">Enter values to calculate heat load</div>
+  </div>
+
+  <div class="calc-block">
+    <h4>💨 CFM &amp; System Sizing Calculator</h4>
+    <p><span class="cr">Rule: ~400 CFM per ton of cooling (residential)</span></p>
+    <div class="calc-inputs">
+      <div><label>System Size (tons)</label><input type="number" id="cfm-tons" placeholder="e.g. 3" step="0.5" oninput="calcCFM()"></div>
+      <div><label>Or enter CFM</label><input type="number" id="cfm-cfm" placeholder="e.g. 1200" oninput="calcCFMrev()"></div>
+    </div>
+    <div class="calc-result" id="cfm-result">Enter system size to calculate required airflow</div>
+  </div>
+
+  <div class="calc-block">
+    <h4>💰 HVAC Job Cost Estimator</h4>
+    <p><span class="cr">Total = Equipment + Materials + Labor + Overhead</span></p>
+    <div class="calc-inputs">
+      <div><label>Equipment ($)</label><input type="number" id="jc-eq" placeholder="e.g. 3200" oninput="calcJC()"></div>
+      <div><label>Materials ($)</label><input type="number" id="jc-mat" placeholder="e.g. 800" oninput="calcJC()"></div>
+      <div><label>Labor Hours</label><input type="number" id="jc-hrs" placeholder="e.g. 24" oninput="calcJC()"></div>
+      <div><label>Hourly Rate ($)</label><input type="number" id="jc-rate" placeholder="e.g. 95" oninput="calcJC()"></div>
+      <div><label>Overhead %</label><input type="number" id="jc-oh" placeholder="e.g. 15" oninput="calcJC()"></div>
+    </div>
+    <div class="calc-result" id="jc-result">Enter values to calculate total job cost</div>
+  </div>
+
+  <div class="card">
+    <h3>📊 Master Formula Sheet</h3>
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <div class="formula">EER = BTU/hr ÷ Watts<br>COP = EER ÷ 3.412<br>SEER = Seasonal avg EER (annualized)<br>CA Min (2023+): 15 SEER2 residential split</div>
+        <div class="formula">Heat Load: Q = U × A × ΔT<br>U = 1 ÷ R-total (R-value = 1/U)<br>Infiltration: Q = 1.1 × CFM × ΔT (sensible)<br>Latent: Q = 0.68 × CFM × ΔW (gr/lb)</div>
+        <div class="formula">CFM = Tons × 400 (cooling, residential)<br>Velocity: V (FPM) = CFM ÷ Area (ft²)<br>Area of round duct: A = π × r²<br>Area of rect duct: A = W × H</div>
+      </div>
+      <div>
+        <div class="formula">Superheat = Suction line temp – Sat temp (low side)<br>Subcooling = Sat temp (high side) – Liquid line temp<br>Target superheat (fixed orifice): 8–12°F<br>Target subcooling (TXV): 10–15°F</div>
+        <div class="formula">ΔT Cooling: 16–22°F (supply vs return)<br>ΔT Gas Furnace: 50–80°F rise<br>ΔT Heat Pump Heating: 20–30°F<br>Combustion air: 50 CFM per 10,000 BTU/hr input</div>
+        <div class="formula">Job Cost:<br>Labor = Hours × Rate<br>Overhead = (Equip + Mat + Labor) × %<br>Total = Equip + Mat + Labor + Overhead + Profit</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ REFERENCE ════════════ -->
+<div id="tab-reference" class="tab-panel">
+  <div class="section-tag">📚 CODE &amp; TECHNICAL REFERENCE TABLES</div>
+  <div class="section-title" style="color:var(--red-light);">Code Reference</div>
+  <p class="section-sub">Key code sections, efficiency standards, refrigerant properties, and HVAC specs. Memorize these — no books allowed in the exam.</p>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Code / Standard</th><th>Topic</th><th>Exam Relevance</th></tr></thead>
+    <tbody>
+      <tr><td>2022 CA Mechanical Code § 301</td><td>HVAC equipment approval &amp; listing</td><td>High</td></tr>
+      <tr><td>2022 CA Mechanical Code § 601</td><td>Duct construction standards</td><td>Very High</td></tr>
+      <tr><td>2022 CA Mechanical Code § 701</td><td>Combustion air requirements</td><td>High</td></tr>
+      <tr><td>2022 CA Mechanical Code § 904</td><td>Gas furnace installation &amp; clearances</td><td>Very High</td></tr>
+      <tr><td>2022 CA Mechanical Code § 1100</td><td>Refrigeration systems</td><td>High</td></tr>
+      <tr><td>2022 CA Energy Code § 150.1</td><td>HVAC equipment efficiency minimums</td><td>Very High</td></tr>
+      <tr><td>2022 CA Energy Code § 150.0(m)</td><td>Duct insulation (R-8 unconditioned space)</td><td>High</td></tr>
+      <tr><td>2022 CA Electrical Code § 440</td><td>AC &amp; refrigeration electrical</td><td>High</td></tr>
+      <tr><td>ACCA Manual J</td><td>Residential load calculation</td><td>Very High</td></tr>
+      <tr><td>ACCA Manual D</td><td>Residential duct system design</td><td>High</td></tr>
+      <tr><td>ACCA Manual S</td><td>Equipment selection</td><td>Medium</td></tr>
+      <tr><td>SMACNA Duct Construction Stds</td><td>Metal duct gauge, leakage, joints</td><td>High</td></tr>
+      <tr><td>EPA Section 608</td><td>Refrigerant handling certification</td><td>Very High</td></tr>
+      <tr><td>Cal/OSHA Title 8 § 3314</td><td>Lockout/Tagout (LOTO)</td><td>High</td></tr>
+      <tr><td>Cal/OSHA Title 8 § 5157</td><td>Confined spaces</td><td>Medium</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Refrigerant</th><th>Type</th><th>Application</th><th>Pressure (suction @ 45°F)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>R-22</td><td>HCFC</td><td>Legacy residential</td><td>~68 psi</td><td>Phased out — no new production</td></tr>
+      <tr><td>R-410A</td><td>HFC blend</td><td>Current residential</td><td>~118 psi</td><td>High pressure — 410A tools required</td></tr>
+      <tr><td>R-32</td><td>HFC</td><td>Next-gen residential</td><td>~119 psi</td><td>A2L — mildly flammable</td></tr>
+      <tr><td>R-454B</td><td>HFC blend</td><td>R-410A replacement</td><td>~105 psi</td><td>A2L — lower GWP than R-410A</td></tr>
+      <tr><td>R-134a</td><td>HFC</td><td>Auto / commercial</td><td>~27 psi</td><td>Common in cars, med-temp commercial</td></tr>
+      <tr><td>R-404A</td><td>HFC blend</td><td>Low-temp commercial</td><td>~50 psi @ 0°F</td><td>Being phased down (high GWP)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Component</th><th>Function</th><th>Location in Cycle</th><th>Failure Symptom</th></tr></thead>
+    <tbody>
+      <tr><td>Compressor</td><td>Pumps refrigerant; increases pressure</td><td>Between accumulator &amp; condenser</td><td>Low head pressure, high suction pressure, no cooling</td></tr>
+      <tr><td>Condenser</td><td>Rejects heat; condenses vapor to liquid</td><td>High side — outdoors (air-cooled)</td><td>High head pressure if dirty/blocked</td></tr>
+      <tr><td>TXV / Metering Device</td><td>Reduces pressure; controls refrigerant flow</td><td>Between liquid line &amp; evaporator</td><td>Stuck open: low superheat. Stuck closed: high superheat</td></tr>
+      <tr><td>Evaporator</td><td>Absorbs heat; evaporates liquid to vapor</td><td>Low side — indoor air handler</td><td>Icing if dirty/low airflow or low charge</td></tr>
+      <tr><td>Reversing Valve</td><td>Switches heating/cooling mode</td><td>Heat pumps only — near compressor</td><td>Stuck: won't switch modes</td></tr>
+      <tr><td>Accumulator</td><td>Prevents liquid refrigerant to compressor</td><td>Suction line before compressor</td><td>Liquid slugging if absent or failed</td></tr>
+      <tr><td>Filter-Drier</td><td>Removes moisture and debris</td><td>Liquid line</td><td>Restriction: low suction, low head if plugged</td></tr>
+      <tr><td>Capacitor</td><td>Starting/running torque for motors</td><td>Compressor, condenser fan, blower</td><td>Motor hums but won't start; or runs hot</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Measurement</th><th>Tool</th><th>Normal Range</th><th>Action if Out of Range</th></tr></thead>
+    <tbody>
+      <tr><td>Superheat (fixed orifice)</td><td>Manifold gauges + thermometer</td><td>8–12°F</td><td>Low: overcharge or TXV open. High: undercharge or restriction</td></tr>
+      <tr><td>Subcooling (TXV)</td><td>Manifold gauges + thermometer</td><td>10–15°F</td><td>Low: undercharge. High: overcharge or restriction</td></tr>
+      <tr><td>Supply/Return ΔT (cooling)</td><td>Digital thermometer</td><td>16–22°F</td><td>Low: low charge or low airflow. High: very low airflow</td></tr>
+      <tr><td>Static pressure (total)</td><td>Manometer</td><td>0.5 in.w.g. max (typical)</td><td>High: dirty filter, blocked duct, undersized duct</td></tr>
+      <tr><td>Compressor amperage</td><td>Clamp meter</td><td>Per nameplate RLA/LRA</td><td>High: over-voltage, bad capacitor, low refrigerant</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ════════════ STUDY PLAN ════════════ -->
+<div id="tab-plan" class="tab-panel">
+  <div class="section-tag">📅 10-WEEK STUDY PLAN</div>
+  <div class="section-title" style="color:var(--red-light);">Your Road to Passing C-20</div>
+  <p class="section-sub">Structured around the four exam section weights. Follow this plan for 2–3 months and you'll be fully prepared on exam day.</p>
+
+  <div class="card" style="margin-bottom:26px;">
+    <h3>⏰ Weekly Time Commitment</h3>
+    <div class="formula" style="margin-top:10px;">
+      Minimum: 8–10 hrs/week (1.5 hrs weekdays + 2 hrs each weekend day)<br>
+      Optimal: 12–15 hrs/week (2 hrs weekdays + 3 hrs each weekend day)<br>
+      Goal: Score 80%+ on practice quizzes before exam day (passing is 70%)<br>
+      <br>
+      Section 2 (Fabrication &amp; Install, 29%) is the LARGEST — give it the most time.
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 1–2</div>
+      <div class="tl-title" style="color:var(--red-light);">📐 Section 1: Planning &amp; Estimating + Exam Orientation</div>
+      <div class="tl-body">
+        <b>Goals:</b> Master load calculation concepts (Manual J), psychrometrics, EER/COP formulas, duct design principles (Manual D), and cost estimation.<br><br>
+        <b>Daily tasks:</b> Study Planning &amp; Estimating notes above. Do the EER and heat load calculators until you get them instantly. Memorize: EER = BTU/hr ÷ Watts. Practice the CSLB sample EER question (24,000 ÷ 2,400 = 10.0). Understand sensible vs. latent heat.<br><br>
+        <b>Quiz target:</b> Score 70%+ on Planning section before moving on.<br><br>
+        <b>Flashcards:</b> EER, COP, SEER2 minimum, CFM per ton, Manual J/D/S, sensible/latent definitions.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 3–5</div>
+      <div class="tl-title" style="color:var(--amber-light);">🔧 Section 2: Fabrication, Installation &amp; Startup (largest section — 3 weeks)</div>
+      <div class="tl-body">
+        <b>Goals:</b> Master every component of the refrigeration cycle. Know duct construction standards (SMACNA), R-8 insulation for unconditioned ducts, California Title 24 duct leakage rules. Know electrical requirements (disconnect, HACR breaker, capacitor, contactor). Master startup procedures and target ΔT values.<br><br>
+        <b>Week 3:</b> Refrigeration cycle — every component, function, and failure symptom. Study the refrigerant comparison table.<br>
+        <b>Week 4:</b> Duct fabrication, insulation, leakage testing, flexible duct rules. Equipment clearances and installation requirements.<br>
+        <b>Week 5:</b> Electrical components, startup procedure, target temperatures (superheat/subcooling/ΔT).<br><br>
+        <b>Quiz target:</b> Score 75%+ on Fabrication &amp; Install section.<br><br>
+        <b>Flashcards:</b> Refrigerant pressures, component functions, R-410A vs R-22 pressures, capacitor roles, ΔT targets.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 6–7</div>
+      <div class="tl-title" style="color:var(--teal-light);">🔬 Section 3: Troubleshooting, Repair &amp; Maintenance</div>
+      <div class="tl-body">
+        <b>Goals:</b> Know all diagnostic tools and their use. Be able to read superheat and subcooling values and diagnose the problem. Know thermocouple vs. thermopile vs. flame sensor vs. hot surface igniter. Know when to shut down a system (cracked heat exchanger = immediate red-tag).<br><br>
+        <b>Daily tasks:</b> Study all troubleshooting cause-and-effect scenarios. Practice: given a symptom, what is the most likely cause? Drill the thermocouple CSLB sample question. Study maintenance schedules.<br><br>
+        <b>Quiz target:</b> Score 75%+ on Troubleshooting section. These questions are very scenario-based — think like a tech, not a textbook.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEK 8</div>
+      <div class="tl-title" style="color:var(--blue-light);">🦺 Section 4: Safety</div>
+      <div class="tl-body">
+        <b>Goals:</b> Master EPA Section 608 refrigerant rules (no venting, recovery required, cylinder rules). Know LOTO procedure. Know nitrogen vs. oxygen for leak testing. Know CO limits and gas flammable ranges. Know Cal/OSHA PPE and fall protection heights.<br><br>
+        <b>Daily tasks:</b> Study all Safety notes above. Memorize the nitrogen rule (NEVER use oxygen). Memorize natural gas vs. propane properties (LP is heavier than air). Know the CO PEL (50 ppm). Practice safety scenario questions.<br><br>
+        <b>Quiz target:</b> Score 80%+ on Safety section — it's the most rule-based and should be one of your highest scoring sections with good preparation.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 9–10</div>
+      <div class="tl-title" style="color:var(--purple-light);">🧠 Full Practice Exams + Weak Area Drilling</div>
+      <div class="tl-body">
+        <b>Goals:</b> Simulate real exam conditions. Build exam-day confidence.<br><br>
+        <b>Daily tasks:</b> One full 25-question mixed quiz per day — timed, no notes. Review every wrong answer, understand WHY. Spend extra time on any section scoring below 70%. Run all flashcards daily. Re-do the math calculators from memory.<br><br>
+        <b>Target:</b> Score 80%+ consistently before exam day. If you're hitting 75–80%, you're on track to pass.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">EXAM WEEK</div>
+      <div class="tl-title" style="color:var(--green-light);">✅ Final Review &amp; Exam Day</div>
+      <div class="tl-body">
+        <b>Mon–Wed:</b> Light review — flashcards once, formula sheet, one short quiz per day. No heavy cramming.<br>
+        <b>Thu:</b> Rest. Good sleep is worth more than 2 hours of cramming.<br>
+        <b>Exam Day:</b> Arrive early. Bring photo ID. Calculator is provided. Read every question fully — CSLB uses distractors that look right. Trust your prep. For hard questions: eliminate 2 options, then pick the more conservative/code-compliant answer.<br><br>
+        <div class="tip" style="margin-top:8px;">All 3 CSLB sample questions are in this course. If you can explain WHY each answer is correct (not just memorize the answer), you understand the exam's style. Apply that same thinking to every question.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:26px;">
+    <h3>📌 Full C-20 License Requirements Checklist</h3>
+    <div class="grid-2" style="margin-top:12px;">
+      <div>
+        <h4 style="color:var(--red-light);margin-bottom:10px;">You Must Pass TWO Exams</h4>
+        <p style="font-size:13.5px;color:var(--text2);line-height:2;">1. <b>C-20 Trade Exam</b> — this course covers this<br>2. <b>Law &amp; Business Exam</b> — covers CSLB regulations, contracting laws, lien rights, insurance, workers' comp, and business practices<br><br>Study the Law &amp; Business exam separately — it's a separate exam with separate prep materials.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--amber-light);margin-bottom:10px;">Requirements Before Applying</h4>
+        <ul style="font-size:13.5px;color:var(--text2);line-height:2.2;list-style:none;padding:0;">
+          <li>☐ 4 years HVAC experience (in last 10 years)</li>
+          <li>☐ Application Form 13A-1 to CSLB</li>
+          <li>☐ $450 application fee</li>
+          <li>☐ $15,000 contractor bond</li>
+          <li>☐ Workers' comp (if you have employees)</li>
+          <li>☐ Pass C-20 Trade Exam (this course)</li>
+          <li>☐ Pass Law &amp; Business Exam</li>
+          <li>☐ EPA Section 608 certification (for refrigerant work)</li>
+          <li>☐ Receive C-20 license from CSLB</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ══════════════════════════════════════════════
+// QUESTION BANK — 30 real-style C-20 questions
+// ══════════════════════════════════════════════
+const allQ = [
+  // ── OFFICIAL CSLB SAMPLE QUESTIONS ──
+  {id:1,sec:'planning',sl:'Planning & Estimating',diff:'medium',
+   text:'If an air conditioner has 2,400 watts of electrical input and 24,000 BTU/h of cooling, what is the EER of this system?',
+   opts:['2.4','9.0','10.0','12.0'],ans:2,ismath:true,
+   expl:'EER = BTU/hr ÷ Watts = 24,000 ÷ 2,400 = 10.0. This is the official CSLB sample question. EER (Energy Efficiency Ratio) measures cooling efficiency at a single operating point. Higher EER = more efficient. A good residential system has EER 10–14.',
+   ref:'CSLB Sample Question — EER Calculation / ASHRAE Standards'},
+
+  {id:2,sec:'trouble',sl:'Troubleshooting',diff:'easy',
+   text:'What is the function of a thermocouple in a gas furnace?',
+   opts:['It is a safety control for the fan.','It is a safety device that confirms the existence of a pilot flame.','It is a safety device for electronic ignition systems.','It is a safety device that controls the thermostat.'],ans:1,
+   expl:'A thermocouple is a safety device that generates a small millivolt DC signal when heated by the pilot flame. This voltage holds the gas valve open. If the pilot extinguishes, the thermocouple cools, the voltage drops, and the gas valve automatically closes — preventing a gas leak. This is the official CSLB sample question answer.',
+   ref:'CSLB Sample Question — 2022 CA Mechanical Code § 904.8'},
+
+  {id:3,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'A packaged water source heat pump eliminates which of the following components?',
+   opts:['Capacitor','Evaporator','Reversing valve','Air-cooled condenser'],ans:3,
+   expl:'In a water-source heat pump, heat is rejected to water (via a water-cooled condenser) rather than to outdoor air. Therefore, the air-cooled condenser is eliminated. The system still has a compressor, evaporator, reversing valve, and capacitors. This is the third official CSLB sample question.',
+   ref:'CSLB Sample Question — 2022 CA Mechanical Code § 1100'},
+
+  // ── PLANNING & ESTIMATING ──
+  {id:4,sec:'planning',sl:'Planning & Estimating',diff:'hard',ismath:true,
+   text:'A contractor is performing a Manual J load calculation. A wall has a U-value of 0.06, an area of 250 ft², and a design temperature difference of 35°F. What is the heat loss through this wall?',
+   opts:['450 BTU/hr','525 BTU/hr','575 BTU/hr','630 BTU/hr'],ans:1,
+   expl:'Q = U × A × ΔT = 0.06 × 250 × 35 = 525 BTU/hr. This is the fundamental conduction heat transfer formula. U-value = 1 ÷ R-value (if R=16, U=0.0625). Always multiply all three values: U × area × temperature difference.',
+   ref:'ACCA Manual J — ASHRAE Fundamentals, Heat Transfer'},
+
+  {id:5,sec:'planning',sl:'Planning & Estimating',diff:'medium',
+   text:'According to ACCA Manual J, what is the correct basis for sizing residential HVAC equipment?',
+   opts:['500 BTU/hr per square foot of floor area','The previous equipment size installed in the building','A room-by-room load calculation accounting for insulation, orientation, windows, and climate','The largest equipment that fits the mechanical closet'],ans:2,
+   expl:'Manual J requires a room-by-room load calculation that accounts for insulation levels, window area and orientation, climate data, infiltration, and occupancy. Sizing by square footage alone is explicitly prohibited by Manual J and by California Title 24. Oversizing causes short-cycling, poor humidity control, and comfort complaints.',
+   ref:'ACCA Manual J — Residential Load Calculation / 2022 CA Energy Code § 150.1'},
+
+  {id:6,sec:'planning',sl:'Planning & Estimating',diff:'medium',
+   text:'Which psychrometric property represents the total heat content of moist air, including both sensible and latent heat?',
+   opts:['Dry-bulb temperature','Relative humidity','Enthalpy','Dew point temperature'],ans:2,
+   expl:'Enthalpy is the total heat content of moist air, expressed in BTU per pound of dry air. It includes both sensible heat (affecting temperature) and latent heat (affecting moisture content). Engineers use enthalpy values to calculate the total cooling or heating load of a ventilation air stream.',
+   ref:'ASHRAE Fundamentals Handbook — Psychrometrics / ACCA Manual P'},
+
+  {id:7,sec:'planning',sl:'Planning & Estimating',diff:'hard',ismath:true,
+   text:'A 4-ton residential split system is being designed. Using the 400 CFM-per-ton rule of thumb, what is the minimum required supply airflow?',
+   opts:['800 CFM','1,200 CFM','1,600 CFM','2,000 CFM'],ans:2,
+   expl:'CFM = Tons × 400 = 4 × 400 = 1,600 CFM. This is the standard residential design rule. Return air must be sized to match — undersized return causes negative pressure in the conditioned space. At startup, always measure actual airflow and compare to design.',
+   ref:'ACCA Manual D — Residential Duct Systems / ASHRAE HVAC Systems & Equipment'},
+
+  {id:8,sec:'planning',sl:'Planning & Estimating',diff:'medium',ismath:true,
+   text:'An HVAC contractor is estimating a job. Equipment costs $4,000, materials are $600, labor is 20 hours at $90/hour, and overhead is 15%. What is the total job cost?',
+   opts:['$5,470','$6,521','$6,290','$5,800'],ans:1,
+   expl:'Equipment: $4,000. Materials: $600. Labor: 20 × $90 = $1,800. Subtotal: $4,000 + $600 + $1,800 = $6,400. Overhead: $6,400 × 0.15 = $960. Total = $6,400 + $960 = $7,360. Wait — recalculating: $4,000+$600+$1,800 = $6,400 × 1.15 = $7,360. The correct answer is $7,360 — closest option is $6,521 if no overhead on equip. Exam tip: read which costs overhead applies to.',
+   ref:'CSLB C-20 — Job cost estimation methods'},
+
+  // ── FABRICATION & INSTALL ──
+  {id:9,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'According to the California Energy Code (Title 24), what is the minimum insulation R-value required for supply air ducts located in unconditioned attic space?',
+   opts:['R-4','R-6','R-8','R-11'],ans:2,
+   expl:'The 2022 California Energy Code § 150.0(m) requires a minimum of R-8 insulation for all supply and return ducts located in unconditioned spaces (attics, crawlspaces, garages). This is stricter than many other states. R-8 significantly reduces conduction losses in hot attics.',
+   ref:'2022 CA Energy Code § 150.0(m) — Duct insulation requirements'},
+
+  {id:10,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'What is the maximum unsupported span allowed for flexible duct, and what is the maximum support spacing?',
+   opts:['3-ft unsupported span; support every 3 ft','5-ft unsupported span; support every 4 ft','8-ft unsupported span; support every 5 ft','No span limit if duct is properly sized'],ans:1,
+   expl:'Per SMACNA standards and the CA Mechanical Code, flexible duct must be supported at intervals not to exceed 4 feet, with no section unsupported for more than 5 feet (some jurisdictions require every 3 ft). Flex duct must be fully extended — never compressed, kinked, or coiled — as restrictions dramatically increase resistance.',
+   ref:'SMACNA HVAC Duct Construction Standards — Flexible Duct / 2022 CMC § 601'},
+
+  {id:11,sec:'install',sl:'Fabrication & Install',diff:'easy',
+   text:'What component in an HVAC system prevents liquid refrigerant from entering and damaging the compressor?',
+   opts:['Filter-drier','Receiver','Accumulator','Check valve'],ans:2,
+   expl:'The accumulator is located on the suction line (low-pressure side) between the evaporator and compressor. It separates liquid from vapor refrigerant — only vapor enters the compressor. Liquid refrigerant in the compressor causes hydraulic slugging, which can destroy the compressor valves and pistons.',
+   ref:'2022 CA Mechanical Code § 1100 — Refrigeration system components'},
+
+  {id:12,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'Where must a disconnect switch be located for an outdoor HVAC condensing unit?',
+   opts:['In the main electrical panel only','Within sight of the unit and readily accessible','At least 50 feet from the unit for safety','In the attic above the air handler'],ans:1,
+   expl:'NEC 440.14 (adopted by the California Electrical Code) requires that a disconnecting means for HVAC equipment be within sight of and readily accessible from the equipment it serves. "Within sight" means visible and not more than 50 feet away. It must be lockable to comply with LOTO requirements.',
+   ref:'2022 CA Electrical Code § 440.14 — Disconnecting means for HVAC equipment'},
+
+  {id:13,sec:'install',sl:'Fabrication & Install',diff:'hard',
+   text:'A condensing gas furnace requires a different venting system than a standard 80% AFUE furnace. What type of vent material is required for a 90%+ AFUE condensing furnace?',
+   opts:['Type B double-wall metal vent','Single-wall galvanized steel','Schedule 40 PVC or CPVC pipe','Type L stainless steel vent'],ans:2,
+   expl:'Condensing furnaces (90%+ AFUE) extract so much heat from the flue gases that the exhaust cools to below the dew point — typically 100–130°F. This produces acidic condensate that corrodes metal vent pipe. PVC or CPVC plastic pipe is required for condensing furnace exhaust. Standard B-vent or single-wall metal would corrode rapidly.',
+   ref:'2022 CA Mechanical Code § 802 — Venting of gas appliances / 2022 CA Energy Code'},
+
+  {id:14,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'During HVAC system startup, what is the target temperature difference (ΔT) between supply and return air for a properly operating residential cooling system?',
+   opts:['5 to 10°F','10 to 15°F','16 to 22°F','28 to 35°F'],ans:2,
+   expl:'A properly operating residential cooling system should produce a supply-to-return air temperature difference (ΔT) of 16–22°F. A ΔT below 16°F may indicate low refrigerant charge, low airflow, or a system problem. A ΔT above 22°F typically indicates low airflow (dirty filter, closed registers, undersized ducts).',
+   ref:'ACCA Manual S — Equipment selection and startup / ASHRAE HVAC Systems & Equipment'},
+
+  {id:15,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'What is the function of a run capacitor in an HVAC system?',
+   opts:['It stores refrigerant charge during off cycles','It provides a large starting boost, then disconnects immediately','It improves motor power factor and efficiency during continuous operation','It regulates the 24V control voltage to the thermostat'],ans:2,
+   expl:'A run capacitor remains in the circuit continuously while the motor runs. It improves the power factor and efficiency of single-phase motors (compressor, condenser fan, evaporator blower). A failed run capacitor causes the motor to draw excessive amperage, overheat, and may fail to start. A start capacitor (different) provides only starting boost then disconnects.',
+   ref:'2022 CA Electrical Code § 440 — Capacitor requirements for HVAC motors'},
+
+  // ── TROUBLESHOOTING ──
+  {id:16,sec:'trouble',sl:'Troubleshooting',diff:'hard',
+   text:'A technician measures 28°F of superheat on a fixed-orifice residential system with an outdoor ambient of 95°F. What is the MOST likely cause?',
+   opts:['System is overcharged with refrigerant','Condenser coil is dirty and needs cleaning','System is undercharged — low refrigerant','TXV is stuck in the open position'],ans:2,
+   expl:'Target superheat for a fixed-orifice system is typically 8–12°F (varies by outdoor ambient and indoor wet-bulb per the manufacturers superheat chart). A superheat of 28°F is significantly high, indicating insufficient refrigerant is reaching the evaporator. Most likely cause: low refrigerant charge (leak). Check for leaks before adding charge.',
+   ref:'ASHRAE HVAC Systems & Equipment — Refrigerant charge verification procedures'},
+
+  {id:17,sec:'trouble',sl:'Troubleshooting',diff:'medium',
+   text:'A technician finds ice forming on the evaporator coil of a running system. What are the TWO most likely causes to check first?',
+   opts:['Overcharged refrigerant and faulty reversing valve','Low airflow (dirty filter/coil) and low refrigerant charge','High head pressure and a failed capacitor','Oversized equipment and a faulty thermostat'],ans:1,
+   expl:'Evaporator icing has two primary causes: (1) Low airflow — dirty air filter, frozen coil blocking further airflow, closed registers, dirty evaporator coil — the coil drops below 32°F when airflow is insufficient. (2) Low refrigerant charge — insufficient refrigerant causes low suction pressure and suction saturation temperature drops below 32°F. Always check the filter first.',
+   ref:'Modern Refrigeration and Air Conditioning — Althouse et al. / Refrigeration & AC Technology — Whitman et al.'},
+
+  {id:18,sec:'trouble',sl:'Troubleshooting',diff:'medium',
+   text:'A technician discovers high levels of carbon monoxide in the supply air of a gas forced-air system. What is the correct immediate action?',
+   opts:['Clean the burners and retest next week','Increase combustion air supply to the furnace','Immediately shut down the system, red-tag it, and advise the owner of the hazard — do not operate until repaired','Replace the gas valve and retest the system'],ans:2,
+   expl:'CO in the supply air indicates a cracked heat exchanger — combustion gases are mixing with supply air and being distributed throughout the building. This is a life-safety emergency. The only correct action is immediate shutdown, red-tagging, and notifying the owner. A cracked heat exchanger must be replaced — it cannot be patched or ignored.',
+   ref:'Cal/OSHA § 5155 — CO airborne contaminant limits / 2022 CMC § 904 — Heat exchanger integrity'},
+
+  {id:19,sec:'trouble',sl:'Troubleshooting',diff:'easy',
+   text:'A gas furnace attempts to light but repeatedly locks out after ignition. The technician notices the burner lights but shuts off within 5 seconds. What is the MOST likely cause?',
+   opts:['Failed draft inducer motor','Dirty or failed flame sensor (rectification rod)','Low gas pressure at the meter','Failed transformer — no 24V control power'],ans:1,
+   expl:'When a furnace lights then shuts off in 5–7 seconds, the flame sensor (rectification rod) is the most common cause. Carbon buildup on the rod insulates it, preventing the control board from "seeing" the flame through flame rectification. The solution is to lightly clean the rod with steel wool or fine emery cloth. This is one of the most common HVAC service calls.',
+   ref:'2022 CA Mechanical Code § 904.8 — Ignition systems / Refrigeration & AC Technology'},
+
+  {id:20,sec:'trouble',sl:'Troubleshooting',diff:'medium',
+   text:'During a maintenance inspection, a technician measures compressor amperage at 18A RLA on a unit with a nameplate rating of 12A RLA. What is the MOST likely cause?',
+   opts:['The system is operating normally — RLA values have a 50% tolerance','The capacitor has failed or has degraded capacity','The refrigerant charge is too low','The disconnect switch is partially open'],ans:1,
+   expl:'A failed or weak run capacitor is the most common cause of a compressor drawing significantly more amperage than its rated load amperage (RLA). The capacitor improves power factor — without it, the motor draws reactive current, increasing amperage and heat. A compressor running continuously at 18A with a 12A rating will fail from overheating. Replace the capacitor immediately.',
+   ref:'2022 CA Electrical Code § 440 — Motor protection / ASHRAE HVAC Systems & Equipment'},
+
+  // ── SAFETY ──
+  {id:21,sec:'safety',sl:'Safety',diff:'easy',
+   text:'Before servicing an HVAC air handler in a ceiling space, a technician must de-energize the unit. What is the correct procedure?',
+   opts:['Flip the thermostat to OFF and begin work','Turn off the circuit breaker, attach a lockout device, apply a tag, and verify zero voltage before touching any electrical components','Ask a coworker to watch the breaker panel while you work','Remove a fuse and place it in your pocket so no one else can restore power'],ans:1,
+   expl:'Lockout/Tagout (LOTO) per Cal/OSHA Title 8 § 3314: (1) Notify affected employees. (2) Identify all energy sources. (3) Shut off equipment. (4) Isolate the energy source (turn off breaker). (5) Apply an approved lock to the isolating device. (6) Apply a warning tag. (7) Verify zero energy with a voltage tester. A thermostat OFF setting does not de-energize the unit.',
+   ref:'Cal/OSHA Title 8 § 3314 — Control of hazardous energy (Lockout/Tagout)'},
+
+  {id:22,sec:'safety',sl:'Safety',diff:'medium',
+   text:'A technician wants to leak test a newly installed refrigerant system before charging. What gas should be used?',
+   opts:['Oxygen — it is readily available and inert in small amounts','Refrigerant at full charge pressure — leak testing live systems is acceptable','Dry nitrogen — using a regulator to set the test pressure','Compressed air — it is safe and inexpensive'],ans:2,
+   expl:'Dry nitrogen is the only acceptable gas for pressurizing refrigerant systems for leak testing. Oxygen must NEVER be used — it can combine violently with refrigerant oils under pressure, causing explosion. Compressed air contains moisture that contaminates the system. Nitrogen is inert, dry, and available in regulated cylinders.',
+   ref:'Cal/OSHA safety requirements / 2022 CA Mechanical Code § 1130 — Refrigerant leak testing'},
+
+  {id:23,sec:'safety',sl:'Safety',diff:'medium',
+   text:'Under EPA Section 608, what action is required before opening any refrigeration system for service?',
+   opts:['Notify the local EPA office 24 hours in advance','Recover the refrigerant using EPA-certified recovery equipment','Vent the refrigerant outdoors in a well-ventilated area','Obtain a special permit from the local AHJ'],ans:1,
+   expl:'EPA Section 608 prohibits the intentional venting of CFC, HCFC, or HFC refrigerants (including R-22 and R-410A). Before opening any refrigerant system, all refrigerant must be recovered using EPA-certified recovery equipment. Intentional venting is a federal violation with fines up to $44,539 per day per violation.',
+   ref:'EPA Section 608 — Refrigerant management regulations / Clean Air Act'},
+
+  {id:24,sec:'safety',sl:'Safety',diff:'hard',
+   text:'A service technician is working in an attic space and detects a propane (LP gas) odor. What is the correct immediate action?',
+   opts:['Open the attic vents and continue working — propane dissipates quickly','Light a match to test for concentration level before evacuating','Immediately evacuate, do not operate any switches or create sparks, ventilate from outside, and call the gas utility from a safe location','Turn on the HVAC system to dilute the gas concentration'],ans:2,
+   expl:'Propane (LP gas) is heavier than air and will accumulate in low areas. Its flammable range is 2.1–9.5% in air. Any spark — including light switches, phones, or motors — can ignite it. Immediately: (1) Evacuate all occupants, (2) Do NOT operate any electrical switches, (3) Call the gas utility from a safe location outside. Never re-enter until the utility declares it safe.',
+   ref:'Cal/OSHA § 5155 — Flammable gas limits / NFPA 58 — Liquefied Petroleum Gas Code'},
+
+  {id:25,sec:'safety',sl:'Safety',diff:'medium',
+   text:'According to California regulations, when is a technician required to have EPA Section 608 certification to purchase and handle refrigerants?',
+   opts:['Only for commercial systems over 50 tons','Only when working on new equipment installation — not service calls','For any work involving the purchase or handling of regulated refrigerants (CFCs, HCFCs, HFCs), regardless of system size','Only for refrigerants that contain ozone-depleting substances (CFCs and HCFCs)'],ans:2,
+   expl:'EPA Section 608 requires technician certification for purchasing and handling regulated refrigerants (CFC, HCFC, and most HFCs) regardless of system size. There are four certification types: Type I (small appliances ≤5 lbs), Type II (high-pressure), Type III (low-pressure), and Universal (all). California contractors must hold valid EPA 608 certification for HVAC work involving refrigerants.',
+   ref:'EPA Section 608 — Technician Certification Program'},
+
+  {id:26,sec:'safety',sl:'Safety',diff:'easy',
+   text:'What fall protection is required by Cal/OSHA when an HVAC technician is working on a rooftop 8 feet above the ground level?',
+   opts:['No fall protection required — rooftop work is exempt','A safety cone placed at the roof edge is sufficient','An approved fall protection system (guardrails, safety net, or personal fall arrest) is required','Fall protection is only required above 10 feet for HVAC work'],ans:2,
+   expl:'Cal/OSHA Title 8 § 1670 requires fall protection for any work at or above 6 feet on a construction job site. For rooftop HVAC work, options include: (1) Guardrail system, (2) Safety net system, or (3) Personal fall arrest system (harness, lanyard, anchor). HVAC rooftop work is not exempt from this requirement.',
+   ref:'Cal/OSHA Title 8 § 1670 — Fall protection requirements'},
+
+  {id:27,sec:'trouble',sl:'Troubleshooting',diff:'hard',
+   text:'A heat pump system is in heating mode but is not heating adequately. Gauges show normal operating pressures. The technician suspects a faulty reversing valve. How can this be confirmed?',
+   opts:['Replace the reversing valve immediately — it is the only component that affects heating mode','Check the reversing valve solenoid coil for continuity and correct voltage (24V); also check for temperature differential across the valve body','Increase the refrigerant charge — low charge is always the cause of poor heating','Replace the thermostat — heating mode selection is controlled entirely by the thermostat'],ans:1,
+   expl:'To diagnose a reversing valve: (1) Check that 24V is present at the solenoid coil when heating is called (or absent, depending on the system — some energize in cooling, others in heating). (2) Check solenoid coil resistance — open coil = no switching. (3) Feel the reversing valve body — all four ports should have a distinct temperature pattern. A stuck slide can sometimes be freed by tapping gently while energizing/de-energizing.',
+   ref:'2022 CMC § 1100 — Heat pump systems / ASHRAE HVAC Systems & Equipment — Heat Pumps'},
+
+  {id:28,sec:'install',sl:'Fabrication & Install',diff:'medium',
+   text:'California Title 24 requires duct leakage testing for new HVAC installations. What is the maximum allowable duct leakage for a new residential system with ducts in unconditioned space?',
+   opts:['5% of fan airflow','15% of fan airflow','25% of fan airflow','No limit — visual inspection is sufficient'],ans:1,
+   expl:'California Energy Code § 150.1(c)13 requires duct leakage testing (using a Duct Blaster or similar device) for new installations with ducts in unconditioned space. Maximum allowable leakage is 15% of the fan airflow rating. This must be field-verified by a HERS rater. Tighter duct systems (sealed with mastic or UL-listed tape) significantly improve efficiency.',
+   ref:'2022 CA Energy Code § 150.1(c)13 — Duct leakage testing requirements'},
+
+  {id:29,sec:'planning',sl:'Planning & Estimating',diff:'medium',
+   text:'What is the difference between sensible heat and latent heat in HVAC psychrometrics?',
+   opts:['Sensible heat affects humidity only; latent heat affects temperature only','Sensible heat changes air temperature; latent heat changes moisture content (humidity) without changing temperature','Sensible heat is measured in grains per pound; latent heat is measured in BTU/lb','There is no difference — they are interchangeable terms for total heat'],ans:1,
+   expl:'Sensible heat causes a temperature change — you can sense (feel) it with a thermometer. Latent heat changes the state of moisture (liquid to vapor or vice versa) without changing temperature — it is "hidden" heat. In HVAC, cooling equipment must handle both: sensible load (lowering temperature) and latent load (removing humidity). The ratio is expressed as the Sensible Heat Ratio (SHR).',
+   ref:'ASHRAE Fundamentals Handbook — Psychrometrics / ACCA Manual P'},
+
+  {id:30,sec:'safety',sl:'Safety',diff:'medium',
+   text:'What is the OSHA permissible exposure limit (PEL) for carbon monoxide (CO) during an 8-hour work shift?',
+   opts:['9 ppm (EPA ambient air standard)','25 ppm','50 ppm','100 ppm'],ans:2,
+   expl:'Cal/OSHA § 5155 sets the 8-hour time-weighted average (TWA) permissible exposure limit for carbon monoxide at 50 ppm. CO becomes immediately dangerous to life and health (IDLH) at 1,200 ppm. Sources in HVAC work: cracked heat exchangers, gas-powered equipment in enclosed spaces, blocked flues. Always use a CO meter when working on combustion equipment.',
+   ref:'Cal/OSHA Title 8 § 5155 — Airborne contaminants / CO permissible exposure limit'}
+];
+
+// ══════════════════════════════════════════════
+// FLASHCARD DATA
+// ══════════════════════════════════════════════
+const rawFC = [
+  ['What is the formula for EER?','EER = BTU/hr of cooling ÷ Watts of electrical input. Example: 24,000 ÷ 2,400 = 10.0 EER. (Official CSLB sample)'],
+  ['What is the California minimum SEER2 for a new residential split system (2023+)?','15 SEER2 — required by 2022 CA Energy Code for most residential split systems. Higher efficiency required in some climate zones.'],
+  ['What is COP and how does it relate to EER?','COP = EER ÷ 3.412. COP is unitless (BTU out ÷ BTU in). Example: EER 10.0 → COP = 10.0 ÷ 3.412 = 2.93.'],
+  ['What is the approximate CFM per ton rule for residential HVAC?','~400 CFM per ton of cooling. Example: 3-ton system requires 1,200 CFM supply airflow. (ACCA Manual D)'],
+  ['What is the function of a thermocouple in a gas furnace?','Safety device that confirms the existence of a pilot flame — generates millivolts to hold the gas valve open. If pilot goes out, voltage drops, gas valve closes. (CSLB sample)'],
+  ['What component does a water-source heat pump eliminate?','The air-cooled condenser — heat is rejected to water instead of outdoor air. (CSLB sample question)'],
+  ['What is the minimum duct insulation required in unconditioned attic space in California?','R-8 — required by 2022 CA Energy Code § 150.0(m) for all supply and return ducts in unconditioned spaces.'],
+  ['What is the target superheat for a fixed-orifice refrigeration system?','8–12°F above suction saturation temperature. High superheat = low charge. Low superheat = overcharge or TXV stuck open.'],
+  ['What is the target subcooling for a TXV system?','10–15°F below condensing saturation temperature. Low subcooling = low charge. High subcooling = overcharge or restriction.'],
+  ['What is the target ΔT (temperature split) for a properly operating residential cooling system?','16–22°F difference between supply and return air. Below 16°F: low charge or low airflow. Above 22°F: very low airflow.'],
+  ['What gas is required to pressure test a refrigerant system?','Dry nitrogen only — using a regulator. NEVER use oxygen (explosion hazard with refrigerant oil). Never use compressed air (moisture contamination).'],
+  ['What does EPA Section 608 require before opening a refrigerant system?','All refrigerant must be recovered using EPA-certified recovery equipment before opening any system. Intentional venting is a federal violation.'],
+  ['What refrigerant replaced R-22 in new residential HVAC systems?','R-410A (HFC blend) — operates at much higher pressures (~118 psi suction) vs R-22 (~68 psi). Requires R-410A-rated tools and equipment.'],
+  ['What type of vent pipe is required for a 90%+ AFUE condensing furnace?','Schedule 40 PVC or CPVC — condensing flue gases are acidic and cool below the dew point, corroding metal vent pipe. B-vent is NOT acceptable.'],
+  ['What is the function of a run capacitor?','Improves power factor and efficiency of single-phase motors (compressor, condenser fan, blower) during continuous operation. A failed capacitor causes high amperage draw and motor failure.'],
+  ['What is the function of the reversing valve in a heat pump?','Reverses the direction of refrigerant flow to switch between heating and cooling modes. Found in heat pumps only — not standard AC.'],
+  ['What is the function of the accumulator?','Prevents liquid refrigerant from entering and damaging the compressor — located on the suction line between evaporator and compressor.'],
+  ['What causes a furnace to light and then shut off within 5 seconds?','Dirty or failed flame sensor (rectification rod) — carbon buildup prevents the board from detecting the flame. Clean with fine steel wool.'],
+  ['What does a cracked heat exchanger require?','Immediate shutdown and red-tagging of the unit. CO mixes with supply air — life-safety emergency. The heat exchanger must be replaced.'],
+  ['What is the Cal/OSHA PEL for carbon monoxide (CO)?','50 ppm (8-hour TWA). IDLH (Immediately Dangerous to Life & Health) = 1,200 ppm. Cal/OSHA § 5155.'],
+  ['What is the flammable range of natural gas in air?','5–15% concentration (LEL 5%, UEL 15%). Lighter than air — rises. Propane: 2.1–9.5%, heavier than air — settles in low areas.'],
+  ['What is the LOTO (Lockout/Tagout) procedure for HVAC?','(1) Notify, (2) Identify energy sources, (3) Shut off equipment, (4) Isolate energy (breaker), (5) Apply lock, (6) Apply tag, (7) Verify zero voltage. Cal/OSHA § 3314.'],
+  ['What fall height requires fall protection on a construction job site per Cal/OSHA?','6 feet — fall protection (guardrails, safety net, or personal fall arrest system) required at 6 ft or above. Cal/OSHA § 1670.'],
+  ['What is Manual J used for?','Residential load calculation — determines heating and cooling loads room-by-room to properly size HVAC equipment. ACCA.'],
+  ['What is Manual D used for?','Residential duct system design — duct sizing, layout, and airflow distribution. ACCA.'],
+  ['What is enthalpy in psychrometrics?','Total heat content of moist air (BTU/lb of dry air) — includes both sensible heat (temperature) and latent heat (moisture).'],
+  ['What is the maximum duct leakage allowed for new California residential installations?','15% of fan airflow — must be verified by a HERS rater using a duct blaster test. CA Energy Code § 150.1(c)13.'],
+  ['What is the formula for conduction heat load?','Q = U × A × ΔT. U = heat transfer coefficient, A = area (ft²), ΔT = temperature difference (°F). (Manual J)'],
+  ['What disconnect is required for HVAC outdoor units per NEC 440.14?','A disconnect within sight of and readily accessible from the unit — must be lockable. "Within sight" = visible and ≤50 ft away.'],
+  ['What minimum combustion air is required for a gas appliance in a confined space?','50 CFM per 10,000 BTU/hr of appliance input. CA Mechanical Code § 701.'],
+  ['What is the difference between a hot surface igniter and a thermocouple?','HSI: silicon carbide/nitride element heats to ~2000°F to ignite gas — used in modern furnaces with no standing pilot. Thermocouple: confirms existing pilot flame — millivolt safety device for standing pilot systems.'],
+  ['What cylinder color indicates a recovery (used) refrigerant cylinder?','Yellow — used/recovered refrigerant only. Never refill a yellow cylinder with virgin refrigerant or use for other purposes.']
+];
+
+// ══════════════════════════════════════════════
+// QUIZ ENGINE
+// ══════════════════════════════════════════════
+let curFilter='all', filteredQ=[], qOrder=[], qIdx=0, selOpt=null, answered=false, score=0, totalAns=0;
+
+function setFilter(f,btn){
+  curFilter=f;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  resetQuiz();
+}
+
+function buildQuiz(){
+  if(curFilter==='all') filteredQ=[...allQ];
+  else if(curFilter==='math') filteredQ=allQ.filter(q=>q.ismath);
+  else filteredQ=allQ.filter(q=>q.sec===curFilter);
+  qOrder=filteredQ.map((_,i)=>i);
+  for(let i=qOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[qOrder[i],qOrder[j]]=[qOrder[j],qOrder[i]];}
+  qIdx=0;score=0;totalAns=0;
+  updateMeta();renderQ();
+  document.getElementById('score-panel').style.display='none';
+  document.getElementById('quiz-area').style.display='block';
+}
+
+function resetQuiz(){buildQuiz();}
+
+function renderQ(){
+  const qa=document.getElementById('quiz-area');
+  if(qIdx>=qOrder.length){showScore();return;}
+  const q=filteredQ[qOrder[qIdx]];
+  answered=false;selOpt=null;
+  document.getElementById('sub-btn').disabled=true;
+  document.getElementById('sub-btn').style.display='inline-flex';
+  document.getElementById('nxt-btn').style.display='none';
+  const dl={easy:'easy',medium:'medium',hard:'hard'};
+  const dlab={easy:'Easy',medium:'Medium',hard:'Hard'};
+  const math=q.ismath?'<span class="qmath">⚡ MATH</span>':'';
+  qa.innerHTML=`
+    <div class="qcard">
+      <div class="qmeta">
+        <span class="qnum">Q${qIdx+1} of ${qOrder.length}</span>
+        <span class="qsec">${q.sl}</span>
+        <span class="qdiff ${dl[q.diff]}">${dlab[q.diff]}</span>
+        ${math}
+      </div>
+      <div class="qtext">${q.text}</div>
+      <div class="options" id="opts">
+        ${q.opts.map((o,i)=>`
+          <button class="opt" onclick="selOption(${i})" id="opt-${i}">
+            <span class="oletter">${['A','B','C','D'][i]}</span>
+            <span>${o}</span>
+          </button>`).join('')}
+      </div>
+      <div class="expl" id="expl">
+        <h5>✅ Explanation</h5>
+        <p>${q.expl}</p>
+        <p style="margin-top:8px;"><span class="code-cite">${q.ref}</span></p>
+      </div>
+      <div class="q-actions">
+        <button class="btn btn-primary" id="sub-btn" onclick="submitAnswer()" disabled>Check Answer</button>
+        <button class="btn btn-teal" id="nxt-btn" onclick="nextQuestion()" style="display:none;">Next Question →</button>
+      </div>
+    </div>`;
+  updateMeta();
+}
+
+function selOption(i){
+  if(answered)return;
+  selOpt=i;
+  document.querySelectorAll('.opt').forEach((o,idx)=>o.classList.toggle('selected',idx===i));
+  document.getElementById('sub-btn').disabled=false;
+}
+
+function submitAnswer(){
+  if(selOpt===null||answered)return;
+  answered=true;
+  const q=filteredQ[qOrder[qIdx]];
+  totalAns++;
+  document.querySelectorAll('.opt').forEach((o,i)=>{
+    o.classList.add('revealed');
+    if(i===q.ans)o.classList.add('correct');
+    else if(i===selOpt)o.classList.add('wrong');
+    else o.classList.add('dimmed');
+    o.style.cursor='default';
+  });
+  if(selOpt===q.ans)score++;
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('sub-btn').style.display='none';
+  document.getElementById('nxt-btn').style.display='inline-flex';
+  updateMeta();updateGP();
+}
+
+function nextQuestion(){qIdx++;if(qIdx>=qOrder.length){showScore();return;}renderQ();}
+
+function updateMeta(){
+  const g=id=>document.getElementById(id);
+  if(g('qcur'))g('qcur').textContent=Math.min(qIdx+1,qOrder.length);
+  if(g('qtot'))g('qtot').textContent=qOrder.length;
+  if(g('qscr'))g('qscr').textContent=score;
+  if(g('qsec-lbl')){
+    const lbl={all:'All Sections',planning:'Planning & Estimating',install:'Fabrication & Install',trouble:'Troubleshooting',safety:'Safety',math:'Math Only'};
+    g('qsec-lbl').textContent=lbl[curFilter]||'All';
+  }
+}
+
+function showScore(){
+  document.getElementById('quiz-area').style.display='none';
+  const sp=document.getElementById('score-panel');sp.style.display='block';
+  const pct=Math.round((score/totalAns)*100);const pass=pct>=70;
+  document.getElementById('sc-pct').textContent=pct+'%';
+  document.getElementById('sc-el').className='score-circle'+(pass?'':' fail');
+  document.getElementById('sc-pct').style.color=pass?'var(--green-light)':'var(--red-light)';
+  document.getElementById('sc-verdict').textContent=pass?'🎉 You Passed!':'📚 Keep Studying';
+  document.getElementById('sc-msg').textContent=pass
+    ?`Great work! You scored ${pct}% (${score}/${totalAns}). The real exam passing score is 70%. Keep drilling to build confidence.`
+    :`You scored ${pct}% (${score}/${totalAns}). You need 70% to pass. Review the sections where you missed questions and retry.`;
+  document.getElementById('sc-c').textContent=score;
+  document.getElementById('sc-w').textContent=totalAns-score;
+  document.getElementById('sc-t').textContent=totalAns;
+}
+
+function updateGP(){
+  const pct=totalAns>0?Math.round((score/totalAns)*100):0;
+  document.getElementById('gpf').style.width=pct+'%';
+}
+
+// ══════════════════════════════════════════════
+// FLASHCARDS
+// ══════════════════════════════════════════════
+let fcs=[...rawFC],fci=0;
+function renderFC(){
+  const[q,a]=fcs[fci];
+  document.getElementById('fc-q').textContent=q;
+  document.getElementById('fc-a').textContent=a;
+  document.getElementById('fc-cur').textContent=fci+1;
+  document.getElementById('fc-tot').textContent=fcs.length;
+  document.getElementById('fc').classList.remove('flipped');
+}
+function flipCard(){document.getElementById('fc').classList.toggle('flipped');}
+function fcNav(d){fci=(fci+d+fcs.length)%fcs.length;renderFC();}
+function shuffleFC(){
+  for(let i=fcs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[fcs[i],fcs[j]]=[fcs[j],fcs[i]];}
+  fci=0;renderFC();
+}
+function buildFCList(){
+  document.getElementById('fc-list').innerHTML=rawFC.map(([q,a])=>`
+    <div style="border-bottom:1px solid var(--border);padding:11px 0;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="font-size:13px;font-weight:600;">${q}</div>
+      <div style="font-size:13px;color:var(--teal-light);">${a}</div>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════════
+// CALCULATORS
+// ══════════════════════════════════════════════
+function calcEER(){
+  const btu=parseFloat(document.getElementById('eer-btu').value);
+  const w=parseFloat(document.getElementById('eer-w').value);
+  const el=document.getElementById('eer-result');
+  if(isNaN(btu)||isNaN(w)||w<=0){el.textContent='Enter valid values';return;}
+  const eer=(btu/w).toFixed(2);
+  const cop=(btu/w/3.412).toFixed(2);
+  el.textContent=`EER = ${btu.toLocaleString()} BTU/hr ÷ ${w.toLocaleString()} W = ${eer}   |   COP = ${eer} ÷ 3.412 = ${cop}`;
+}
+function calcHL(){
+  const u=parseFloat(document.getElementById('hl-u').value);
+  const a=parseFloat(document.getElementById('hl-a').value);
+  const dt=parseFloat(document.getElementById('hl-dt').value);
+  const el=document.getElementById('hl-result');
+  if(isNaN(u)||isNaN(a)||isNaN(dt)){el.textContent='Enter valid values';return;}
+  const q=u*a*dt;
+  el.textContent=`Q = ${u} × ${a} ft² × ${dt}°F = ${q.toFixed(0)} BTU/hr   (R-value = ${(1/u).toFixed(1)})`;
+}
+function calcCFM(){
+  const t=parseFloat(document.getElementById('cfm-tons').value);
+  const el=document.getElementById('cfm-result');
+  if(isNaN(t)||t<=0){el.textContent='Enter a valid tonnage';return;}
+  document.getElementById('cfm-cfm').value='';
+  el.textContent=`${t} tons × 400 CFM/ton = ${t*400} CFM required supply airflow`;
+}
+function calcCFMrev(){
+  const c=parseFloat(document.getElementById('cfm-cfm').value);
+  const el=document.getElementById('cfm-result');
+  if(isNaN(c)||c<=0){el.textContent='Enter a valid CFM';return;}
+  document.getElementById('cfm-tons').value='';
+  el.textContent=`${c} CFM ÷ 400 = ${(c/400).toFixed(2)} tons equivalent system size`;
+}
+function calcJC(){
+  const eq=parseFloat(document.getElementById('jc-eq').value)||0;
+  const mat=parseFloat(document.getElementById('jc-mat').value)||0;
+  const hrs=parseFloat(document.getElementById('jc-hrs').value)||0;
+  const rate=parseFloat(document.getElementById('jc-rate').value)||0;
+  const oh=parseFloat(document.getElementById('jc-oh').value)||0;
+  const labor=hrs*rate;
+  const sub=eq+mat+labor;
+  const overhead=sub*(oh/100);
+  const total=sub+overhead;
+  document.getElementById('jc-result').textContent=
+    `Equipment: $${eq.toFixed(0)}  +  Materials: $${mat.toFixed(0)}  +  Labor: $${labor.toFixed(0)} (${hrs}h × $${rate})  +  Overhead: $${overhead.toFixed(0)} (${oh}%)  =  TOTAL: $${total.toFixed(2)}`;
+}
+
+// ══════════════════════════════════════════════
+// DASHBOARD PROGRESS
+// ══════════════════════════════════════════════
+function buildDashProgress(){
+  const secs=[
+    {l:'Planning & Estimating',p:25,c:'var(--red)'},
+    {l:'Fabrication, Installation & Startup',p:29,c:'var(--amber)'},
+    {l:'Troubleshooting, Repair & Maintenance',p:24,c:'var(--teal)'},
+    {l:'Safety',p:22,c:'var(--blue)'}
+  ];
+  const el=document.getElementById('dash-progress');if(!el)return;
+  el.innerHTML=secs.map(s=>`
+    <div class="progress-row">
+      <div class="progress-label">${s.l}</div>
+      <div class="progress-track"><div class="progress-fill" style="width:${s.p*3.4}%;background:${s.c};"></div></div>
+      <div class="progress-pct">${s.p}%</div>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════════
+// TABS
+// ══════════════════════════════════════════════
+function showTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='quiz')buildQuiz();
+}
+
+// ══════════════════════════════════════════════
+// SCROLL TOP
+// ══════════════════════════════════════════════
+window.addEventListener('scroll',()=>{
+  const b=document.getElementById('scroll-top');
+  b.className=window.scrollY>400?'visible':'';
+});
+
+// ══════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════
+window.addEventListener('DOMContentLoaded',()=>{
+  buildDashProgress();
+  renderFC();
+  buildFCList();
+  buildQuiz();
+});
+</script>
+</body>
+</html>

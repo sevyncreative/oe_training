@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California C-36 Plumbing License Exam Prep | Pass First Time</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07090f;
+  --surface: #0f1520;
+  --surface2: #161e2e;
+  --surface3: #1e2a40;
+  --border: #2a3a58;
+  --border2: #364a6a;
+  --blue: #2979ff;
+  --blue-light: #5e97ff;
+  --orange: #ff6d00;
+  --orange-light: #ff9e40;
+  --green: #00c853;
+  --green-light: #69f0ae;
+  --red: #ff1744;
+  --yellow: #ffd600;
+  --text: #e0e8f8;
+  --text2: #7a96c0;
+  --text3: #3d5278;
+  --mono: 'DM Mono', monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ═══ PIPE BACKGROUND ═══ */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 120px, rgba(41,121,255,0.018) 120px, rgba(41,121,255,0.018) 121px),
+    repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(41,121,255,0.018) 120px, rgba(41,121,255,0.018) 121px);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ═══ HEADER ═══ */
+header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(7,9,15,0.96);
+  border-bottom:2px solid var(--blue);
+  backdrop-filter:blur(12px);
+  box-shadow:0 2px 40px rgba(41,121,255,0.2);
+}
+.hdr{
+  max-width:1300px;margin:0 auto;
+  padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:14px;}
+.logo-icon{
+  width:50px;height:50px;
+  background:linear-gradient(135deg,var(--blue),#0040c0);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+  box-shadow:0 0 24px rgba(41,121,255,0.5);
+  flex-shrink:0;
+}
+.logo h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;letter-spacing:3px;color:var(--blue-light);line-height:1;
+}
+.logo p{font-size:11px;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+.hdr-meta{display:flex;gap:10px;flex-wrap:wrap;}
+.badge{
+  background:var(--surface2);border:1px solid var(--border2);
+  border-radius:20px;padding:5px 14px;
+  font-size:11px;color:var(--text2);
+  display:flex;align-items:center;gap:6px;
+  white-space:nowrap;
+}
+.badge b{color:var(--blue-light);}
+.badge.green b{color:var(--green-light);}
+.badge.orange b{color:var(--orange-light);}
+
+/* ═══ PROGRESS BAR ═══ */
+#global-progress-bar{
+  height:3px;
+  background:var(--surface2);
+  position:relative;
+}
+#global-progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--orange));
+  width:0%;
+  transition:width 0.6s ease;
+}
+
+/* ═══ NAV TABS ═══ */
+.nav-tabs-wrap{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-tabs-wrap::-webkit-scrollbar{display:none;}
+.nav-tabs{
+  max-width:1300px;margin:0 auto;
+  padding:0 24px;
+  display:flex;gap:0;
+  min-width:max-content;
+}
+.tab-btn{
+  padding:14px 22px;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;font-weight:600;
+  color:var(--text2);
+  background:none;border:none;cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:all 0.2s;
+  white-space:nowrap;
+  display:flex;align-items:center;gap:8px;
+  letter-spacing:0.3px;
+}
+.tab-btn:hover{color:var(--text);background:rgba(255,255,255,0.03);}
+.tab-btn.active{color:var(--blue-light);border-bottom-color:var(--blue);}
+.tab-btn .tab-count{
+  background:var(--surface3);
+  border-radius:10px;padding:1px 7px;
+  font-size:10px;font-family:var(--mono);
+}
+.tab-btn.active .tab-count{background:var(--blue);color:#fff;}
+
+/* ═══ MAIN LAYOUT ═══ */
+main{max-width:1300px;margin:0 auto;padding:32px 24px;position:relative;z-index:1;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ═══ SECTION HEADINGS ═══ */
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;letter-spacing:3px;
+  color:var(--blue-light);
+  margin-bottom:6px;
+  display:flex;align-items:center;gap:14px;
+}
+.section-sub{font-size:14px;color:var(--text2);margin-bottom:28px;line-height:1.6;}
+.section-tag{
+  display:inline-flex;align-items:center;
+  background:rgba(41,121,255,0.12);border:1px solid rgba(41,121,255,0.3);
+  border-radius:6px;padding:3px 12px;
+  font-size:11px;font-family:var(--mono);color:var(--blue-light);
+  letter-spacing:0.5px;
+  margin-bottom:20px;
+}
+
+/* ═══ CARDS ═══ */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px;
+  margin-bottom:20px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.card:hover{border-color:var(--border2);}
+.card-accent-top{
+  position:absolute;top:0;left:0;right:0;height:3px;
+}
+.card h3{font-size:17px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.card h4{font-size:14px;font-weight:700;margin-bottom:8px;color:var(--blue-light);}
+.card p{font-size:14px;color:var(--text2);line-height:1.75;}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr;}}
+
+/* ═══ EXAM OVERVIEW CARDS ═══ */
+.section-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:0;
+  overflow:hidden;
+  transition:transform 0.2s,box-shadow 0.2s;
+  cursor:pointer;
+}
+.section-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.3);}
+.section-card-header{
+  padding:20px 24px 16px;
+  display:flex;align-items:flex-start;gap:16px;
+}
+.section-num{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:22px;
+  flex-shrink:0;
+}
+.section-card-info h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+.section-card-info .pct{
+  font-family:var(--mono);font-size:28px;font-weight:500;
+  line-height:1;
+}
+.section-card-body{padding:0 24px 20px;}
+.section-card-body ul{list-style:none;}
+.section-card-body li{
+  font-size:13px;color:var(--text2);padding:4px 0;
+  display:flex;align-items:center;gap:8px;
+}
+.section-card-body li::before{content:'▸';color:var(--text3);font-size:10px;}
+.section-card-progress{
+  height:4px;background:var(--surface3);
+  margin:0;
+}
+.section-card-progress-fill{
+  height:100%;
+  border-radius:0;
+}
+
+/* ═══ STUDY CONTENT ═══ */
+.study-block{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:4px solid var(--blue);
+  border-radius:0 14px 14px 0;
+  padding:20px 24px;
+  margin-bottom:16px;
+}
+.study-block.orange{border-left-color:var(--orange);}
+.study-block.green{border-left-color:var(--green);}
+.study-block.yellow{border-left-color:var(--yellow);}
+.study-block h4{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.study-block p{font-size:13.5px;color:var(--text2);line-height:1.8;margin-bottom:8px;}
+.study-block ul,.study-block ol{
+  padding-left:20px;
+  font-size:13.5px;color:var(--text2);line-height:2;
+}
+
+.code-ref{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(41,121,255,0.1);border:1px solid rgba(41,121,255,0.25);
+  border-radius:5px;padding:1px 8px;
+  font-family:var(--mono);font-size:11px;color:var(--blue-light);
+  white-space:nowrap;
+}
+.code-ref.orange{background:rgba(255,109,0,0.1);border-color:rgba(255,109,0,0.25);color:var(--orange-light);}
+
+.formula-box{
+  background:var(--surface3);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:16px 20px;
+  font-family:var(--mono);
+  font-size:14px;
+  color:var(--yellow);
+  margin:12px 0;
+  letter-spacing:0.3px;
+  line-height:1.9;
+}
+
+.tip-box{
+  background:rgba(0,200,83,0.06);
+  border:1px solid rgba(0,200,83,0.2);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:12px 0;
+  font-size:13px;
+  color:var(--green-light);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.tip-box::before{content:'💡';font-size:16px;flex-shrink:0;margin-top:1px;}
+
+.warn-box{
+  background:rgba(255,214,0,0.06);
+  border:1px solid rgba(255,214,0,0.2);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:12px 0;
+  font-size:13px;
+  color:var(--yellow);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.warn-box::before{content:'⚠️';font-size:16px;flex-shrink:0;margin-top:1px;}
+
+/* ═══ QUIZ ENGINE ═══ */
+.quiz-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;flex-wrap:wrap;gap:14px;
+}
+.quiz-meta{display:flex;gap:10px;flex-wrap:wrap;}
+.quiz-pill{
+  background:var(--surface2);border:1px solid var(--border2);
+  border-radius:20px;padding:6px 16px;
+  font-size:12px;color:var(--text2);
+  display:flex;align-items:center;gap:6px;
+}
+.quiz-pill b{color:var(--text);font-family:var(--mono);}
+.quiz-pill.timer-pill b{color:var(--yellow);}
+
+.question-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px 32px;
+  margin-bottom:20px;
+  animation:fadeSlideUp 0.35s ease;
+}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.question-meta{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;
+}
+.q-num{
+  font-family:var(--mono);font-size:11px;
+  background:var(--surface3);border-radius:6px;padding:3px 10px;
+  color:var(--text3);
+}
+.q-section{
+  font-size:11px;color:var(--text2);
+  background:rgba(41,121,255,0.1);border:1px solid rgba(41,121,255,0.2);
+  border-radius:6px;padding:3px 10px;color:var(--blue-light);
+  font-family:var(--mono);
+}
+.q-diff{font-size:11px;border-radius:6px;padding:3px 10px;font-family:var(--mono);}
+.q-diff.easy{background:rgba(0,200,83,0.1);color:var(--green-light);}
+.q-diff.medium{background:rgba(255,214,0,0.1);color:var(--yellow);}
+.q-diff.hard{background:rgba(255,23,68,0.1);color:#ff6090;}
+
+.question-text{
+  font-size:17px;font-weight:500;
+  line-height:1.65;color:var(--text);
+  margin-bottom:22px;
+}
+.code-context{
+  background:var(--surface3);
+  border-radius:8px;padding:12px 16px;
+  font-family:var(--mono);font-size:12.5px;
+  color:var(--text2);line-height:1.7;
+  margin-bottom:18px;
+  border-left:3px solid var(--orange);
+}
+
+.options{display:flex;flex-direction:column;gap:10px;}
+.option{
+  background:var(--surface2);
+  border:1.5px solid var(--border);
+  border-radius:10px;
+  padding:14px 18px;
+  cursor:pointer;
+  font-size:14px;
+  color:var(--text);
+  display:flex;align-items:flex-start;gap:14px;
+  transition:all 0.18s;
+  position:relative;
+  overflow:hidden;
+  text-align:left;
+  width:100%;
+}
+.option:hover:not(.revealed){
+  border-color:var(--blue);
+  background:rgba(41,121,255,0.07);
+  transform:translateX(4px);
+}
+.option.selected{border-color:var(--blue);background:rgba(41,121,255,0.1);}
+.option.correct{
+  border-color:var(--green)!important;
+  background:rgba(0,200,83,0.08)!important;
+  color:var(--green-light);
+}
+.option.wrong{
+  border-color:var(--red)!important;
+  background:rgba(255,23,68,0.08)!important;
+  color:#ff6090;
+}
+.option.dimmed{opacity:0.4;}
+.option-letter{
+  width:26px;height:26px;min-width:26px;
+  border-radius:6px;
+  background:var(--surface3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  color:var(--text2);
+  margin-top:1px;
+  transition:all 0.18s;
+}
+.option.correct .option-letter{background:var(--green);color:#000;}
+.option.wrong .option-letter{background:var(--red);color:#fff;}
+.option.selected .option-letter{background:var(--blue);color:#fff;}
+
+.explanation{
+  margin-top:20px;
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  border-left:4px solid var(--green);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;
+  display:none;
+  animation:fadeSlideUp 0.3s ease;
+}
+.explanation.show{display:block;}
+.explanation h5{
+  font-size:12px;font-family:var(--mono);
+  color:var(--green-light);letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:8px;
+}
+.explanation p{font-size:13.5px;color:var(--text2);line-height:1.75;}
+.explanation .code-cite{
+  font-family:var(--mono);font-size:11px;
+  background:rgba(255,109,0,0.1);border:1px solid rgba(255,109,0,0.2);
+  border-radius:4px;padding:2px 8px;color:var(--orange-light);
+  display:inline;
+}
+
+.q-actions{
+  display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;
+}
+.btn{
+  padding:11px 22px;
+  border-radius:9px;font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:600;cursor:pointer;
+  border:none;transition:all 0.18s;
+  display:flex;align-items:center;gap:8px;
+}
+.btn-primary{background:var(--blue);color:#fff;}
+.btn-primary:hover{background:#1565c0;transform:translateY(-1px);}
+.btn-secondary{background:var(--surface3);color:var(--text);border:1px solid var(--border2);}
+.btn-secondary:hover{background:var(--surface2);border-color:var(--blue);}
+.btn-success{background:var(--green);color:#000;}
+.btn-success:hover{background:#00a846;}
+.btn-orange{background:var(--orange);color:#fff;}
+.btn-orange:hover{background:#c75000;}
+.btn:disabled{opacity:0.4;cursor:not-allowed;transform:none!important;}
+
+/* ═══ QUIZ FILTER BAR ═══ */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;
+}
+.filter-btn{
+  padding:8px 18px;border-radius:20px;
+  font-size:12px;font-weight:600;cursor:pointer;
+  background:var(--surface2);color:var(--text2);
+  border:1px solid var(--border);transition:all 0.18s;
+}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue-light);}
+.filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+/* ═══ SCOREBOARD ═══ */
+#score-panel{
+  display:none;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:36px;
+  text-align:center;
+  animation:fadeSlideUp 0.4s ease;
+}
+.score-circle{
+  width:140px;height:140px;
+  border-radius:50%;
+  border:5px solid var(--green);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  background:rgba(0,200,83,0.06);
+}
+.score-circle.fail{border-color:var(--red);background:rgba(255,23,68,0.06);}
+.score-pct{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--green-light);line-height:1;}
+.score-circle.fail .score-pct{color:#ff6090;}
+.score-label{font-size:12px;color:var(--text2);margin-top:2px;}
+.score-breakdown{
+  display:flex;justify-content:center;gap:30px;margin:20px 0 28px;flex-wrap:wrap;
+}
+.score-stat{text-align:center;}
+.score-stat .val{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--text);}
+.score-stat .lbl{font-size:11px;color:var(--text2);}
+
+/* ═══ STUDY PLAN ═══ */
+.timeline{position:relative;padding-left:36px;}
+.timeline::before{
+  content:'';
+  position:absolute;left:14px;top:0;bottom:0;
+  width:2px;background:linear-gradient(to bottom,var(--blue),var(--orange),var(--green));
+}
+.tl-item{
+  position:relative;margin-bottom:28px;
+}
+.tl-dot{
+  position:absolute;left:-29px;top:3px;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--blue);border:3px solid var(--bg);
+  box-shadow:0 0 10px rgba(41,121,255,0.4);
+}
+.tl-item:nth-child(2) .tl-dot{background:var(--orange);box-shadow:0 0 10px rgba(255,109,0,0.4);}
+.tl-item:nth-child(3) .tl-dot{background:var(--green);box-shadow:0 0 10px rgba(0,200,83,0.4);}
+.tl-week{
+  font-family:var(--mono);font-size:10px;color:var(--text3);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;
+}
+.tl-title{font-size:16px;font-weight:700;margin-bottom:8px;}
+.tl-body{font-size:13.5px;color:var(--text2);line-height:1.8;}
+
+/* ═══ REFERENCE TABLE ═══ */
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead tr{background:var(--surface3);}
+th{
+  padding:12px 16px;text-align:left;
+  font-family:var(--mono);font-size:11px;
+  color:var(--text2);letter-spacing:0.8px;text-transform:uppercase;
+  border-bottom:2px solid var(--border2);
+}
+td{
+  padding:11px 16px;
+  border-bottom:1px solid var(--border);
+  color:var(--text2);
+  line-height:1.6;
+}
+tr:hover td{background:rgba(255,255,255,0.02);}
+tr td:first-child{color:var(--text);font-weight:500;}
+.tbl-wrap{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+/* ═══ MATH CALC ═══ */
+.calc-block{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:24px;
+  margin-bottom:20px;
+}
+.calc-block h4{font-size:15px;font-weight:700;margin-bottom:6px;}
+.calc-inputs{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0;}
+.calc-inputs input{
+  background:var(--surface3);border:1px solid var(--border2);
+  border-radius:8px;padding:10px 14px;
+  font-family:var(--mono);font-size:14px;
+  color:var(--text);width:140px;outline:none;
+  transition:border-color 0.2s;
+}
+.calc-inputs input:focus{border-color:var(--blue);}
+.calc-inputs label{font-size:12px;color:var(--text2);display:block;margin-bottom:4px;}
+.calc-result{
+  background:var(--surface3);border:1px solid var(--border2);
+  border-radius:10px;padding:14px 18px;
+  font-family:var(--mono);font-size:16px;
+  color:var(--yellow);margin-top:4px;
+  min-height:48px;
+}
+
+/* ═══ FLASHCARDS ═══ */
+.flashcard-container{
+  perspective:1000px;
+  width:100%;max-width:600px;
+  margin:0 auto 24px;
+  height:200px;
+}
+.flashcard{
+  width:100%;height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform 0.5s ease;
+  cursor:pointer;
+}
+.flashcard.flipped{transform:rotateY(180deg);}
+.flashcard-face{
+  position:absolute;inset:0;
+  backface-visibility:hidden;
+  background:var(--surface);
+  border:1px solid var(--border2);
+  border-radius:16px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:28px;
+  text-align:center;
+}
+.flashcard-back{transform:rotateY(180deg);background:var(--surface2);}
+.flashcard-face .face-label{
+  font-family:var(--mono);font-size:10px;
+  color:var(--text3);letter-spacing:1px;text-transform:uppercase;
+  position:absolute;top:16px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;
+}
+.fc-q{font-size:16px;font-weight:600;line-height:1.5;}
+.fc-a{font-size:15px;color:var(--green-light);line-height:1.6;}
+.fc-nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:8px;}
+.fc-counter{font-family:var(--mono);font-size:13px;color:var(--text2);}
+
+/* ═══ PROGRESS TRACKER ═══ */
+.progress-section{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px 24px;
+  margin-bottom:16px;
+}
+.progress-row{
+  display:flex;align-items:center;gap:14px;margin-bottom:10px;
+}
+.progress-label{font-size:13px;color:var(--text2);min-width:220px;}
+.progress-bar-track{
+  flex:1;height:8px;
+  background:var(--surface3);border-radius:4px;overflow:hidden;
+}
+.progress-bar-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+.progress-pct{font-family:var(--mono);font-size:12px;color:var(--text2);min-width:36px;text-align:right;}
+
+/* ═══ HOME DASHBOARD ═══ */
+.hero{
+  background:linear-gradient(135deg,rgba(41,121,255,0.08) 0%,transparent 60%);
+  border:1px solid rgba(41,121,255,0.2);
+  border-radius:20px;
+  padding:36px 40px;
+  margin-bottom:32px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:'C-36';
+  position:absolute;right:-10px;bottom:-30px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:160px;letter-spacing:-4px;
+  color:rgba(41,121,255,0.04);
+  pointer-events:none;line-height:1;
+}
+.hero h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:48px;letter-spacing:2px;
+  line-height:1.05;margin-bottom:12px;
+}
+.hero h2 span{color:var(--orange-light);}
+.hero p{font-size:15px;color:var(--text2);line-height:1.75;max-width:620px;margin-bottom:22px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.exam-stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;
+}
+@media(max-width:800px){.exam-stats-row{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.exam-stats-row{grid-template-columns:1fr 1fr;}}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:20px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.stat-card .stat-icon{font-size:22px;}
+.stat-card .stat-val{
+  font-family:'Bebas Neue',sans-serif;font-size:32px;
+  color:var(--text);line-height:1;
+}
+.stat-card .stat-lbl{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.8px;}
+
+/* ═══ SCROLL TO TOP ═══ */
+#scroll-top{
+  position:fixed;bottom:24px;right:24px;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--blue);color:#fff;
+  border:none;cursor:pointer;font-size:18px;
+  box-shadow:0 4px 20px rgba(41,121,255,0.4);
+  display:none;align-items:center;justify-content:center;
+  z-index:999;transition:all 0.2s;
+}
+#scroll-top:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(41,121,255,0.5);}
+#scroll-top.visible{display:flex;}
+
+/* ═══ CHEAT SHEET PRINT ═══ */
+@media print{
+  header,.nav-tabs-wrap,.tab-btn:not(.active),#score-panel,.q-actions,.filter-bar,.hero-actions{display:none!important;}
+  body{background:#fff;color:#000;}
+  .card,.study-block,.question-card{border:1px solid #ccc;break-inside:avoid;}
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:700px){
+  .hero{padding:24px 20px;}
+  .hero h2{font-size:34px;}
+  .question-card{padding:20px 18px;}
+  main{padding:20px 14px;}
+  .hdr{padding:12px 16px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-icon">🔧</div>
+      <div>
+        <h1>PASS C-36</h1>
+        <p>California Plumbing License Exam Prep</p>
+      </div>
+    </div>
+    <div class="hdr-meta">
+      <div class="badge"><span>📋</span> Exam: <b>C-36 Plumbing</b></div>
+      <div class="badge green"><span>✅</span> Questions: <b>120+</b></div>
+      <div class="badge orange"><span>⏱</span> Exam Time: <b>3 hrs</b></div>
+    </div>
+  </div>
+  <div id="global-progress-bar"><div id="global-progress-fill"></div></div>
+</header>
+
+<div class="nav-tabs-wrap">
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="showTab('home',this)">🏠 Dashboard</button>
+    <button class="tab-btn" onclick="showTab('overview',this)">📊 Exam Overview</button>
+    <button class="tab-btn" onclick="showTab('study1',this)">📐 Planning &amp; Estimating <span class="tab-count">22%</span></button>
+    <button class="tab-btn" onclick="showTab('study2',this)">⛏ Underground &amp; Rough <span class="tab-count">22%</span></button>
+    <button class="tab-btn" onclick="showTab('study3',this)">🚿 Finish Plumbing <span class="tab-count">20%</span></button>
+    <button class="tab-btn" onclick="showTab('study4',this)">🔨 Service &amp; Repair <span class="tab-count">19%</span></button>
+    <button class="tab-btn" onclick="showTab('study5',this)">🦺 Safety <span class="tab-count">17%</span></button>
+    <button class="tab-btn" onclick="showTab('quiz',this)">🧠 Practice Quiz</button>
+    <button class="tab-btn" onclick="showTab('flashcards',this)">🃏 Flashcards</button>
+    <button class="tab-btn" onclick="showTab('math',this)">🔢 Math &amp; Formulas</button>
+    <button class="tab-btn" onclick="showTab('reference',this)">📚 Code Reference</button>
+    <button class="tab-btn" onclick="showTab('plan',this)">📅 Study Plan</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════ DASHBOARD ═══════════════ -->
+<div id="tab-home" class="tab-panel active">
+  <div class="hero">
+    <h2>Pass the California<br><span>C-36 Plumbing</span><br>License Exam</h2>
+    <p>This is your complete, interactive prep course built directly from the CSLB C-36 Study Guide. Five exam sections, 120+ real-style questions, formula calculators, flashcards, and a 10-week study plan — everything you need to pass the first time.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="showTab('quiz',document.querySelectorAll('.tab-btn')[7])">▶ Start Practice Quiz</button>
+      <button class="btn btn-secondary" onclick="showTab('plan',document.querySelectorAll('.tab-btn')[11])">📅 View Study Plan</button>
+      <button class="btn btn-secondary" onclick="showTab('overview',document.querySelectorAll('.tab-btn')[1])">📊 Exam Overview</button>
+    </div>
+  </div>
+
+  <div class="exam-stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">📝</div>
+      <div class="stat-val">~100</div>
+      <div class="stat-lbl">Exam Questions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">⏱</div>
+      <div class="stat-val">3 HRS</div>
+      <div class="stat-lbl">Time Allowed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-val">70%</div>
+      <div class="stat-lbl">Passing Score</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📖</div>
+      <div class="stat-val">Closed</div>
+      <div class="stat-lbl">Book Policy</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-accent-top" style="background:linear-gradient(90deg,var(--blue),var(--orange));"></div>
+      <h3>📋 Exam Section Breakdown</h3>
+      <p style="margin-bottom:16px;">The C-36 exam covers 5 sections. Know exactly where to focus your time:</p>
+      <div id="dashboard-progress"></div>
+    </div>
+    <div class="card">
+      <div class="card-accent-top" style="background:linear-gradient(90deg,var(--green),var(--blue));"></div>
+      <h3>📚 Quick Tips from CSLB</h3>
+      <div class="study-block" style="margin-bottom:10px;">
+        <h4>Multiple Choice — 4 options, 1 BEST answer</h4>
+        <p>Read all four options completely before choosing. CSLB writes questions where multiple answers may seem right — you need the BEST one.</p>
+      </div>
+      <div class="tip-box">No penalty for guessing — always answer every question, even if unsure.</div>
+      <div class="tip-box">A calculator is provided for math problems.</div>
+      <div class="warn-box">This is a CLOSED-BOOK exam. No reference materials allowed during the test.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔑 Key Reference Codes (Know These Cold)</h3>
+    <div class="grid-3" style="margin-top:14px;">
+      <div><span class="code-ref">2022 CA Plumbing Code</span><p style="font-size:12px;color:var(--text2);margin-top:6px;">Primary code — pipe sizing, venting, fixtures. Published by IAPMO. Title 24.</p></div>
+      <div><span class="code-ref">2022 CA Building Code</span><p style="font-size:12px;color:var(--text2);margin-top:6px;">Structural & inspection requirements. ICC. Title 24.</p></div>
+      <div><span class="code-ref">2022 CA Mechanical Code</span><p style="font-size:12px;color:var(--text2);margin-top:6px;">Fuel gas, HVAC overlap, mechanical systems. IAPMO. Title 24.</p></div>
+      <div><span class="code-ref orange">Cal/OSHA Title 8</span><p style="font-size:12px;color:var(--text2);margin-top:6px;">Safety orders — all personnel, job site, trenching, confined space.</p></div>
+      <div><span class="code-ref orange">CA Green Building Code</span><p style="font-size:12px;color:var(--text2);margin-top:6px;">Water conservation requirements. CALGreen. Title 24.</p></div>
+      <div><span class="code-ref orange">Underground Service Alert</span><p style="font-size:12px;color:var(--text2);margin-top:6px;">Call 811 before digging. CA Govt Code 4216. Mandatory notification.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<div id="tab-overview" class="tab-panel">
+  <div class="section-tag">📊 CSLB C-36 EXAM STRUCTURE</div>
+  <div class="section-title">Exam Overview</div>
+  <p class="section-sub">The C-36 Plumbing Exam is divided into five major sections. Each section carries a specific weight — your study time should reflect these percentages.</p>
+
+  <div class="grid-2" style="margin-bottom:28px;">
+    <div class="section-card" onclick="showTab('study1',document.querySelectorAll('.tab-btn')[2])">
+      <div style="height:4px;background:linear-gradient(90deg,#2979ff,#5e97ff);"></div>
+      <div class="section-card-header">
+        <div class="section-num" style="background:rgba(41,121,255,0.12);color:#5e97ff;">01</div>
+        <div class="section-card-info">
+          <h3>Planning &amp; Estimating</h3>
+          <div class="pct" style="color:#5e97ff;">22%</div>
+        </div>
+      </div>
+      <div class="section-card-body">
+        <ul>
+          <li>Scope of work &amp; code compliance</li>
+          <li>Pipe sizing &amp; venting requirements</li>
+          <li>Shop drawings, plans &amp; specifications</li>
+          <li>Job site inspections</li>
+          <li>Water conservation</li>
+          <li>Cost estimation (materials, labor, overhead)</li>
+        </ul>
+      </div>
+      <div class="section-card-progress"><div class="section-card-progress-fill" style="width:22%;background:var(--blue);"></div></div>
+    </div>
+
+    <div class="section-card" onclick="showTab('study2',document.querySelectorAll('.tab-btn')[3])">
+      <div style="height:4px;background:linear-gradient(90deg,#ff6d00,#ff9e40);"></div>
+      <div class="section-card-header">
+        <div class="section-num" style="background:rgba(255,109,0,0.12);color:#ff9e40;">02</div>
+        <div class="section-card-info">
+          <h3>Underground &amp; Rough Systems</h3>
+          <div class="pct" style="color:#ff9e40;">22%</div>
+        </div>
+      </div>
+      <div class="section-card-body">
+        <ul>
+          <li>Excavation &amp; underground installations</li>
+          <li>Piping layout &amp; installation</li>
+          <li>Fuel gas piping</li>
+          <li>Insulation &amp; system testing</li>
+        </ul>
+      </div>
+      <div class="section-card-progress"><div class="section-card-progress-fill" style="width:22%;background:var(--orange);"></div></div>
+    </div>
+
+    <div class="section-card" onclick="showTab('study3',document.querySelectorAll('.tab-btn')[4])">
+      <div style="height:4px;background:linear-gradient(90deg,#00c853,#69f0ae);"></div>
+      <div class="section-card-header">
+        <div class="section-num" style="background:rgba(0,200,83,0.12);color:#69f0ae;">03</div>
+        <div class="section-card-info">
+          <h3>Finish Plumbing Installations</h3>
+          <div class="pct" style="color:#69f0ae;">20%</div>
+        </div>
+      </div>
+      <div class="section-card-body">
+        <ul>
+          <li>Plumbing fixtures &amp; appliances</li>
+          <li>Water heaters</li>
+          <li>Shut-off valves</li>
+          <li>Specialty installations</li>
+          <li>Industrial &amp; commercial piping</li>
+        </ul>
+      </div>
+      <div class="section-card-progress"><div class="section-card-progress-fill" style="width:20%;background:var(--green);"></div></div>
+    </div>
+
+    <div class="section-card" onclick="showTab('study4',document.querySelectorAll('.tab-btn')[5])">
+      <div style="height:4px;background:linear-gradient(90deg,#aa00ff,#e040fb);"></div>
+      <div class="section-card-header">
+        <div class="section-num" style="background:rgba(170,0,255,0.12);color:#e040fb;">04</div>
+        <div class="section-card-info">
+          <h3>Service, Repair &amp; Remodel</h3>
+          <div class="pct" style="color:#e040fb;">19%</div>
+        </div>
+      </div>
+      <div class="section-card-body">
+        <ul>
+          <li>Troubleshoot plumbing issues</li>
+          <li>Isolate leaks &amp; damage</li>
+          <li>Repair plumbing systems</li>
+          <li>Retrofit plumbing</li>
+          <li>Disposal of plumbing materials</li>
+        </ul>
+      </div>
+      <div class="section-card-progress"><div class="section-card-progress-fill" style="width:19%;background:#aa00ff;"></div></div>
+    </div>
+
+    <div class="section-card" onclick="showTab('study5',document.querySelectorAll('.tab-btn')[6])">
+      <div style="height:4px;background:linear-gradient(90deg,#ffd600,#fff176);"></div>
+      <div class="section-card-header">
+        <div class="section-num" style="background:rgba(255,214,0,0.12);color:#fff176;">05</div>
+        <div class="section-card-info">
+          <h3>Safety</h3>
+          <div class="pct" style="color:#fff176;">17%</div>
+        </div>
+      </div>
+      <div class="section-card-body">
+        <ul>
+          <li>Personnel safety (Cal/OSHA Title 8)</li>
+          <li>Job site safety</li>
+          <li>Environmental safety</li>
+          <li>Trenching &amp; shoring</li>
+          <li>Confined space entry</li>
+        </ul>
+      </div>
+      <div class="section-card-progress"><div class="section-card-progress-fill" style="width:17%;background:var(--yellow);"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🗓 What to Expect on Exam Day</h3>
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <div class="study-block">
+          <h4>Format</h4>
+          <ul>
+            <li>Multiple-choice, 4 options per question</li>
+            <li>Only one BEST answer</li>
+            <li>Some questions require math computation</li>
+            <li>Calculator is provided by testing center</li>
+            <li>No penalty for guessing</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="study-block orange">
+          <h4>Logistics</h4>
+          <ul>
+            <li>Administered at PSI testing centers statewide</li>
+            <li>Closed-book — no reference materials</li>
+            <li>Approx. 3 hours to complete</li>
+            <li>You must also pass the Law &amp; Business Exam</li>
+            <li>Bring government-issued photo ID</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tip-box" style="margin-top:12px;">The exam is written and reviewed by licensed plumbing contractors who are actively working in the trade — so questions are grounded in real-world application, not just textbook theory.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ STUDY SECTION 1 ═══════════════ -->
+<div id="tab-study1" class="tab-panel">
+  <div class="section-tag">SECTION 1 — 22% OF EXAM</div>
+  <div class="section-title" style="color:#5e97ff;">Planning &amp; Estimating</div>
+  <p class="section-sub">Covers scope of work, code compliance, pipe sizing/venting, shop drawings, inspections, project coordination, water conservation, and cost estimation.</p>
+
+  <div class="study-block">
+    <h4>📐 Scope of Work &amp; Code Compliance</h4>
+    <p>Before any plumbing work begins, the contractor must establish the scope of work — what is covered under the C-36 license — and ensure full compliance with applicable codes.</p>
+    <p>The C-36 license covers: water supply systems, drain/waste/vent (DWV) systems, fuel gas piping, water heaters, and related fixtures on residential, commercial, and industrial projects.</p>
+    <div class="tip-box">Know the difference between C-36 (Plumbing) and adjacent licenses: C-20 (HVAC), C-34 (Pipeline), C-42 (Sanitation). Overlap questions appear on the exam.</div>
+    <p><span class="code-ref">2022 CA Plumbing Code § 101</span> — General scope and authority. All plumbing must conform to the California Plumbing Code (CPC), Title 24.</p>
+  </div>
+
+  <div class="study-block orange">
+    <h4>🔢 Pipe Sizing — The Core Formula</h4>
+    <p>Pipe sizing is one of the most tested math topics. It's based on <strong>Drainage Fixture Units (DFU)</strong> and <strong>Water Supply Fixture Units (WSFU)</strong>.</p>
+    <div class="formula-box">
+      DFU = Sum of fixture unit values for all fixtures served by that drain<br>
+      <br>
+      Common Fixture Unit Values (DFU):<br>
+      • Lavatory (sink): 1 DFU<br>
+      • Bathtub / Shower: 2 DFU<br>
+      • Water Closet (toilet): 4 DFU (private) / 6 DFU (public)<br>
+      • Kitchen Sink (residential): 2 DFU<br>
+      • Washing Machine: 2 DFU<br>
+      • Floor Drain: 2 DFU<br>
+      • Urinal: 4 DFU
+    </div>
+    <p><span class="code-ref">2022 CPC Table 7-3</span> — Drainage fixture unit values. <span class="code-ref">CPC Table 6-4</span> — Water supply fixture units.</p>
+    <div class="tip-box">For sizing a building drain: total all DFUs on the system and refer to CPC Table 7-5 for minimum pipe diameter. A 4" drain handles up to 160 DFU.</div>
+  </div>
+
+  <div class="study-block green">
+    <h4>🌬 Venting Requirements</h4>
+    <p>Every fixture trap must be vented. Venting prevents siphoning of trap seals and allows air circulation through the DWV system.</p>
+    <ul>
+      <li><strong>Minimum vent pipe size:</strong> 1¼" — never smaller than the drain it serves (up to 4")</li>
+      <li><strong>Individual vent:</strong> connects above the trap weir to the main vent stack</li>
+      <li><strong>Common vent:</strong> two fixtures back-to-back sharing one vent</li>
+      <li><strong>Wet vent:</strong> serves as both a vent and a drain for a fixture</li>
+      <li><strong>Air Admittance Valve (AAV):</strong> allowed under CPC for isolated locations — must be accessible</li>
+      <li><strong>Trap-to-vent distance:</strong> varies by pipe size; 2" trap arm max 5 ft to vent</li>
+    </ul>
+    <p style="margin-top:8px;"><span class="code-ref">2022 CPC Chapter 9</span> — Venting systems. Critical chapter — memorize the trap arm distances.</p>
+  </div>
+
+  <div class="study-block yellow">
+    <h4>📊 Shop Drawings &amp; Plans</h4>
+    <p>The contractor must be able to read and interpret plumbing plans, isometric drawings, and specifications.</p>
+    <ul>
+      <li><strong>Isometric drawings</strong> show 3D pipe runs in 2D — used for DWV and supply layout</li>
+      <li><strong>Plan view</strong> = overhead view showing pipe routing on each floor</li>
+      <li><strong>Riser diagrams</strong> show vertical pipe routing through building floors</li>
+      <li><strong>Specifications (specs)</strong> define materials, quality standards, and installation methods</li>
+    </ul>
+    <div class="warn-box">On the exam: be able to read a simple isometric drawing and identify pipe sizes, fixture locations, and venting paths.</div>
+  </div>
+
+  <div class="study-block">
+    <h4>💧 Water Conservation (CALGreen)</h4>
+    <p>California's Green Building Standards Code (CALGreen) mandates maximum flow rates for plumbing fixtures:</p>
+    <div class="formula-box">
+      Showerheads: max 1.8 GPM @ 80 psi (residential, effective 2018)<br>
+      Lavatory faucets: max 1.2 GPM (residential) / 0.5 GPM (public restrooms)<br>
+      Kitchen faucets: max 1.8 GPM<br>
+      Water closets: max 1.28 GPF (high-efficiency, HET)<br>
+      Urinals: max 0.5 GPF (HEU)
+    </div>
+    <p><span class="code-ref">CALGreen § 4.303</span> — Residential indoor water use. <span class="code-ref">CALGreen § 5.303</span> — Nonresidential indoor water use.</p>
+  </div>
+
+  <div class="study-block orange">
+    <h4>💰 Cost Estimation</h4>
+    <p>The exam tests your ability to calculate job costs including materials, labor, equipment, and overhead.</p>
+    <div class="formula-box">
+      Total Job Cost = Materials + Labor + Equipment + Overhead + Profit<br>
+      <br>
+      Labor Cost = Hours × Hourly Rate<br>
+      Equipment Cost = Days × Daily Rate<br>
+      Overhead = typically 10–20% of direct costs<br>
+      <br>
+      Example (from official CSLB sample):<br>
+      Backhoe rental: $400/day × 4 days = $1,600<br>
+      Operator: $70/hr × 8 hrs × 4 days = $2,240<br>
+      Total = $1,600 + $2,240 = $3,840 ✓
+    </div>
+    <div class="tip-box">Always calculate equipment and labor separately, then add them. This is a common exam trap — don't double-count or confuse the rates.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ STUDY SECTION 2 ═══════════════ -->
+<div id="tab-study2" class="tab-panel">
+  <div class="section-tag">SECTION 2 — 22% OF EXAM</div>
+  <div class="section-title" style="color:#ff9e40;">Underground &amp; Rough Systems</div>
+  <p class="section-sub">Covers excavation, underground pipe installations, piping layout, fuel gas piping, insulation, and system testing.</p>
+
+  <div class="study-block orange">
+    <h4>⛏ Excavation &amp; Underground Safety</h4>
+    <p><strong>Always call 811 (Dig Alert / Underground Service Alert)</strong> before any excavation. California law (Gov. Code 4216) requires notification at least 2 working days before digging — except in emergencies.</p>
+    <ul>
+      <li>Trenches 5 ft or deeper require a protective system (shoring, sloping, or shielding)</li>
+      <li>Soil types (A, B, C) determine allowable slope angles — Type C is the most unstable</li>
+      <li>Type C soil: slope 1½H:1V (34°) maximum</li>
+      <li>Type B soil: slope 1H:1V (45°) maximum</li>
+      <li>Type A soil: slope ¾H:1V (53°) maximum</li>
+      <li>A competent person must inspect the trench daily and after rain</li>
+    </ul>
+    <p><span class="code-ref orange">Cal/OSHA Title 8 §1541</span> — Excavations. Critical for the Safety section too.</p>
+  </div>
+
+  <div class="study-block">
+    <h4>🔩 Underground Pipe Installation</h4>
+    <p>Underground drainage piping must be properly bedded and protected. Key requirements:</p>
+    <ul>
+      <li><strong>Minimum cover over sewer pipe:</strong> 12 inches (residential) under slabs</li>
+      <li><strong>Minimum slope for drainage:</strong> ¼" per foot (2%) for pipes up to 3"; ⅛" per foot (1%) for pipes 4" and larger</li>
+      <li><strong>Under-slab material:</strong> ABS or PVC Schedule 40 are most common; cast iron also accepted</li>
+      <li><strong>Pipe bedding:</strong> granular material (pea gravel or sand) min. 4" under pipe in unstable soil</li>
+      <li><strong>Building sewer separation:</strong> minimum 5 ft from water service laterals (10 ft preferred)</li>
+    </ul>
+    <div class="formula-box">
+      Slope Calculation:<br>
+      Drop = Length × Slope<br>
+      Example: 20 ft of 3" pipe at ¼"/ft = 20 × 0.25 = 5" total drop
+    </div>
+    <p><span class="code-ref">2022 CPC § 722</span> — Underground drainage. <span class="code-ref">CPC § 724</span> — Pipe bedding.</p>
+  </div>
+
+  <div class="study-block green">
+    <h4>🔥 Fuel Gas Piping</h4>
+    <p>Natural gas and LP gas piping falls under C-36 scope. Key code points:</p>
+    <ul>
+      <li>Gas piping must be sized for the BTU demand of all connected appliances</li>
+      <li><strong>Approved materials:</strong> black steel (Schedule 40), CSST (corrugated stainless steel tubing — must be bonded), or approved PE for underground</li>
+      <li>All gas piping must be tested at 1½ times working pressure or 3 psi, whichever is greater, for a minimum of 10 minutes before being covered</li>
+      <li>Gas shutoff must be within 6 ft of appliance (or per local AHJ)</li>
+      <li>CSST bonding: required per CPC and NEC 250.104(B) — ½" or larger bonding conductor</li>
+    </ul>
+    <p><span class="code-ref">2022 CPC Chapter 12</span> — Fuel gas piping systems. <span class="code-ref">2022 CA Mechanical Code Chapter 13</span> — Gas piping.</p>
+    <div class="warn-box">CSST (yellow flexible gas piping) MUST be bonded to the electrical grounding system. Failure to bond is a code violation and a fire hazard.</div>
+  </div>
+
+  <div class="study-block yellow">
+    <h4>🧊 Insulation Requirements</h4>
+    <p>Pipe insulation is required by the California Energy Code (Title 24, Part 6) for hot water supply and recirculation lines to reduce heat loss.</p>
+    <ul>
+      <li>Hot water supply pipes inside conditioned space: minimum R-3 insulation if ¾" or larger</li>
+      <li>Cold water pipes in unconditioned spaces or below grade: insulate to prevent condensation and freezing</li>
+      <li>Domestic hot water recirculation lines: must be insulated per CEnC Table 150.0-B</li>
+    </ul>
+    <p><span class="code-ref">CA Energy Code § 150.0(j)</span> — Piping insulation requirements.</p>
+  </div>
+
+  <div class="study-block">
+    <h4>🔍 System Testing Requirements</h4>
+    <p>All new plumbing systems must be tested and inspected before concealment. Common tests:</p>
+    <div class="formula-box">
+      Water Test (DWV): Fill system with water to the highest point.<br>
+      Hold for minimum 15 minutes with no leaks. (CPC § 723.0)<br>
+      <br>
+      Air Test (DWV): Pressurize to 5 psi (not more than 6 psi).<br>
+      Hold for minimum 15 minutes. (CPC § 723.0)<br>
+      <br>
+      Water Supply Test: 100 psi for 15 minutes, or<br>
+      1.5x working pressure — whichever is greater.<br>
+      <br>
+      Gas Piping Test: 1.5x working pressure or 3 psi min.<br>
+      Hold for 10 minutes with no pressure drop.
+    </div>
+    <div class="tip-box">For the exam: water test uses the system itself as the gauge. Air tests use an air compressor and gauge. Know both methods and their minimum pressures/hold times.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ STUDY SECTION 3 ═══════════════ -->
+<div id="tab-study3" class="tab-panel">
+  <div class="section-tag">SECTION 3 — 20% OF EXAM</div>
+  <div class="section-title" style="color:#69f0ae;">Finish Plumbing Installations</div>
+  <p class="section-sub">Covers plumbing fixtures, appliances, water heaters, shut-off valves, specialty installations, and commercial/industrial piping.</p>
+
+  <div class="study-block green">
+    <h4>🚿 Plumbing Fixtures — Installation Standards</h4>
+    <p>All fixtures must be listed and labeled (UPC/ANSI approved) and installed per the CPC. Key requirements:</p>
+    <ul>
+      <li><strong>Water closet rough-in:</strong> standard is 12" from finished wall to center of drain (also 10" and 14" available)</li>
+      <li><strong>Wall-mounted water closet:</strong> requires an approved carrier fitting (NOT a hubless closet ring) — this is an official CSLB sample question</li>
+      <li><strong>Clearances — water closet:</strong> 15" min from centerline to any side wall or obstruction; 21" clear in front (residential), 30" preferred</li>
+      <li><strong>Lavatory:</strong> P-trap required; max 24" developed length from trap weir to vent</li>
+      <li><strong>Shower pan liner:</strong> must be water-tested for 24 hours with no leakage before tile installation</li>
+      <li><strong>Bathtub overflow:</strong> must connect to drain line before the P-trap</li>
+    </ul>
+    <p><span class="code-ref">2022 CPC Chapter 4</span> — Plumbing fixtures and fixture fittings.</p>
+  </div>
+
+  <div class="study-block orange">
+    <h4>🌡 Water Heaters</h4>
+    <p>Water heater installation is heavily tested. Key code requirements:</p>
+    <ul>
+      <li><strong>T&P (Temperature &amp; Pressure) Relief Valve:</strong> required on every water heater; discharge pipe must terminate 6" from floor (or to approved drain), must not be reduced in size, minimum ¾" ID</li>
+      <li><strong>GFCI protection:</strong> required for electric water heaters in garages</li>
+      <li><strong>Seismic strapping:</strong> California requires TWO straps — one in upper ⅓, one in lower ⅓ of tank</li>
+      <li><strong>Pressure relief:</strong> set at 150 psi maximum</li>
+      <li><strong>Temperature setting:</strong> 120°F maximum (to prevent scalding, per CPC)</li>
+      <li><strong>Expansion tank:</strong> required when a check valve or PRV is installed on the supply side (closed system)</li>
+      <li><strong>Clearances:</strong> 18" from floor in garage if gas (to keep pilot above combustibles)</li>
+    </ul>
+    <p><span class="code-ref">2022 CPC § 501–508</span> — Water heater requirements.</p>
+    <div class="warn-box">Never cap or reduce the T&P relief valve discharge pipe. This is the most common code violation — and a life-safety issue.</div>
+  </div>
+
+  <div class="study-block">
+    <h4>🔒 Shut-Off Valves</h4>
+    <p>Isolation valves allow portions of the system to be serviced without shutting off the entire building water supply.</p>
+    <ul>
+      <li><strong>Main shut-off:</strong> required at the water service entrance to every building</li>
+      <li><strong>Individual fixture shut-offs:</strong> required under every sink, toilet, and at each water-using appliance</li>
+      <li><strong>Pressure Reducing Valve (PRV):</strong> required when supply pressure exceeds 80 psi; set to 60–80 psi</li>
+      <li><strong>Hose bibb vacuum breaker:</strong> required on all hose connections to prevent backflow</li>
+      <li><strong>Backflow prevention:</strong> required at cross-connection points; type depends on hazard level (AVB, PVB, DCVA, RPZ)</li>
+    </ul>
+    <p><span class="code-ref">2022 CPC § 603</span> — Water supply valves. <span class="code-ref">CPC Chapter 6</span> — Cross-connection control.</p>
+  </div>
+
+  <div class="study-block yellow">
+    <h4>🏭 Commercial &amp; Industrial Piping</h4>
+    <p>Commercial plumbing involves larger systems, grease interceptors, and specialty systems:</p>
+    <ul>
+      <li><strong>Grease interceptors:</strong> required for restaurants and food service facilities; sized in GPM based on fixture flow rates; typically 40–100 GPM units</li>
+      <li><strong>Interceptor sizing formula:</strong> GPM = (Fixture capacity in gallons ÷ drainage time in minutes) × drain factor</li>
+      <li><strong>Floor drains in commercial kitchens:</strong> must connect to grease interceptor, not directly to sewer</li>
+      <li><strong>Reduced pressure zone (RPZ) backflow preventer:</strong> required for high-hazard cross-connections (boilers, irrigation, etc.)</li>
+      <li><strong>Medical gas:</strong> not covered by C-36; requires specialty contractor</li>
+    </ul>
+    <div class="formula-box">
+      Grease Interceptor Sizing Example:<br>
+      3-compartment sink: 3 × 20 gal = 60 gal capacity<br>
+      Drainage time: 1 minute (typically used)<br>
+      Drain factor: 0.75 (for food waste)<br>
+      GPM = (60 ÷ 1) × 0.75 = 45 GPM → Use next size up: 50 GPM interceptor
+    </div>
+  </div>
+
+  <div class="study-block">
+    <h4>💧 Water Filtration</h4>
+    <p>Filtration systems remove contaminants from domestic water. Know the filtration media:</p>
+    <ul>
+      <li><strong>Carbon (activated charcoal):</strong> used for taste and odor control — this is the CSLB official sample question answer</li>
+      <li><strong>Sand/multimedia filters:</strong> remove sediment and turbidity</li>
+      <li><strong>Water softeners (ion exchange):</strong> remove calcium and magnesium (hardness)</li>
+      <li><strong>UV treatment:</strong> kills bacteria and viruses without chemicals</li>
+      <li><strong>Reverse osmosis (RO):</strong> removes dissolved solids, heavy metals</li>
+    </ul>
+    <p><span class="code-ref">2022 CPC § 611</span> — Water treatment devices.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ STUDY SECTION 4 ═══════════════ -->
+<div id="tab-study4" class="tab-panel">
+  <div class="section-tag">SECTION 4 — 19% OF EXAM</div>
+  <div class="section-title" style="color:#e040fb;">Service, Repair &amp; Remodel</div>
+  <p class="section-sub">Covers troubleshooting plumbing issues, isolating leaks, making repairs, retrofitting systems, and proper disposal of materials.</p>
+
+  <div class="study-block" style="border-left-color:#e040fb;">
+    <h4>🔍 Troubleshooting Plumbing Issues</h4>
+    <p>The exam tests real-world diagnostic skills. Common problems and causes:</p>
+    <ul>
+      <li><strong>Slow drains:</strong> partial blockage, improper slope, trap vaporization (check vent)</li>
+      <li><strong>Gurgling drains:</strong> inadequate venting — negative pressure pulling water from traps</li>
+      <li><strong>Water hammer:</strong> sudden pressure spike from fast-closing valves; cure with air chambers or water hammer arrestors</li>
+      <li><strong>No hot water:</strong> pilot outage (gas), failed heating element (electric), or T&P valve has discharged (pressure issue)</li>
+      <li><strong>Running toilet:</strong> worn flapper, misadjusted float, or cracked overflow tube</li>
+      <li><strong>Low water pressure:</strong> partially closed valve, failing PRV, mineral buildup, undersized supply line, or high demand</li>
+      <li><strong>Sewer gas odor:</strong> dry trap, cracked pipe, or failed wax ring</li>
+    </ul>
+  </div>
+
+  <div class="study-block orange">
+    <h4>🔦 Isolating Leaks &amp; Diagnosis</h4>
+    <p>Systematic isolation is key to efficient repair:</p>
+    <ul>
+      <li>Start by shutting off the main and checking if meter is still moving (indicates a leak downstream)</li>
+      <li>Use zone shut-offs to narrow the leak location section by section</li>
+      <li>Pressure testing with gauges helps identify leak rate and location</li>
+      <li>Electronic leak detection (acoustic sensors) for concealed pipe leaks</li>
+      <li>Camera inspection (CCTV) for underground drainage problem diagnosis</li>
+    </ul>
+    <div class="tip-box">If a water meter is still spinning with all fixtures off and valves closed to the building, the leak is on the service lateral between the meter and the building.</div>
+  </div>
+
+  <div class="study-block green">
+    <h4>🔧 Repair Methods</h4>
+    <p>Know the correct repair method for each pipe material:</p>
+    <ul>
+      <li><strong>Copper pipe:</strong> solder (sweat) joints, compression fittings, or push-fit connectors (SharkBite-type)</li>
+      <li><strong>PVC/ABS:</strong> solvent cement — purple primer required before cement on PVC; ABS uses black cement</li>
+      <li><strong>Cast iron:</strong> hubless couplings (Fernco/rubber), or lead and oakum for hub joints (legacy)</li>
+      <li><strong>Galvanized steel:</strong> threaded fittings; or cut-out and replace with approved materials</li>
+      <li><strong>CPVC:</strong> CPVC-specific cement only; do NOT use PVC cement on CPVC</li>
+      <li><strong>PEX:</strong> crimp rings, clamp rings, or expansion fittings — never solvent-welded</li>
+    </ul>
+    <p><span class="code-ref">2022 CPC Chapter 6 &amp; 7</span> — Approved pipe materials and joining methods.</p>
+  </div>
+
+  <div class="study-block yellow">
+    <h4>🏗 Retrofit &amp; Remodel Plumbing</h4>
+    <p>Remodel work requires understanding code requirements for existing systems:</p>
+    <ul>
+      <li>When remodeling, new work must meet current code even if existing system does not</li>
+      <li><strong>California low-flow mandate:</strong> any toilet replacement must be 1.28 GPF or less (HET)</li>
+      <li><strong>Re-piping:</strong> whole-house repipe with PEX or copper is common; requires permit and inspection</li>
+      <li><strong>Earthquake retrofits:</strong> add flexible connectors at water heater and gas appliances</li>
+      <li><strong>Drain relining (CIPP):</strong> cured-in-place pipe lining can repair underground sewer without excavation — must be approved by AHJ</li>
+    </ul>
+    <div class="warn-box">Always pull a permit for remodel plumbing. Unpermitted work can result in license revocation under CSLB. Cal B&P Code § 7028 — performing work without a permit is a violation.</div>
+  </div>
+
+  <div class="study-block" style="border-left-color:#e040fb;">
+    <h4>♻️ Disposal of Plumbing Materials</h4>
+    <p>Proper disposal of old plumbing materials is legally required:</p>
+    <ul>
+      <li><strong>Lead pipe/solder:</strong> classified as hazardous waste; must go to a certified hazardous waste facility</li>
+      <li><strong>Asbestos pipe insulation:</strong> asbestos abatement required by a licensed asbestos contractor before removal</li>
+      <li><strong>Refrigerants (from water chillers):</strong> EPA Section 608 certified technician required for recovery</li>
+      <li><strong>Used oil (compressor oil):</strong> must be recycled; not disposed in sewer or trash</li>
+      <li><strong>PVC/ABS scrap:</strong> recyclable — separate from general trash at certified recyclers</li>
+    </ul>
+    <p><span class="code-ref orange">Cal/OSHA &amp; Cal/EPA</span> — Hazardous material disposal regulations.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ STUDY SECTION 5 ═══════════════ -->
+<div id="tab-study5" class="tab-panel">
+  <div class="section-tag">SECTION 5 — 17% OF EXAM</div>
+  <div class="section-title" style="color:#fff176;">Safety</div>
+  <p class="section-sub">Covers personnel safety, job site safety, and environmental safety — all governed primarily by Cal/OSHA Title 8.</p>
+
+  <div class="study-block yellow">
+    <h4>👷 Personnel Safety — Cal/OSHA Title 8</h4>
+    <p>Every plumbing contractor must know Cal/OSHA requirements for worker protection:</p>
+    <ul>
+      <li><strong>PPE (Personal Protective Equipment):</strong> hard hat, safety glasses, gloves, steel-toed boots required on most job sites</li>
+      <li><strong>Respiratory protection:</strong> required when working with solvents (PVC primer/cement), soldering flux, or lead — Cal/OSHA § 5144</li>
+      <li><strong>Hearing protection:</strong> required at or above 85 dB TWA (8-hour time-weighted average)</li>
+      <li><strong>Fall protection:</strong> required for work 6 ft or more above ground on construction sites; 4 ft in general industry</li>
+      <li><strong>Ladder safety:</strong> 3-point contact rule; extension ladders must extend 3 ft above the landing; angle = 4:1 ratio</li>
+    </ul>
+    <p><span class="code-ref orange">Cal/OSHA Title 8 § 3380</span> — PPE requirements.</p>
+  </div>
+
+  <div class="study-block orange">
+    <h4>🏗 Job Site Safety</h4>
+    <ul>
+      <li><strong>Confined spaces:</strong> any space with limited entry/exit and not designed for continuous occupancy (manholes, crawlspaces under 24"). Requires permit if atmospheric hazards exist. Cal/OSHA § 5157</li>
+      <li><strong>Lockout/Tagout (LOTO):</strong> required before servicing any equipment that could unexpectedly energize. Isolate energy source, apply lock, and verify zero energy. Cal/OSHA § 3314</li>
+      <li><strong>Fire watch:</strong> required when using torch or open flame within 35 ft of combustibles; maintain for 30 minutes after work stops</li>
+      <li><strong>Soldering/brazing:</strong> lead-free solder (95/5 tin-antimony or similar) required for potable water systems since 1988 (federal Safe Drinking Water Act)</li>
+      <li><strong>Right-to-Know / Hazard Communication:</strong> Safety Data Sheets (SDS) must be on site for all hazardous chemicals. Cal/OSHA § 5194</li>
+      <li><strong>Traffic control:</strong> work in public ROW requires traffic control per CA MUTCD; use flaggers, cones, and signs</li>
+    </ul>
+  </div>
+
+  <div class="study-block green">
+    <h4>🌿 Environmental Safety</h4>
+    <ul>
+      <li><strong>Stormwater:</strong> no plumbing materials or waste may enter storm drains; NPDES permit may be required for larger sites</li>
+      <li><strong>Backflow prevention protects public water supply</strong> — cross-connection between potable and non-potable systems is a major environmental violation</li>
+      <li><strong>Chemical spills:</strong> contain immediately; report to CalOES (911) if quantity exceeds reportable threshold</li>
+      <li><strong>Asbestos:</strong> stop work and notify AHJ if discovered unexpectedly; requires licensed abatement contractor</li>
+      <li><strong>Lead service lines:</strong> replacement required in many jurisdictions; consult local water authority</li>
+    </ul>
+    <div class="formula-box">
+      Confined Space Classification:<br>
+      • Non-permit: large enough to enter, limited egress, not designed for continuous occupancy<br>
+      • Permit-required: above PLUS one of: hazardous atmosphere, engulfment risk, internal configuration hazard, or other recognized serious safety hazard
+    </div>
+    <div class="warn-box">Never enter a permit-required confined space without a written permit, trained attendant, retrieval equipment, and atmospheric testing. This is a life-safety requirement — and a tested exam topic.</div>
+  </div>
+
+  <div class="study-block">
+    <h4>🔥 Torch Safety &amp; Soldering</h4>
+    <ul>
+      <li>Use lead-free solder on all potable water systems (tin-antimony, tin-silver, or equivalent)</li>
+      <li>Wrap flammable material with a fire-retardant shield (soldering pad) when working near framing</li>
+      <li>Ensure fire extinguisher (Class B for solvent fires, Class ABC for general) is within reach</li>
+      <li>Propane torches: never use in confined space without ventilation — asphyxiation risk from CO</li>
+    </ul>
+    <p><span class="code-ref orange">Cal/OSHA § 8395</span> — Welding and cutting safety requirements.</p>
+    <div class="tip-box">Lead-free solder melts at a higher temperature than lead solder. Use a proper flux and more heat — but don't overheat copper; it will oxidize and the solder won't flow correctly.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ QUIZ ═══════════════ -->
+<div id="tab-quiz" class="tab-panel">
+  <div class="section-tag">🧠 INTERACTIVE PRACTICE EXAM</div>
+  <div class="section-title">Practice Quiz</div>
+  <p class="section-sub">Real-style questions matching actual CSLB exam format — 4 choices, one best answer. Explanations with code references after each answer.</p>
+
+  <div class="quiz-header">
+    <div class="quiz-meta">
+      <div class="quiz-pill">Section: <b id="q-section-display">All</b></div>
+      <div class="quiz-pill">Question: <b id="q-current">1</b> / <b id="q-total">25</b></div>
+      <div class="quiz-pill">Score: <b id="q-score">0</b> correct</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-secondary" onclick="resetQuiz()">↺ Restart</button>
+      <button class="btn btn-primary" id="submit-btn" onclick="submitAnswer()" disabled>Check Answer</button>
+      <button class="btn btn-success" id="next-btn" onclick="nextQuestion()" style="display:none;">Next →</button>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All Sections</button>
+    <button class="filter-btn" onclick="setFilter('planning',this)">Planning &amp; Estimating</button>
+    <button class="filter-btn" onclick="setFilter('underground',this)">Underground &amp; Rough</button>
+    <button class="filter-btn" onclick="setFilter('finish',this)">Finish Plumbing</button>
+    <button class="filter-btn" onclick="setFilter('repair',this)">Service &amp; Repair</button>
+    <button class="filter-btn" onclick="setFilter('safety',this)">Safety</button>
+    <button class="filter-btn" onclick="setFilter('math',this)">⚡ Math Only</button>
+  </div>
+
+  <div id="quiz-area"></div>
+  <div id="score-panel">
+    <div class="score-circle" id="score-circle-el">
+      <div class="score-pct" id="final-pct">0%</div>
+      <div class="score-label">Score</div>
+    </div>
+    <h2 id="score-verdict" style="font-family:'Bebas Neue',sans-serif;font-size:32px;margin-bottom:8px;"></h2>
+    <p id="score-msg" style="color:var(--text2);font-size:14px;margin-bottom:20px;"></p>
+    <div class="score-breakdown">
+      <div class="score-stat"><div class="val" id="s-correct">0</div><div class="lbl">Correct</div></div>
+      <div class="score-stat"><div class="val" id="s-wrong">0</div><div class="lbl">Wrong</div></div>
+      <div class="score-stat"><div class="val" id="s-total">0</div><div class="lbl">Total</div></div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="resetQuiz()">↺ Try Again</button>
+      <button class="btn btn-secondary" onclick="showTab('study1',document.querySelectorAll('.tab-btn')[2])">📚 Review Study Material</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FLASHCARDS ═══════════════ -->
+<div id="tab-flashcards" class="tab-panel">
+  <div class="section-tag">🃏 FLASHCARD DRILL</div>
+  <div class="section-title">Flashcards</div>
+  <p class="section-sub">Click the card to flip and reveal the answer. Use the arrows to move between cards. Great for memorizing code numbers, fixture units, and key rules.</p>
+
+  <div class="flashcard-container" id="fc-container">
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="flashcard-face">
+        <div class="face-label">QUESTION — Click to flip</div>
+        <div class="fc-q" id="fc-question"></div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div class="face-label">ANSWER</div>
+        <div class="fc-a" id="fc-answer"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fc-nav">
+    <button class="btn btn-secondary" onclick="fcNav(-1)">← Prev</button>
+    <div class="fc-counter"><span id="fc-current">1</span> / <span id="fc-total">30</span></div>
+    <button class="btn btn-secondary" onclick="fcNav(1)">Next →</button>
+    <button class="btn btn-orange" onclick="shuffleCards()" style="margin-left:12px;">🔀 Shuffle</button>
+  </div>
+
+  <div class="card" style="margin-top:28px;">
+    <h3>📋 All Flashcards at a Glance</h3>
+    <p style="margin-bottom:16px;">Quick-reference list — all terms and answers:</p>
+    <div id="fc-list"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ MATH & FORMULAS ═══════════════ -->
+<div id="tab-math" class="tab-panel">
+  <div class="section-tag">🔢 MATH, FORMULAS &amp; CALCULATORS</div>
+  <div class="section-title">Math &amp; Formulas</div>
+  <p class="section-sub">Interactive calculators for the most common plumbing math problems on the C-36 exam. All formulas shown with step-by-step work.</p>
+
+  <div class="calc-block">
+    <h4>📐 Drain Slope Calculator</h4>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:4px;"><span class="code-ref">Formula: Drop = Length × Slope</span> — Pipes 3" and under: use ¼"/ft slope. Pipes 4" and over: use ⅛"/ft slope.</p>
+    <div class="calc-inputs">
+      <div><label>Pipe Length (ft)</label><input type="number" id="slope-length" placeholder="e.g. 20" oninput="calcSlope()"></div>
+      <div><label>Slope (inches/ft)</label><input type="number" id="slope-rate" placeholder="0.25 or 0.125" step="0.125" oninput="calcSlope()"></div>
+    </div>
+    <div class="calc-result" id="slope-result">Enter values above to calculate drop</div>
+  </div>
+
+  <div class="calc-block">
+    <h4>💰 Job Cost Estimator</h4>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:4px;"><span class="code-ref">Formula: Total = Materials + (Hours × Rate) + (Days × Equipment Rate)</span></p>
+    <div class="calc-inputs">
+      <div><label>Materials ($)</label><input type="number" id="cost-mat" placeholder="e.g. 1200" oninput="calcCost()"></div>
+      <div><label>Labor Hours</label><input type="number" id="cost-hrs" placeholder="e.g. 32" oninput="calcCost()"></div>
+      <div><label>Hourly Rate ($)</label><input type="number" id="cost-rate" placeholder="e.g. 85" oninput="calcCost()"></div>
+      <div><label>Equipment Days</label><input type="number" id="cost-eqdays" placeholder="e.g. 4" oninput="calcCost()"></div>
+      <div><label>Equipment $/Day</label><input type="number" id="cost-eqrate" placeholder="e.g. 400" oninput="calcCost()"></div>
+      <div><label>Overhead %</label><input type="number" id="cost-overhead" placeholder="e.g. 15" oninput="calcCost()"></div>
+    </div>
+    <div class="calc-result" id="cost-result">Enter values to calculate total job cost</div>
+  </div>
+
+  <div class="calc-block">
+    <h4>🚽 DFU (Drainage Fixture Unit) Counter</h4>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:4px;"><span class="code-ref">CPC Table 7-3</span> — Total DFU determines minimum drain pipe size.</p>
+    <div id="dfu-inputs" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0;"></div>
+    <div class="calc-result" id="dfu-result">Enter fixture counts above</div>
+    <div style="margin-top:12px;font-size:13px;color:var(--text2);">
+      <b style="color:var(--text);">Minimum Drain Pipe Size by DFU (CPC Table 7-5):</b><br>
+      ≤1 DFU → 1¼" &nbsp;|&nbsp; ≤3 DFU → 1½" &nbsp;|&nbsp; ≤6 DFU → 2" &nbsp;|&nbsp; ≤12 DFU → 2½" &nbsp;|&nbsp; ≤20 DFU → 3" &nbsp;|&nbsp; ≤160 DFU → 4" &nbsp;|&nbsp; ≤360 DFU → 6"
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📊 Essential Formula Sheet</h3>
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <div class="formula-box">
+          DRAIN SLOPE:<br>
+          Drop (in) = Length (ft) × Slope (in/ft)<br>
+          Standard: ¼"/ft for ≤3" pipe<br>
+          Standard: ⅛"/ft for ≥4" pipe
+        </div>
+        <div class="formula-box">
+          WATER HAMMER ARRESTOR SIZING:<br>
+          Based on WSFU demand at fixture group<br>
+          Refer to PDI Standard WH-201 Table
+        </div>
+        <div class="formula-box">
+          PRESSURE LOSS IN PIPE:<br>
+          Use Hazen-Williams or friction loss tables<br>
+          For exam: know that longer pipe = more loss<br>
+          Smaller pipe diameter = more friction loss
+        </div>
+      </div>
+      <div>
+        <div class="formula-box">
+          JOB COST:<br>
+          Total = Mat + Labor + Equipment + Overhead<br>
+          Labor = Hours × Hourly Rate<br>
+          Equipment = Days × Daily Rate<br>
+          Overhead = (Mat + Labor + Equip) × %
+        </div>
+        <div class="formula-box">
+          VOLUME OF PIPE (gallons):<br>
+          V = π × r² × L ÷ 231<br>
+          (r in inches, L in inches)<br>
+          Or use: 1" pipe ≈ 0.04 gal/ft<br>
+               2" pipe ≈ 0.16 gal/ft<br>
+               4" pipe ≈ 0.65 gal/ft
+        </div>
+        <div class="formula-box">
+          FLOW RATE (GPM):<br>
+          GPM = Volume (gal) ÷ Time (min)<br>
+          For grease interceptors:<br>
+          GPM = Fixture Cap (gal) ÷ Drain Time (min) × Factor
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CODE REFERENCE ═══════════════ -->
+<div id="tab-reference" class="tab-panel">
+  <div class="section-tag">📚 CODE REFERENCE TABLES</div>
+  <div class="section-title">Quick Code Reference</div>
+  <p class="section-sub">Key code sections, fixture values, and sizing tables. Memorize these — you can't bring books into the exam.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Fixture</th><th>DFU (Private)</th><th>DFU (Public)</th><th>Trap Size</th><th>CPC Reference</th></tr></thead>
+      <tbody>
+        <tr><td>Lavatory (sink)</td><td>1</td><td>2</td><td>1¼"</td><td>Table 7-3</td></tr>
+        <tr><td>Bathtub</td><td>2</td><td>2</td><td>1½"</td><td>Table 7-3</td></tr>
+        <tr><td>Shower (single head)</td><td>2</td><td>2</td><td>2"</td><td>Table 7-3</td></tr>
+        <tr><td>Water Closet (toilet)</td><td>4</td><td>6</td><td>3" (integral)</td><td>Table 7-3</td></tr>
+        <tr><td>Kitchen Sink (residential)</td><td>2</td><td>4</td><td>1½"</td><td>Table 7-3</td></tr>
+        <tr><td>Dishwasher</td><td>2</td><td>2</td><td>via sink</td><td>Table 7-3</td></tr>
+        <tr><td>Washing Machine</td><td>2</td><td>2</td><td>2"</td><td>Table 7-3</td></tr>
+        <tr><td>Floor Drain</td><td>2</td><td>2</td><td>2"</td><td>Table 7-3</td></tr>
+        <tr><td>Urinal (wall hung)</td><td>4</td><td>4</td><td>2"</td><td>Table 7-3</td></tr>
+        <tr><td>Slop Sink / Mop Sink</td><td>3</td><td>3</td><td>3"</td><td>Table 7-3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Total DFU</th><th>Min Drain Pipe Diameter</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>1 DFU</td><td>1¼"</td><td>Lavatory only</td></tr>
+        <tr><td>Up to 3 DFU</td><td>1½"</td><td>Small branch</td></tr>
+        <tr><td>Up to 6 DFU</td><td>2"</td><td>Common branch</td></tr>
+        <tr><td>Up to 12 DFU</td><td>2½"</td><td>Larger branch</td></tr>
+        <tr><td>Up to 20 DFU</td><td>3"</td><td>Stack or branch</td></tr>
+        <tr><td>Up to 160 DFU</td><td>4"</td><td>Building drain / sewer</td></tr>
+        <tr><td>Up to 360 DFU</td><td>6"</td><td>Large commercial</td></tr>
+        <tr><td>Up to 620 DFU</td><td>8"</td><td>Very large commercial</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Code / Standard</th><th>Topic Covered</th><th>Exam Relevance</th></tr></thead>
+      <tbody>
+        <tr><td>2022 CPC Chapter 4</td><td>Fixtures &amp; fittings</td><td>High — finish plumbing</td></tr>
+        <tr><td>2022 CPC Chapter 6</td><td>Water supply, backflow prevention</td><td>High — cross-connection</td></tr>
+        <tr><td>2022 CPC Chapter 7</td><td>Drainage systems, DFU sizing</td><td>Very High — math questions</td></tr>
+        <tr><td>2022 CPC Chapter 9</td><td>Venting systems</td><td>Very High — vent sizing</td></tr>
+        <tr><td>2022 CPC Chapter 12</td><td>Fuel gas piping</td><td>High — gas test pressures</td></tr>
+        <tr><td>2022 CPC § 501–508</td><td>Water heaters, T&P valve</td><td>High — safety questions</td></tr>
+        <tr><td>CALGreen § 4.303</td><td>Water conservation / flow rates</td><td>Medium — GPM/GPF limits</td></tr>
+        <tr><td>Cal/OSHA Title 8 § 1541</td><td>Excavation &amp; trenching</td><td>High — safety section</td></tr>
+        <tr><td>Cal/OSHA Title 8 § 5157</td><td>Confined spaces</td><td>High — safety section</td></tr>
+        <tr><td>Cal/OSHA Title 8 § 3314</td><td>Lockout/Tagout</td><td>Medium</td></tr>
+        <tr><td>CA Govt Code § 4216</td><td>Underground Dig Alert / 811</td><td>High — excavation</td></tr>
+        <tr><td>CA B&P Code § 7028</td><td>Unlicensed contracting violation</td><td>Medium — Law &amp; Business</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Test Type</th><th>Pressure</th><th>Duration</th><th>Code</th></tr></thead>
+      <tbody>
+        <tr><td>DWV — Water Test</td><td>Fill to highest point</td><td>15 minutes</td><td>CPC § 723.0</td></tr>
+        <tr><td>DWV — Air Test</td><td>5 psi (max 6 psi)</td><td>15 minutes</td><td>CPC § 723.0</td></tr>
+        <tr><td>Water Supply</td><td>100 psi or 1.5× working pressure</td><td>15 minutes</td><td>CPC § 609.4</td></tr>
+        <tr><td>Gas Piping</td><td>1.5× working or 3 psi min</td><td>10 minutes</td><td>CPC § 1215</td></tr>
+        <tr><td>Shower Pan</td><td>Water fill (2" above threshold)</td><td>24 hours</td><td>CPC § 408.8</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════ STUDY PLAN ═══════════════ -->
+<div id="tab-plan" class="tab-panel">
+  <div class="section-tag">📅 10-WEEK STUDY PLAN</div>
+  <div class="section-title">Your Road to Passing</div>
+  <p class="section-sub">A structured 10-week plan designed around the exam's section weights. Follow this plan to be fully prepared by exam day. Adjust the pace if you have 2 months — compress Weeks 1–8 slightly.</p>
+
+  <div class="card" style="margin-bottom:28px;">
+    <h3>📊 Weekly Study Time Recommendation</h3>
+    <div class="formula-box" style="margin-top:10px;">
+      Minimum: 8–10 hours/week (1.5 hr weekdays + 2 hrs each weekend day)<br>
+      Optimal: 12–15 hours/week (2 hrs weekdays + 3 hrs each weekend day)<br>
+      Goal: Score 80%+ on practice quizzes before test day (passing is 70%)
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 1–2</div>
+      <div class="tl-title" style="color:var(--blue-light);">📐 Section 1: Planning &amp; Estimating + Exam Orientation</div>
+      <div class="tl-body">
+        <b>Goals:</b> Understand the exam format. Master pipe sizing (DFU), venting rules, and cost estimation formulas.<br><br>
+        <b>Daily tasks:</b> Read CPC Chapter 7 (drainage) and Chapter 9 (venting). Work through all Planning &amp; Estimating study notes above. Do the DFU calculator until you can size a 3-bathroom house from memory. Practice 20 math problems per day.<br><br>
+        <b>Quiz target:</b> Score 70%+ on Planning section quizzes before moving on.<br><br>
+        <b>Flashcards:</b> All DFU values, trap sizes, vent distances. Drill until automatic.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 3–4</div>
+      <div class="tl-title" style="color:var(--orange-light);">⛏ Section 2: Underground &amp; Rough Systems</div>
+      <div class="tl-body">
+        <b>Goals:</b> Master excavation safety (soil types, shoring), underground pipe installation, slope calculations, fuel gas testing, and system pressure tests.<br><br>
+        <b>Daily tasks:</b> Study Cal/OSHA Title 8 § 1541 (excavations). Memorize trench sloping angles for soil types A, B, C. Practice slope calculations (Drop = Length × Slope). Review gas piping materials (CSST bonding requirement).<br><br>
+        <b>Quiz target:</b> Score 70%+ on Underground section. Focus on test pressures and durations — these are guaranteed exam questions.<br><br>
+        <b>Flashcards:</b> Test pressures, soil type angles, 811 call requirements, pipe bedding rules.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 5–6</div>
+      <div class="tl-title" style="color:var(--green-light);">🚿 Sections 3 &amp; 4: Finish Plumbing + Service &amp; Repair</div>
+      <div class="tl-body">
+        <b>Goals:</b> Know water heater code cold (seismic strapping, T&P valve, expansion tank). Know all backflow device types. Be able to diagnose plumbing problems and choose the right pipe repair method.<br><br>
+        <b>Daily tasks:</b> Study CPC § 501–508 (water heaters). Review all backflow preventer types and when each is required. Study repair methods by pipe material. Practice troubleshooting scenario questions.<br><br>
+        <b>Quiz target:</b> Score 75%+ on combined Finish + Service sections.<br><br>
+        <b>Flashcards:</b> Water heater code points, backflow types (AVB, PVB, DCVA, RPZ), pipe joining methods by material.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEK 7</div>
+      <div class="tl-title" style="color:var(--yellow);">🦺 Section 5: Safety + Water Conservation</div>
+      <div class="tl-body">
+        <b>Goals:</b> Master confined space rules (permit vs. non-permit), fall protection heights, LOTO procedure, PPE requirements, and CALGreen flow rate limits.<br><br>
+        <b>Daily tasks:</b> Study Cal/OSHA § 5157 (confined spaces). Memorize CALGreen flow rates (showerhead: 1.8 GPM, WC: 1.28 GPF, etc.). Study disposal rules for lead, asbestos, refrigerants. Practice safety scenario questions — they are straightforward if you know the rules.<br><br>
+        <b>Quiz target:</b> Score 80%+ on Safety section — it's the most formula-free and should be your highest-scoring section.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEKS 8–9</div>
+      <div class="tl-title" style="color:#e040fb;">🧠 Full Practice Exams + Weak Area Review</div>
+      <div class="tl-body">
+        <b>Goals:</b> Simulate real exam conditions. Identify weak areas and drill them.<br><br>
+        <b>Daily tasks:</b> Take one full 25-question mixed quiz per day under timed conditions (no notes). Review every wrong answer — understand WHY it's wrong, not just what the right answer is. Spend extra time on any section where you score below 70%. Go back through flashcards daily.<br><br>
+        <b>Target:</b> Score 80%+ consistently on mixed quizzes before exam day. If you're hitting 75–80%, you're on track.
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-week">WEEK 10 — EXAM WEEK</div>
+      <div class="tl-title" style="color:var(--blue-light);">✅ Final Review + Exam Day</div>
+      <div class="tl-body">
+        <b>Monday–Wednesday:</b> Light review only — go through all flashcards once, review your formula sheet, and do one short 15-question quiz per day. No heavy cramming.<br><br>
+        <b>Thursday:</b> Rest day. Light walk through code reference tables. Good sleep is more valuable than 2 more hours of study.<br><br>
+        <b>Exam Day:</b> Arrive early. Bring government-issued photo ID. The calculator is provided. Read each question fully — CSLB tests for the BEST answer, and distractor options are designed to trick you if you read too fast. Flag and skip hard questions; come back at the end. No penalty for guessing — fill in every answer.<br><br>
+        <div class="tip-box" style="margin-top:8px;">Trust your preparation. If you followed this plan, you're ready. Most questions will feel familiar. The ones that don't — use the process of elimination to get to 2 choices, then pick the safer/more conservative code answer.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:28px;">
+    <h3>📌 What Else You'll Need</h3>
+    <div class="grid-2" style="margin-top:14px;">
+      <div>
+        <h4 style="color:var(--blue-light);margin-bottom:10px;">Two Exams Required</h4>
+        <p style="font-size:13.5px;color:var(--text2);line-height:1.8;">To get your C-36 license you must pass TWO exams:<br>1. <b>The C-36 Trade Exam</b> (this course covers this)<br>2. <b>The Law &amp; Business Exam</b> (general contractor laws, CSLB regulations, business practices)<br><br>Study the Law &amp; Business exam separately — it covers contracting laws, lien rights, insurance, workers' comp, and CSLB regulations.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--orange-light);margin-bottom:10px;">Requirements Checklist</h4>
+        <ul style="font-size:13.5px;color:var(--text2);line-height:2.2;list-style:none;padding:0;">
+          <li>☐ 4 years plumbing experience (last 10 years)</li>
+          <li>☐ Application Form 13A-1 submitted to CSLB</li>
+          <li>☐ $450 application fee paid</li>
+          <li>☐ $15,000 contractor bond on file</li>
+          <li>☐ Workers' comp insurance (if you have employees)</li>
+          <li>☐ Pass Trade Exam (this course)</li>
+          <li>☐ Pass Law &amp; Business Exam</li>
+          <li>☐ Receive C-36 license from CSLB</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ═══════════════════════════════════════════
+// QUESTION BANK — 30 real-style questions
+// ═══════════════════════════════════════════
+const allQuestions = [
+  {
+    id:1, section:'finish', difficulty:'medium',
+    sectionLabel:'Finish Plumbing',
+    text:'What type of fitting should a contractor use to install a wall-mounted water closet?',
+    options:['A hubless closet ring','An approved spud fitting','An approved closet flange','An approved carrier fitting'],
+    answer:3,
+    explanation:'A wall-mounted (wall-hung) water closet requires an approved carrier fitting — a structural support inside the wall that bears the weight of the fixture and the user. A closet flange is used for floor-mounted toilets. This is an official CSLB sample question.',
+    codeRef:'2022 CPC § 402.5 — Carrier fittings for wall-hung fixtures'
+  },
+  {
+    id:2, section:'planning', difficulty:'medium',
+    sectionLabel:'Planning & Estimating',
+    text:'What is the total charge for four 8-hour days\' use of a backhoe, if the rental cost is $400 per day and the operator cost is $70 per hour?',
+    options:['$5,440','$3,840','$2,640','$2,160'],
+    answer:1,
+    explanation:'Rental: $400 × 4 days = $1,600. Operator: $70/hr × 8 hrs × 4 days = $2,240. Total = $1,600 + $2,240 = $3,840. This is an official CSLB sample question — always separate equipment and labor costs.',
+    codeRef:'CSLB Sample Question — Cost Estimation',
+    ismath:true
+  },
+  {
+    id:3, section:'finish', difficulty:'easy',
+    sectionLabel:'Finish Plumbing',
+    text:'When installing a water filtration system for domestic use, what is commonly used for taste and odor control?',
+    options:['Lime','Carbon','Nitrogen','Copper sulphate'],
+    answer:1,
+    explanation:'Activated carbon (charcoal) filters are the standard solution for taste and odor control in domestic water filtration. Lime is used for pH adjustment; nitrogen is not a filter media; copper sulphate treats algae but not for potable water. This is an official CSLB sample question.',
+    codeRef:'2022 CPC § 611 — Water treatment devices'
+  },
+  {
+    id:4, section:'planning', difficulty:'hard',
+    sectionLabel:'Planning & Estimating',
+    text:'A residential bathroom has one lavatory, one bathtub, and one water closet (private use). What is the total Drainage Fixture Unit (DFU) count for this bathroom?',
+    options:['5 DFU','6 DFU','7 DFU','8 DFU'],
+    answer:2,
+    explanation:'Lavatory: 1 DFU + Bathtub: 2 DFU + Water Closet (private): 4 DFU = 7 DFU total. Memorize fixture unit values from CPC Table 7-3 — these appear as direct calculation questions on the exam.',
+    codeRef:'2022 CPC Table 7-3 — Drainage fixture unit values',
+    ismath:true
+  },
+  {
+    id:5, section:'underground', difficulty:'medium',
+    sectionLabel:'Underground & Rough',
+    text:'What is the minimum slope required for a 4-inch underground drain pipe?',
+    options:['¼ inch per foot','⅛ inch per foot','½ inch per foot','1 inch per foot'],
+    answer:1,
+    explanation:'Per the California Plumbing Code, drain pipes 4 inches and larger require a minimum slope of ⅛ inch per foot (approximately 1%). Pipes 3 inches and smaller require ¼ inch per foot. Insufficient slope leads to sediment buildup and blockages.',
+    codeRef:'2022 CPC § 708.0 — Drainage pipe grades'
+  },
+  {
+    id:6, section:'safety', difficulty:'easy',
+    sectionLabel:'Safety',
+    text:'According to Cal/OSHA, at what minimum depth does a trench require a protective system such as shoring, sloping, or a trench shield?',
+    options:['3 feet','4 feet','5 feet','6 feet'],
+    answer:2,
+    explanation:'Cal/OSHA Title 8 § 1541 requires that any trench 5 feet or deeper must have a protective system installed (sloping, shoring, or shielding). Trenches less than 5 feet may also require protection if a competent person determines the soil is unstable.',
+    codeRef:'Cal/OSHA Title 8 § 1541.1 — Excavation protective systems'
+  },
+  {
+    id:7, section:'safety', difficulty:'medium',
+    sectionLabel:'Safety',
+    text:'How far in advance must contractors notify Underground Service Alert (Dig Alert) before beginning excavation work in California?',
+    options:['24 hours','2 working days','5 working days','1 week'],
+    answer:1,
+    explanation:'California Government Code § 4216 requires notification to Underground Service Alert (call 811) at least 2 working days before beginning any excavation. This allows utility companies to mark underground lines and prevent accidental strikes.',
+    codeRef:'CA Govt Code § 4216 — Underground utility notification'
+  },
+  {
+    id:8, section:'finish', difficulty:'medium',
+    sectionLabel:'Finish Plumbing',
+    text:'California seismic code requires water heaters to be strapped to the wall. How many straps are required, and where must they be located?',
+    options:['One strap in the upper third of the tank','Two straps — upper third and lower third of the tank','One strap around the middle of the tank','Two straps — both in the upper half of the tank'],
+    answer:1,
+    explanation:'California requires two seismic straps on all water heaters: one in the upper third and one in the lower third of the tank. This is a California-specific requirement to prevent water heaters from tipping during earthquakes, which can rupture gas lines.',
+    codeRef:'2022 CPC § 507.0 — Water heater seismic strapping'
+  },
+  {
+    id:9, section:'underground', difficulty:'medium',
+    sectionLabel:'Underground & Rough',
+    text:'What is the minimum test pressure for a new gas piping system prior to cover, according to the California Plumbing Code?',
+    options:['5 psi for 15 minutes','1.5 times working pressure or 3 psi, whichever is greater, for 10 minutes','100 psi for 10 minutes','3 psi for 5 minutes'],
+    answer:1,
+    explanation:'Gas piping must be tested at 1.5 times the working pressure OR a minimum of 3 psi, whichever is greater, and held for a minimum of 10 minutes with no pressure drop. This test must be performed before any pipe is concealed.',
+    codeRef:'2022 CPC § 1215.2 — Gas piping pressure testing'
+  },
+  {
+    id:10, section:'repair', difficulty:'easy',
+    sectionLabel:'Service & Repair',
+    text:'A homeowner complains that all the drains in their house are draining slowly and there is a gurgling sound. What is the MOST likely cause?',
+    options:['A grease blockage in the main sewer line','Inadequate venting — negative pressure in the DWV system','The water pressure is too high','The P-traps are evaporating'],
+    answer:1,
+    explanation:'Gurgling from multiple fixtures simultaneously is a classic sign of inadequate venting. When drains run, they create negative pressure in the pipes. Without proper venting, this negative pressure pulls air through the water in trap seals, creating a gurgling sound. A single clog would typically affect one fixture.',
+    codeRef:'2022 CPC Chapter 9 — Venting systems'
+  },
+  {
+    id:11, section:'finish', difficulty:'hard',
+    sectionLabel:'Finish Plumbing',
+    text:'What is the maximum water flow rate allowed for a residential showerhead in California under CALGreen standards?',
+    options:['2.5 GPM at 80 psi','2.0 GPM at 60 psi','1.8 GPM at 80 psi','1.5 GPM at 60 psi'],
+    answer:2,
+    explanation:'California\'s Green Building Standards Code (CALGreen) limits residential showerheads to a maximum of 1.8 GPM at 80 psi (effective for permits after 2018). This is stricter than the federal standard of 2.5 GPM. Water conservation is a tested exam topic.',
+    codeRef:'CALGreen § 4.303.1 — Residential indoor water use'
+  },
+  {
+    id:12, section:'planning', difficulty:'hard',
+    sectionLabel:'Planning & Estimating',
+    text:'A 4-inch building drain is sized to serve multiple fixtures. According to the CPC, what is the maximum number of Drainage Fixture Units that a 4-inch horizontal drain pipe can handle?',
+    options:['60 DFU','100 DFU','160 DFU','200 DFU'],
+    answer:2,
+    explanation:'Per CPC Table 7-5, a 4-inch horizontal drain pipe can handle a maximum of 160 DFU. This is a critical number to memorize. Below this: 3" handles 20 DFU, 2" handles 6 DFU. Above this: 6" handles 360 DFU.',
+    codeRef:'2022 CPC Table 7-5 — Horizontal fixture branch and stack sizing',
+    ismath:true
+  },
+  {
+    id:13, section:'safety', difficulty:'medium',
+    sectionLabel:'Safety',
+    text:'Before a worker enters a manhole to inspect an underground sewer connection, what classification must the competent person assign if methane gas may be present?',
+    options:['A non-permit confined space — no special requirements','A permit-required confined space — written permit, attendant, and testing required','A restricted-entry zone — hard hat and gloves only','A hazardous materials area — EPA permits required'],
+    answer:1,
+    explanation:'A manhole with the potential for hazardous atmosphere (such as methane or hydrogen sulfide) is a permit-required confined space under Cal/OSHA § 5157. This requires: a written entry permit, an outside attendant, atmospheric testing, retrieval equipment, and trained entrants. Failure to follow these rules is a life-safety violation.',
+    codeRef:'Cal/OSHA Title 8 § 5157 — Permit-required confined spaces'
+  },
+  {
+    id:14, section:'repair', difficulty:'medium',
+    sectionLabel:'Service & Repair',
+    text:'A contractor is repairing a copper water supply line. Which joining method is NOT acceptable for potable water copper pipe in California?',
+    options:['Lead-free solder (sweat joint)','Compression fitting','Push-fit connector (SharkBite-type)','Lead-based solder'],
+    answer:3,
+    explanation:'Lead-based solder has been prohibited on potable water systems since 1988 under the federal Safe Drinking Water Act, adopted by California. All solder used on drinking water copper pipe must be lead-free (e.g., 95/5 tin-antimony or silver-bearing alloys). The other options are all code-approved methods.',
+    codeRef:'2022 CPC § 604.1 — Lead-free requirements for potable water'
+  },
+  {
+    id:15, section:'underground', difficulty:'medium',
+    sectionLabel:'Underground & Rough',
+    text:'When installing CSST (corrugated stainless steel tubing) for a natural gas system, what additional installation step is required beyond what\'s needed for black iron pipe?',
+    options:['CSST must be painted yellow for identification','CSST must be electrically bonded to the grounding system','CSST requires pressure testing at twice the normal rate','CSST must be installed inside a conduit when exposed'],
+    answer:1,
+    explanation:'CSST must be bonded to the building\'s electrical grounding system per both the CPC and NEC 250.104(B). This is because CSST is vulnerable to arcing damage from nearby lightning strikes. The bonding conductor must be ½" or larger copper. This is NOT required for black iron pipe.',
+    codeRef:'2022 CPC § 1211.1.2 — CSST bonding requirements'
+  },
+  {
+    id:16, section:'finish', difficulty:'hard',
+    sectionLabel:'Finish Plumbing',
+    text:'When is a thermal expansion tank required on a domestic water heater installation?',
+    options:['Only when the water heater is larger than 75 gallons','When a check valve or pressure reducing valve creates a closed water system','When the water pressure exceeds 60 psi','Whenever a gas water heater is installed in a garage'],
+    answer:1,
+    explanation:'A thermal expansion tank is required when the water supply system is "closed" — meaning a check valve, PRV (pressure reducing valve), or backflow preventer prevents expanded hot water from flowing back into the supply main. Without an expansion tank, thermal expansion causes pressure spikes that can damage the T&P valve and pipes.',
+    codeRef:'2022 CPC § 608.3 — Thermal expansion control'
+  },
+  {
+    id:17, section:'planning', difficulty:'medium',
+    sectionLabel:'Planning & Estimating',
+    text:'A contractor is calculating the total drainage load for a small commercial restroom with 2 wall-hung urinals, 3 public water closets, and 2 public lavatories. What is the total DFU count?',
+    options:['24 DFU','28 DFU','32 DFU','30 DFU'],
+    answer:3,
+    explanation:'Urinals: 2 × 4 = 8 DFU. Public WC: 3 × 6 = 18 DFU. Public Lavatories: 2 × 2 = 4 DFU. Total: 8 + 18 + 4 = 30 DFU. Use public-use fixture unit values for any restroom open to the public. A 4" drain (max 160 DFU) would easily handle this.',
+    codeRef:'2022 CPC Table 7-3 — Public use fixture unit values',
+    ismath:true
+  },
+  {
+    id:18, section:'repair', difficulty:'easy',
+    sectionLabel:'Service & Repair',
+    text:'A homeowner reports a strong smell of rotten eggs near a bathroom fixture that has not been used for several months. What is the MOST likely cause?',
+    options:['A cracked drain pipe behind the wall','A faulty wax ring under the toilet','An evaporated P-trap allowing sewer gas to enter the room','The water heater anode rod needs replacement'],
+    answer:2,
+    explanation:'When a P-trap dries out from infrequent use, the water seal evaporates, allowing sewer gases (including hydrogen sulfide, which smells like rotten eggs) to enter the room. The cure is simple: pour water into the drain to refill the trap. Add a small amount of mineral oil to slow future evaporation in rarely-used fixtures.',
+    codeRef:'2022 CPC § 1002.0 — Trap requirements and maintenance'
+  },
+  {
+    id:19, section:'safety', difficulty:'medium',
+    sectionLabel:'Safety',
+    text:'According to Cal/OSHA, at what noise level (8-hour TWA) must an employer provide hearing protection to workers?',
+    options:['75 dB','80 dB','85 dB','90 dB'],
+    answer:2,
+    explanation:'Cal/OSHA requires hearing protection to be provided (and a hearing conservation program implemented) when workers are exposed to noise at or above 85 dB as an 8-hour time-weighted average (TWA). Exposure above 90 dB TWA requires mandatory use of hearing protection — not just provision.',
+    codeRef:'Cal/OSHA Title 8 § 5097 — Hearing conservation'
+  },
+  {
+    id:20, section:'underground', difficulty:'hard',
+    sectionLabel:'Underground & Rough',
+    text:'A 20-foot run of 2-inch drain pipe must be installed at proper slope. What is the total vertical drop required?',
+    options:['2.5 inches','5 inches','2.0 inches','10 inches'],
+    answer:1,
+    explanation:'For 2-inch pipe (3" and smaller), the minimum slope is ¼ inch per foot. Drop = Length × Slope = 20 ft × 0.25 in/ft = 5 inches total drop. The pipe inlet would be 5 inches higher than the pipe outlet. This is a straightforward calculation exam question.',
+    codeRef:'2022 CPC § 708.0 — Minimum pipe slope',
+    ismath:true
+  },
+  {
+    id:21, section:'finish', difficulty:'medium',
+    sectionLabel:'Finish Plumbing',
+    text:'What is the minimum clearance required in front of a water closet (toilet) in a residential bathroom per the California Plumbing Code?',
+    options:['18 inches','21 inches','24 inches','30 inches'],
+    answer:1,
+    explanation:'The CPC requires a minimum of 21 inches of clear space in front of a water closet (measured from the front of the fixture to any obstruction). The minimum side clearance is 15 inches from centerline to any wall or obstruction. ADA/accessible requirements are more generous (60" turning radius, 18" side clearance).',
+    codeRef:'2022 CPC § 402.5 — Water closet clearances'
+  },
+  {
+    id:22, section:'repair', difficulty:'hard',
+    sectionLabel:'Service & Repair',
+    text:'A contractor discovers asbestos pipe insulation while working on an older building\'s plumbing system. What is the correct action?',
+    options:['Remove the asbestos carefully using standard PPE and continue work','Stop all work immediately, notify the building owner and AHJ, and only remove through a licensed asbestos abatement contractor','Wet the asbestos, wrap it in plastic, dispose in a dumpster, and continue','Apply new insulation over the existing asbestos and seal it'],
+    answer:1,
+    explanation:'Upon discovering asbestos-containing materials, all work must stop immediately. The building owner and Authority Having Jurisdiction (AHJ) must be notified. Asbestos removal requires a California-licensed asbestos abatement contractor following OSHA 29 CFR 1926.1101 and Cal/OSHA Title 8 § 1529. Even small disturbances can release deadly fibers.',
+    codeRef:'Cal/OSHA Title 8 § 1529 — Asbestos in construction'
+  },
+  {
+    id:23, section:'planning', difficulty:'medium',
+    sectionLabel:'Planning & Estimating',
+    text:'Which of the following is an Air Admittance Valve (AAV) allowed to serve as a vent for, under the California Plumbing Code?',
+    options:['The main building vent stack — it can replace a traditional vent stack','An island sink or isolated fixture that cannot be conventionally vented, where accessible','Any fixture in the building as a substitute for conventional venting','Outdoor fixtures only'],
+    answer:1,
+    explanation:'Air Admittance Valves (AAVs) are permitted under the CPC for isolated fixtures (such as island sinks) that cannot be conventionally vented and where accessibility is maintained. AAVs are one-way valves that open under negative pressure to admit air. They are NOT permitted as a substitute for the main vent stack or for outdoor use.',
+    codeRef:'2022 CPC § 906.0 — Air admittance valves'
+  },
+  {
+    id:24, section:'safety', difficulty:'easy',
+    sectionLabel:'Safety',
+    text:'What class of fire extinguisher is required for a fire involving flammable liquids such as PVC primer and solvent cement?',
+    options:['Class A — ordinary combustibles','Class B — flammable liquids','Class C — electrical fires','Class D — metal fires'],
+    answer:1,
+    explanation:'Class B fire extinguishers are designed for flammable liquid fires, including PVC solvent cement, primer, and other petroleum-based chemicals commonly used in plumbing. Class ABC extinguishers are acceptable in most plumbing work environments as they cover all three common hazard types.',
+    codeRef:'Cal/OSHA Title 8 § 3273 — Fire extinguisher classifications'
+  },
+  {
+    id:25, section:'finish', difficulty:'hard',
+    sectionLabel:'Finish Plumbing',
+    text:'What type of backflow preventer is required at a high-hazard cross-connection, such as a connection between a domestic water supply and a boiler system containing chemical additives?',
+    options:['Atmospheric vacuum breaker (AVB)','Pressure vacuum breaker (PVB)','Double check valve assembly (DCVA)','Reduced pressure zone (RPZ) backflow preventer'],
+    answer:3,
+    explanation:'A Reduced Pressure Zone (RPZ) backflow preventer — also called an RP assembly — is required for high-hazard cross-connections where contamination could be harmful to health, such as connections to boilers with chemical treatment, irrigation with pesticides, or similar hazardous systems. AVBs and PVBs are for lower-hazard applications.',
+    codeRef:'2022 CPC § 603.3 — Cross-connection control by degree of hazard'
+  },
+  {
+    id:26, section:'underground', difficulty:'medium',
+    sectionLabel:'Underground & Rough',
+    text:'When pressure testing a DWV (drain-waste-vent) system using air, what is the required test pressure and minimum hold time?',
+    options:['10 psi for 30 minutes','5 psi (not to exceed 6 psi) for 15 minutes','3 psi for 10 minutes','8 psi for 20 minutes'],
+    answer:1,
+    explanation:'The CPC requires an air test of the DWV system at 5 psi (never exceeding 6 psi — higher pressure can damage PVC/ABS fittings) held for a minimum of 15 minutes with no pressure drop. The water test alternative fills the system to the highest point and also holds for 15 minutes.',
+    codeRef:'2022 CPC § 723.0 — DWV system testing requirements'
+  },
+  {
+    id:27, section:'repair', difficulty:'medium',
+    sectionLabel:'Service & Repair',
+    text:'What is the correct PVC pipe joining procedure before applying solvent cement?',
+    options:['Apply cement directly — primer is optional for PVC','Clean pipe, apply purple primer to both surfaces, then apply solvent cement before primer dries','Apply primer to female fitting only, then cement to male pipe only','Sand the pipe end only, no primer or cement needed — heat fusion is used for PVC'],
+    answer:1,
+    explanation:'For PVC pipe, the proper sequence is: 1) Clean and dry both surfaces, 2) Apply purple CPVC/PVC primer to both the pipe end and fitting socket to soften the PVC, 3) Apply solvent cement to both surfaces while primer is still wet, 4) Insert and twist ¼ turn, hold for 30 seconds. Purple primer is required on PVC in California — clear primer is not allowed.',
+    codeRef:'2022 CPC § 604.1 & ASTM D2564 — PVC solvent cement standards'
+  },
+  {
+    id:28, section:'planning', difficulty:'easy',
+    sectionLabel:'Planning & Estimating',
+    text:'Under California law, when is a plumbing contractor required to obtain a building permit for plumbing work?',
+    options:['Only for new construction projects','Only for commercial projects','For any plumbing work except minor repairs to existing fixtures costing less than $500','For any plumbing work regardless of cost'],
+    answer:2,
+    explanation:'California requires permits for plumbing work based on the nature of the work — not a dollar threshold for the license requirement. Minor repairs like replacing a faucet washer, fixture, or showerhead typically do not require permits. However, new installations, re-pipes, additions to the drainage system, water heater replacements, and most alterations do require a permit. Always check with the local AHJ.',
+    codeRef:'2022 CPC § 103.0 — Permit requirements'
+  },
+  {
+    id:29, section:'safety', difficulty:'hard',
+    sectionLabel:'Safety',
+    text:'A plumber is working on a commercial building\'s hot water recirculation pump. The pump is connected to the electrical panel. What is the correct procedure before beginning work on the pump?',
+    options:['Turn off the pump switch and begin work','Turn off the circuit breaker, place a lockout device on it, and verify zero energy with a voltage tester before touching any electrical components','Ask a coworker to hold the circuit breaker open while you work','Post a "Do Not Operate" sign on the pump only'],
+    answer:1,
+    explanation:'Lockout/Tagout (LOTO) procedure per Cal/OSHA § 3314 requires: 1) Notify affected employees, 2) Identify all energy sources, 3) Shut down the equipment, 4) Isolate energy (turn off breaker), 5) Apply an approved lock to the isolating device, 6) Release/restrain stored energy, 7) Verify zero energy with a test instrument. A coworker cannot substitute for a lock.',
+    codeRef:'Cal/OSHA Title 8 § 3314 — Control of hazardous energy (Lockout/Tagout)'
+  },
+  {
+    id:30, section:'finish', difficulty:'medium',
+    sectionLabel:'Finish Plumbing',
+    text:'The T&P (temperature and pressure) relief valve discharge pipe on a residential water heater must terminate in which location?',
+    options:['Directly into the building\'s DWV system (tie into a drain)','Outside the building through the wall at any height','Within 6 inches of the floor or to an approved drain, pointing downward','Into a bucket placed next to the water heater'],
+    answer:2,
+    explanation:'The T&P relief valve discharge pipe must terminate at a safe point of discharge — typically within 6 inches of the floor, pointing down, over an approved drain. It must NOT be reduced in size, capped, plugged, or piped directly into a drain trap (which could create back-pressure). The termination must be visible and must not create a burn hazard.',
+    codeRef:'2022 CPC § 608.5 — T&P relief valve discharge requirements'
+  }
+];
+
+// ═══════════════════════════════════════════
+// QUIZ ENGINE
+// ═══════════════════════════════════════════
+let currentFilter = 'all';
+let filteredQuestions = [];
+let quizOrder = [];
+let currentIdx = 0;
+let selectedOption = null;
+let answered = false;
+let score = 0;
+let totalAnswered = 0;
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  resetQuiz();
+}
+
+function buildQuiz() {
+  if (currentFilter === 'all') filteredQuestions = [...allQuestions];
+  else if (currentFilter === 'math') filteredQuestions = allQuestions.filter(q => q.ismath);
+  else filteredQuestions = allQuestions.filter(q => q.section === currentFilter);
+
+  // Shuffle
+  quizOrder = filteredQuestions.map((_,i) => i);
+  for (let i = quizOrder.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [quizOrder[i], quizOrder[j]] = [quizOrder[j], quizOrder[i]];
+  }
+  currentIdx = 0; score = 0; totalAnswered = 0;
+  updateQuizMeta();
+  renderQuestion();
+  document.getElementById('score-panel').style.display = 'none';
+  document.getElementById('quiz-area').style.display = 'block';
+}
+
+function resetQuiz() { buildQuiz(); }
+
+function renderQuestion() {
+  const qa = document.getElementById('quiz-area');
+  if (currentIdx >= quizOrder.length) { showScore(); return; }
+  const q = filteredQuestions[quizOrder[currentIdx]];
+  answered = false; selectedOption = null;
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').style.display = 'inline-flex';
+  document.getElementById('next-btn').style.display = 'none';
+
+  const diffMap = {easy:'easy',medium:'medium',hard:'hard'};
+  const diffLabel = {easy:'Easy',medium:'Medium',hard:'Hard'};
+
+  const mathNote = q.ismath ? '<span style="background:rgba(255,214,0,0.1);border:1px solid rgba(255,214,0,0.3);border-radius:5px;padding:2px 8px;font-family:var(--mono);font-size:10px;color:var(--yellow);">⚡ MATH</span>' : '';
+
+  qa.innerHTML = `
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="q-num">Q${currentIdx+1} of ${quizOrder.length}</span>
+        <span class="q-section">${q.sectionLabel}</span>
+        <span class="q-diff ${diffMap[q.difficulty]}">${diffLabel[q.difficulty]}</span>
+        ${mathNote}
+      </div>
+      <div class="question-text">${q.text}</div>
+      <div class="options" id="options-wrap">
+        ${q.options.map((opt,i) => `
+          <button class="option" onclick="selectOption(${i})" id="opt-${i}">
+            <span class="option-letter">${['A','B','C','D'][i]}</span>
+            <span>${opt}</span>
+          </button>
+        `).join('')}
+      </div>
+      <div class="explanation" id="explanation-box">
+        <h5>✅ Explanation</h5>
+        <p>${q.explanation}</p>
+        <p style="margin-top:8px;"><span class="code-cite">${q.codeRef}</span></p>
+      </div>
+      <div class="q-actions">
+        <button class="btn btn-primary" id="submit-btn" onclick="submitAnswer()" disabled>Check Answer</button>
+        <button class="btn btn-success" id="next-btn" onclick="nextQuestion()" style="display:none;">Next Question →</button>
+        ${currentIdx > 0 ? '' : ''}
+      </div>
+    </div>
+  `;
+  updateQuizMeta();
+}
+
+function selectOption(i) {
+  if (answered) return;
+  selectedOption = i;
+  document.querySelectorAll('.option').forEach((o,idx) => {
+    o.classList.toggle('selected', idx === i);
+  });
+  document.getElementById('submit-btn').disabled = false;
+}
+
+function submitAnswer() {
+  if (selectedOption === null || answered) return;
+  answered = true;
+  const q = filteredQuestions[quizOrder[currentIdx]];
+  totalAnswered++;
+
+  document.querySelectorAll('.option').forEach((o,i) => {
+    o.classList.add('revealed');
+    if (i === q.answer) o.classList.add('correct');
+    else if (i === selectedOption) o.classList.add('wrong');
+    else o.classList.add('dimmed');
+    o.style.cursor = 'default';
+  });
+
+  if (selectedOption === q.answer) score++;
+  document.getElementById('explanation-box').classList.add('show');
+  document.getElementById('submit-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'inline-flex';
+  updateQuizMeta();
+  updateGlobalProgress();
+}
+
+function nextQuestion() {
+  currentIdx++;
+  if (currentIdx >= quizOrder.length) { showScore(); return; }
+  renderQuestion();
+}
+
+function updateQuizMeta() {
+  const el = id => document.getElementById(id);
+  if(el('q-current')) el('q-current').textContent = Math.min(currentIdx+1, quizOrder.length);
+  if(el('q-total')) el('q-total').textContent = quizOrder.length;
+  if(el('q-score')) el('q-score').textContent = score;
+  if(el('q-section-display')) {
+    const labels = {all:'All Sections',planning:'Planning & Estimating',underground:'Underground & Rough',finish:'Finish Plumbing',repair:'Service & Repair',safety:'Safety',math:'Math Only'};
+    el('q-section-display').textContent = labels[currentFilter]||'All';
+  }
+}
+
+function showScore() {
+  document.getElementById('quiz-area').style.display = 'none';
+  const sp = document.getElementById('score-panel');
+  sp.style.display = 'block';
+  const pct = Math.round((score / totalAnswered) * 100);
+  const passed = pct >= 70;
+  document.getElementById('final-pct').textContent = pct + '%';
+  document.getElementById('score-circle-el').className = 'score-circle' + (passed?'':' fail');
+  document.getElementById('final-pct').style.color = passed ? 'var(--green-light)' : '#ff6090';
+  document.getElementById('score-verdict').textContent = passed ? '🎉 You Passed!' : '📚 Keep Studying';
+  document.getElementById('score-msg').textContent = passed
+    ? `Great work! You scored ${pct}% (${score}/${totalAnswered}). The passing score is 70%. Keep practicing to build confidence.`
+    : `You scored ${pct}% (${score}/${totalAnswered}). You need 70% to pass. Review the sections where you missed questions and try again.`;
+  document.getElementById('s-correct').textContent = score;
+  document.getElementById('s-wrong').textContent = totalAnswered - score;
+  document.getElementById('s-total').textContent = totalAnswered;
+}
+
+function updateGlobalProgress() {
+  const pct = totalAnswered > 0 ? Math.round((score / (totalAnswered || 1)) * 100) : 0;
+  document.getElementById('global-progress-fill').style.width = pct + '%';
+}
+
+// ═══════════════════════════════════════════
+// FLASHCARDS
+// ═══════════════════════════════════════════
+const rawFlashcards = [
+  ['What is the DFU value for a private water closet (toilet)?','4 DFU (Drainage Fixture Units) — per CPC Table 7-3. Public WC = 6 DFU.'],
+  ['What is the DFU value for a bathtub?','2 DFU — same whether private or public use. (CPC Table 7-3)'],
+  ['What is the DFU value for a lavatory (sink)?','1 DFU (private) / 2 DFU (public) — CPC Table 7-3'],
+  ['What is the minimum drain slope for a 3-inch pipe?','¼ inch per foot (approximately 2%) — CPC § 708.0'],
+  ['What is the minimum drain slope for a 4-inch pipe?','⅛ inch per foot (approximately 1%) — CPC § 708.0'],
+  ['What is the maximum DFU for a 4-inch horizontal drain pipe?','160 DFU — CPC Table 7-5. This is a critical number to memorize.'],
+  ['How many seismic straps are required on a water heater in California?','TWO straps — one in the upper ⅓ and one in the lower ⅓ of the tank. CPC § 507.0'],
+  ['What is the maximum showerhead flow rate in California (CALGreen)?','1.8 GPM at 80 psi for residential showerheads. CALGreen § 4.303.1'],
+    ['What is the maximum toilet flush volume under CALGreen?','1.28 GPF (gallons per flush) — High-Efficiency Toilet (HET). CALGreen § 4.303.'],
+  ['What must be used for taste and odor control in a water filtration system?','Activated carbon (charcoal) — absorbs taste and odor compounds. CPC § 611'],
+  ['What is the minimum trench depth that requires a protective system per Cal/OSHA?','5 feet — trenches 5 ft or deeper require sloping, shoring, or shielding. Cal/OSHA § 1541'],
+  ['How many days advance notice is required before excavating in California (Dig Alert)?','2 working days — call 811 (Underground Service Alert). CA Govt Code § 4216'],
+  ['What is the air test pressure for a DWV system?','5 psi (not to exceed 6 psi) held for 15 minutes with no drop. CPC § 723.0'],
+  ['What is the gas piping test pressure requirement?','1.5× working pressure OR minimum 3 psi, whichever is greater, for 10 minutes. CPC § 1215.2'],
+  ['What fitting is required for a wall-mounted (wall-hung) water closet?','An approved carrier fitting — it bears the structural load of the fixture. CPC § 402.5'],
+  ['What type of backflow preventer is required for a high-hazard cross-connection?','Reduced Pressure Zone (RPZ) assembly — required where contamination could harm health. CPC § 603.3'],
+  ['When is a thermal expansion tank required on a water heater?','When the system is "closed" — meaning a check valve, PRV, or backflow preventer prevents pressure relief back to the main. CPC § 608.3'],
+  ['What is required on CSST gas piping that is NOT required for black iron pipe?','Electrical bonding to the grounding system (½" or larger bonding conductor). CPC § 1211.1.2'],
+  ['What is the maximum water supply pressure before a PRV is required?','80 psi — a Pressure Reducing Valve must be installed when supply pressure exceeds 80 psi. CPC § 608.2'],
+  ['What solder must be used on potable water copper pipe?','Lead-free solder only — required by federal Safe Drinking Water Act since 1988. CPC § 604.1'],
+  ['What is the shower pan test requirement?','Water filled to 2" above threshold, held for 24 hours with no leakage. CPC § 408.8'],
+  ['What noise level (8-hr TWA) requires Cal/OSHA hearing protection provision?','85 dB TWA — employer must provide hearing protection and implement a conservation program. Cal/OSHA § 5097'],
+  ['What fall protection height triggers Cal/OSHA requirements on a construction site?','6 feet above a lower level — fall protection required at or above 6 ft in construction. Cal/OSHA § 1670'],
+  ['What is the proper primer color required for PVC pipe joints in California?','Purple primer — clear primer is not allowed for PVC in California. ASTM D2564'],
+  ['What is the DFU value for a kitchen sink (residential)?','2 DFU — CPC Table 7-3. Floor drains and washing machines are also 2 DFU.'],
+  ['At what temperature must a water heater be set (maximum) to prevent scalding?','120°F maximum — per CPC to prevent scalding injuries. CPC § 501.0'],
+  ['What is the minimum water supply test pressure?','100 psi OR 1.5× working pressure, whichever is greater, for 15 minutes. CPC § 609.4'],
+  ['What soil type has the STEEPEST allowable slope for trenching without shoring?','Type A soil — max slope ¾H:1V (53°). Type C is the most unstable at 1½H:1V (34°). Cal/OSHA § 1541'],
+  ['What is the minimum clearance in front of a residential toilet?','21 inches clear space in front of the water closet. CPC § 402.5'],
+  ['What procedure is required before working on energized equipment in plumbing?','Lockout/Tagout (LOTO) — isolate energy source, apply lock, verify zero energy. Cal/OSHA § 3314']
+];
+
+let flashcards = [...rawFlashcards];
+let fcIndex = 0;
+
+function renderFlashcard() {
+  const [q,a] = flashcards[fcIndex];
+  document.getElementById('fc-question').textContent = q;
+  document.getElementById('fc-answer').textContent = a;
+  document.getElementById('fc-current').textContent = fcIndex + 1;
+  document.getElementById('fc-total').textContent = flashcards.length;
+  document.getElementById('flashcard').classList.remove('flipped');
+}
+
+function flipCard() {
+  document.getElementById('flashcard').classList.toggle('flipped');
+}
+
+function fcNav(dir) {
+  fcIndex = (fcIndex + dir + flashcards.length) % flashcards.length;
+  renderFlashcard();
+}
+
+function shuffleCards() {
+  for (let i = flashcards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i+1));
+    [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+  }
+  fcIndex = 0;
+  renderFlashcard();
+}
+
+function buildFcList() {
+  const el = document.getElementById('fc-list');
+  el.innerHTML = rawFlashcards.map(([q,a],i) => `
+    <div style="border-bottom:1px solid var(--border);padding:12px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="font-size:13px;font-weight:600;">${q}</div>
+      <div style="font-size:13px;color:var(--green-light);">${a}</div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════
+// CALCULATORS
+// ═══════════════════════════════════════════
+function calcSlope() {
+  const len = parseFloat(document.getElementById('slope-length').value);
+  const rate = parseFloat(document.getElementById('slope-rate').value);
+  const el = document.getElementById('slope-result');
+  if(isNaN(len)||isNaN(rate)||len<=0) { el.textContent='Enter valid values above'; return; }
+  const drop = len * rate;
+  el.textContent = `Drop = ${len} ft × ${rate} in/ft = ${drop.toFixed(3)} inches (${(drop/12).toFixed(3)} feet)`;
+}
+
+function calcCost() {
+  const mat = parseFloat(document.getElementById('cost-mat').value)||0;
+  const hrs = parseFloat(document.getElementById('cost-hrs').value)||0;
+  const rate = parseFloat(document.getElementById('cost-rate').value)||0;
+  const eqdays = parseFloat(document.getElementById('cost-eqdays').value)||0;
+  const eqrate = parseFloat(document.getElementById('cost-eqrate').value)||0;
+  const ohpct = parseFloat(document.getElementById('cost-overhead').value)||0;
+  const labor = hrs * rate;
+  const equip = eqdays * eqrate;
+  const subtotal = mat + labor + equip;
+  const overhead = subtotal * (ohpct/100);
+  const total = subtotal + overhead;
+  document.getElementById('cost-result').textContent =
+    `Materials: $${mat.toFixed(2)}  +  Labor: $${labor.toFixed(2)} (${hrs}h × $${rate}/hr)  +  Equipment: $${equip.toFixed(2)}  +  Overhead: $${overhead.toFixed(2)} (${ohpct}%)  =  TOTAL: $${total.toFixed(2)}`;
+}
+
+// DFU counter
+const dfuFixtures = [
+  {name:'Lavatories (private)',unit:1},
+  {name:'Lavatories (public)',unit:2},
+  {name:'Bathtubs',unit:2},
+  {name:'Showers (single)',unit:2},
+  {name:'Water Closets (private)',unit:4},
+  {name:'Water Closets (public)',unit:6},
+  {name:'Urinals',unit:4},
+  {name:'Kitchen Sinks',unit:2},
+  {name:'Floor Drains',unit:2},
+  {name:'Washing Machines',unit:2},
+  {name:'Slop/Mop Sinks',unit:3},
+  {name:'Dishwashers',unit:2}
+];
+
+function buildDFU() {
+  const wrap = document.getElementById('dfu-inputs');
+  wrap.innerHTML = dfuFixtures.map((f,i) => `
+    <div>
+      <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:4px;">${f.name} <span style="color:var(--text3);">(${f.unit} DFU ea)</span></label>
+      <input type="number" min="0" value="0" style="background:var(--surface3);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;font-family:var(--mono);font-size:14px;color:var(--text);width:80px;outline:none;" oninput="calcDFU()">
+    </div>
+  `).join('');
+}
+
+function calcDFU() {
+  const inputs = document.querySelectorAll('#dfu-inputs input');
+  let total = 0;
+  inputs.forEach((inp,i) => {
+    total += (parseFloat(inp.value)||0) * dfuFixtures[i].unit;
+  });
+  let size = '1¼"';
+  if(total > 360) size = '8" or larger';
+  else if(total > 160) size = '6"';
+  else if(total > 20) size = '4"';
+  else if(total > 12) size = '3"';
+  else if(total > 6) size = '2½"';
+  else if(total > 3) size = '2"';
+  else if(total > 1) size = '1½"';
+  document.getElementById('dfu-result').textContent = `Total DFU: ${total} → Minimum drain pipe size: ${size}`;
+}
+
+// ═══════════════════════════════════════════
+// DASHBOARD PROGRESS BARS
+// ═══════════════════════════════════════════
+function buildDashboardProgress() {
+  const sections = [
+    {label:'Planning & Estimating',pct:22,color:'var(--blue)'},
+    {label:'Underground & Rough Systems',pct:22,color:'var(--orange)'},
+    {label:'Finish Plumbing Installations',pct:20,color:'var(--green)'},
+    {label:'Service, Repair & Remodel',pct:19,color:'#aa00ff'},
+    {label:'Safety',pct:17,color:'var(--yellow)'}
+  ];
+  const el = document.getElementById('dashboard-progress');
+  if(!el) return;
+  el.innerHTML = sections.map(s => `
+    <div class="progress-row">
+      <div class="progress-label" style="font-size:12px;">${s.label}</div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" style="width:${s.pct*4}%;background:${s.color};"></div>
+      </div>
+      <div class="progress-pct">${s.pct}%</div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════
+// TAB SWITCHING
+// ═══════════════════════════════════════════
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='quiz') buildQuiz();
+}
+
+// ═══════════════════════════════════════════
+// SCROLL TOP BUTTON
+// ═══════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scroll-top');
+  if(window.scrollY > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+
+// ═══════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════
+window.addEventListener('DOMContentLoaded', () => {
+  buildDashboardProgress();
+  renderFlashcard();
+  buildFcList();
+  buildDFU();
+  buildQuiz();
+});
+</script>
+</body>
+</html>
