@@ -2030,9 +2030,8 @@ function renderQuestion() {
   if (currentIdx >= quizOrder.length) { showScore(); return; }
   const q = filteredQuestions[quizOrder[currentIdx]];
   answered = false; selectedOption = null;
-  document.getElementById('submit-btn').disabled = true;
-  document.getElementById('submit-btn').style.display = 'inline-flex';
-  document.getElementById('next-btn').style.display = 'none';
+  setAllById('submit-btn', el => { el.disabled = true; el.style.display = 'inline-flex'; });
+  setAllById('next-btn', el => el.style.display = 'none');
 
   const diffMap = {easy:'easy',medium:'medium',hard:'hard'};
   const diffLabel = {easy:'Easy',medium:'Medium',hard:'Hard'};
@@ -2071,13 +2070,15 @@ function renderQuestion() {
   updateQuizMeta();
 }
 
+function setAllById(id,fn){document.querySelectorAll('#'+id).forEach(fn);}
+
 function selectOption(i) {
   if (answered) return;
   selectedOption = i;
   document.querySelectorAll('.option').forEach((o,idx) => {
     o.classList.toggle('selected', idx === i);
   });
-  document.getElementById('submit-btn').disabled = false;
+  setAllById('submit-btn', el => el.disabled = false);
 }
 
 function submitAnswer() {
@@ -2096,8 +2097,8 @@ function submitAnswer() {
 
   if (selectedOption === q.answer) score++;
   document.getElementById('explanation-box').classList.add('show');
-  document.getElementById('submit-btn').style.display = 'none';
-  document.getElementById('next-btn').style.display = 'inline-flex';
+  setAllById('submit-btn', el => el.style.display = 'none');
+  setAllById('next-btn', el => el.style.display = 'inline-flex');
   updateQuizMeta();
   updateGlobalProgress();
 }
