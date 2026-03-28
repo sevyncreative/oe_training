@@ -367,6 +367,14 @@ tr td:first-child{color:var(--text);font-weight:500;}
   .qcard{padding:18px 16px;}
   main{padding:18px 14px;}
 }
+.hdr-nav{display:flex;gap:8px;align-items:center;margin-left:auto;margin-right:16px;}
+.hdr-nav a{color:var(--text2);text-decoration:none;font-size:13px;padding:6px 14px;border:1px solid var(--border);border-radius:8px;transition:all 0.2s;letter-spacing:0.5px;white-space:nowrap;}
+.hdr-nav a:hover{background:var(--surface2);}
+.hdr-nav a.nav-plumbing{color:#5e97ff;border-color:#2979ff40;}
+@media(max-width:600px){
+  .hdr-nav{margin-left:0;margin-right:0;order:3;width:100%;justify-content:center;}
+  .hdr-nav a{font-size:12px;padding:5px 10px;}
+}
 </style>
 </head>
 <body>
@@ -380,9 +388,9 @@ tr td:first-child{color:var(--text);font-weight:500;}
         <p>California HVAC License Exam Prep</p>
       </div>
     </div>
-    <div class="hdr-nav" style="display:flex;gap:8px;align-items:center;margin-left:auto;margin-right:16px;">
-      <a href="index.html" style="color:var(--text2);text-decoration:none;font-size:13px;padding:6px 14px;border:1px solid var(--border);border-radius:8px;transition:all 0.2s;letter-spacing:0.5px;">🎓 All Courses</a>
-      <a href="plumbing.html" style="color:#5e97ff;text-decoration:none;font-size:13px;padding:6px 14px;border:1px solid #2979ff40;border-radius:8px;transition:all 0.2s;letter-spacing:0.5px;">🔧 C-36 Plumbing</a>
+    <div class="hdr-nav">
+      <a href="index.html">🎓 All Courses</a>
+      <a href="plumbing.html" class="nav-plumbing">🔧 C-36 Plumbing</a>
     </div>
     <div class="hdr-meta">
       <div class="badge"><span>📋</span> Exam: <b>C-20 Warm-Air HVAC</b></div>
