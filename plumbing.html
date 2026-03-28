@@ -686,6 +686,14 @@ tr td:first-child{color:var(--text);font-weight:500;}
   main{padding:20px 14px;}
   .hdr{padding:12px 16px;}
 }
+.hdr-nav{display:flex;gap:8px;align-items:center;margin-left:auto;margin-right:16px;}
+.hdr-nav a{color:var(--text2);text-decoration:none;font-size:13px;padding:6px 14px;border:1px solid var(--border);border-radius:8px;transition:all 0.2s;letter-spacing:0.5px;white-space:nowrap;}
+.hdr-nav a:hover{background:var(--surface2);}
+.hdr-nav a.nav-hvac{color:#ff7043;border-color:#ff3d0040;}
+@media(max-width:600px){
+  .hdr-nav{margin-left:0;margin-right:0;order:3;width:100%;justify-content:center;}
+  .hdr-nav a{font-size:12px;padding:5px 10px;}
+}
 </style>
 </head>
 <body>
@@ -698,6 +706,10 @@ tr td:first-child{color:var(--text);font-weight:500;}
         <h1>PASS C-36</h1>
         <p>California Plumbing License Exam Prep</p>
       </div>
+    </div>
+    <div class="hdr-nav">
+      <a href="index.html">🎓 All Courses</a>
+      <a href="hvac.html" class="nav-hvac">🔥 C-20 HVAC</a>
     </div>
     <div class="hdr-meta">
       <div class="badge"><span>📋</span> Exam: <b>C-36 Plumbing</b></div>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California Contractor License Exam Prep | Training Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080b10;
+  --surface: #0d1219;
+  --surface2: #131b27;
+  --surface3: #1a2435;
+  --border: #1f3050;
+  --text: #dce8f5;
+  --text2: #6b90b8;
+  --text3: #334d6e;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 800px 400px at 30% 20%, rgba(41,121,255,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 300px at 70% 70%, rgba(255,61,0,0.04) 0%, transparent 70%);
+  pointer-events:none;z-index:0;
+}
+
+header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(8,11,16,0.97);
+  border-bottom:2px solid #2979ff;
+  backdrop-filter:blur(14px);
+  box-shadow:0 2px 50px rgba(41,121,255,0.15);
+}
+.hdr{
+  max-width:1100px;margin:0 auto;
+  padding:16px 24px;
+  display:flex;align-items:center;gap:14px;
+}
+.logo-icon{
+  width:50px;height:50px;
+  background:linear-gradient(135deg,#2979ff,#0040c0);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+  box-shadow:0 0 28px rgba(41,121,255,0.4);
+}
+.logo h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:20px;letter-spacing:3px;color:#5e97ff;line-height:1;
+}
+.logo p{font-size:11px;color:var(--text2);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+
+.container{
+  position:relative;z-index:1;
+  max-width:1100px;margin:0 auto;
+  padding:60px 24px 80px;
+}
+.hero-text{
+  text-align:center;
+  margin-bottom:60px;
+}
+.hero-text h2{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(28px,5vw,44px);
+  letter-spacing:2px;
+  line-height:1.2;
+  margin-bottom:16px;
+}
+.hero-text h2 span{
+  background:linear-gradient(90deg,#2979ff,#00c853);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-text p{
+  font-size:18px;
+  color:var(--text2);
+  max-width:600px;
+  margin:0 auto;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:32px;
+}
+
+.card{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:40px 36px 36px;
+  text-decoration:none;
+  color:var(--text);
+  transition:all 0.3s ease;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:4px;
+  transition:height 0.3s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:transparent;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.card:hover::before{
+  height:6px;
+}
+
+.card--hvac::before{ background:linear-gradient(90deg,#ff3d00,#ff7043); }
+.card--hvac:hover{ border-color:#ff3d0040; box-shadow:0 20px 60px rgba(255,61,0,0.15); }
+.card--plumbing::before{ background:linear-gradient(90deg,#2979ff,#5e97ff); }
+.card--plumbing:hover{ border-color:#2979ff40; box-shadow:0 20px 60px rgba(41,121,255,0.15); }
+
+.card-icon{
+  width:72px;height:72px;
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:36px;
+  margin-bottom:24px;
+}
+.card--hvac .card-icon{
+  background:linear-gradient(135deg,#ff3d00,#b71c1c);
+  box-shadow:0 0 30px rgba(255,61,0,0.3);
+}
+.card--plumbing .card-icon{
+  background:linear-gradient(135deg,#2979ff,#0040c0);
+  box-shadow:0 0 30px rgba(41,121,255,0.3);
+}
+
+.card h3{
+  font-family:'Orbitron',sans-serif;
+  font-size:22px;
+  letter-spacing:2px;
+  margin-bottom:6px;
+}
+.card--hvac h3{ color:#ff7043; }
+.card--plumbing h3{ color:#5e97ff; }
+
+.card .subtitle{
+  font-size:13px;
+  color:var(--text2);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.card .desc{
+  font-size:15px;
+  color:var(--text2);
+  line-height:1.7;
+  margin-bottom:28px;
+}
+
+.card-features{
+  list-style:none;
+  margin-bottom:32px;
+}
+.card-features li{
+  padding:6px 0;
+  font-size:14px;
+  color:var(--text2);
+  display:flex;align-items:center;gap:10px;
+}
+.card-features li::before{
+  content:'✓';
+  font-weight:700;
+  font-size:13px;
+  width:22px;height:22px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.card--hvac .card-features li::before{
+  color:#ff3d00;
+  background:rgba(255,61,0,0.12);
+}
+.card--plumbing .card-features li::before{
+  color:#2979ff;
+  background:rgba(41,121,255,0.12);
+}
+
+.card-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 32px;
+  border-radius:12px;
+  font-family:'Orbitron',sans-serif;
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#fff;
+  text-decoration:none;
+  transition:all 0.3s ease;
+}
+.card--hvac .card-btn{
+  background:linear-gradient(135deg,#ff3d00,#d32f2f);
+  box-shadow:0 4px 20px rgba(255,61,0,0.3);
+}
+.card--hvac .card-btn:hover{
+  box-shadow:0 6px 30px rgba(255,61,0,0.5);
+  transform:translateY(-2px);
+}
+.card--plumbing .card-btn{
+  background:linear-gradient(135deg,#2979ff,#0040c0);
+  box-shadow:0 4px 20px rgba(41,121,255,0.3);
+}
+.card--plumbing .card-btn:hover{
+  box-shadow:0 6px 30px rgba(41,121,255,0.5);
+  transform:translateY(-2px);
+}
+
+footer{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:40px 24px;
+  color:var(--text3);
+  font-size:13px;
+  border-top:1px solid var(--border);
+}
+
+/* ── MOBILE ── */
+@media(max-width:480px){
+  .hdr{padding:12px 16px;}
+  .logo-icon{width:40px;height:40px;font-size:20px;border-radius:10px;}
+  .logo h1{font-size:16px;letter-spacing:2px;}
+  .container{padding:36px 16px 60px;}
+  .hero-text{margin-bottom:36px;}
+  .hero-text p{font-size:15px;}
+  .cards{grid-template-columns:1fr;gap:20px;}
+  .card{padding:28px 22px 28px;}
+  .card-icon{width:56px;height:56px;font-size:28px;border-radius:14px;margin-bottom:18px;}
+  .card h3{font-size:18px;}
+  .card .desc{font-size:14px;margin-bottom:20px;}
+  .card-btn{padding:12px 24px;font-size:12px;letter-spacing:1.5px;width:100%;justify-content:center;}
+}
+@media(max-width:720px) and (min-width:481px){
+  .cards{grid-template-columns:1fr;max-width:500px;margin:0 auto;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="logo" style="display:flex;align-items:center;gap:14px;">
+      <div class="logo-icon">🎓</div>
+      <div>
+        <h1>EXAM PREP</h1>
+        <p>California Contractor License Training</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="hero-text">
+    <h2>Choose Your <span>Training Track</span></h2>
+    <p>Interactive exam prep courses designed to help you pass your California contractor license exam on the first try.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card card--hvac">
+      <div class="card-icon">🔥</div>
+      <h3>C-20 HVAC</h3>
+      <div class="subtitle">Warm-Air Heating, Ventilating &amp; Air-Conditioning</div>
+      <p class="desc">Master the California C-20 HVAC contractor license exam with comprehensive practice questions covering refrigeration cycles, load calculations, duct design, codes, and more.</p>
+      <ul class="card-features">
+        <li>Timed practice exams</li>
+        <li>Detailed answer explanations</li>
+        <li>Score tracking &amp; analytics</li>
+        <li>All major HVAC exam topics</li>
+      </ul>
+      <a href="hvac.html" class="card-btn">Start HVAC Training →</a>
+    </div>
+
+    <div class="card card--plumbing">
+      <div class="card-icon">🔧</div>
+      <h3>C-36 Plumbing</h3>
+      <div class="subtitle">Plumbing Contractor License</div>
+      <p class="desc">Prepare for the California C-36 Plumbing contractor license exam with in-depth practice covering pipe sizing, drainage systems, water heaters, codes, and safety.</p>
+      <ul class="card-features">
+        <li>Timed practice exams</li>
+        <li>Detailed answer explanations</li>
+        <li>Score tracking &amp; analytics</li>
+        <li>All major plumbing exam topics</li>
+      </ul>
+      <a href="plumbing.html" class="card-btn">Start Plumbing Training →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  California Contractor License Exam Prep — Study hard, pass first time.
+</footer>
+
+</body>
+</html>
