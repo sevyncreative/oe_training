@@ -628,6 +628,7 @@ async function submitForm() {
       body: formData,
     });
     const result = await res.json();
+    console.log('Web3Forms response:', res.status, result);
 
     if (result.success) {
       document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
