@@ -644,6 +644,7 @@ async function submitForm() {
       throw new Error(result.message || 'Submission failed');
     }
   } catch (err) {
+    console.error('Estimate form submission error:', err);
     btn.disabled = false;
     btn.textContent = 'Send estimate request ✓';
     btn.style.opacity = '1';
