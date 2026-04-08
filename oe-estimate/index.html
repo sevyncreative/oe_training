@@ -572,44 +572,72 @@ function getFormData() {
   };
 }
 
-function submitForm() {
+async function submitForm() {
   const d = getFormData();
-  const subject = encodeURIComponent('New Estimate Request – OE Services');
-  const body = encodeURIComponent(
-    '📋 NEW ESTIMATE REQUEST — OE SERVICES\n' +
-    '══════════════════════════════\n\n' +
-    'CUSTOMER INFORMATION\n' +
-    '──────────────────\n' +
-    'Name:     ' + d.fname + ' ' + d.lname + '\n' +
-    'Phone:    ' + d.phone + '\n' +
-    'Email:    ' + d.email + '\n' +
-    'Address:  ' + (d.address || 'Not provided') + '\n\n' +
-    'SCOPE OF WORK\n' +
-    '──────────────────\n' +
-    'Service:  ' + d.service + '\n' +
-    'Property: ' + (d.property || 'Not specified') + '\n' +
-    'Timeline: ' + (d.timeline || 'Not specified') + '\n' +
-    'Notes:    ' + (d.description || 'None') + '\n\n' +
-    'ATTACHMENTS\n' +
-    '──────────────────\n' +
-    'Photos:   ' + (photoFiles.length > 0 ? photoFiles.length + ' photo(s) attached via form' : 'None') + '\n' +
-    'Video:    ' + (videoBlob ? 'Video attached via form' : 'None') + '\n\n' +
-    '══════════════════════════════\n' +
-    'Submitted via OE Services estimate form'
-  );
-  window.location.href = 'mailto:ahernandez@oeservices.us?subject=' + subject + '&body=' + body;
+  const btn = document.getElementById('btn-next');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  btn.style.opacity = '0.6';
 
-  document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
-  document.getElementById('nav-bar').style.display = 'none';
-  const success = document.getElementById('success-screen');
-  success.style.display = 'block';
-  const d2 = getFormData();
-  document.getElementById('success-detail').innerHTML = [
-    ['Name', d2.fname + ' ' + d2.lname],
-    ['Phone', d2.phone],
-    ['Email', d2.email],
-    ['Service', d2.service],
-  ].map(([l,v]) => `<div class="detail-row"><span class="detail-label">${l}</span><span class="detail-val">${v}</span></div>`).join('');
+  const formData = new FormData();
+  // Get your free access key at https://web3forms.com (enter ahernandez@oeservices.us)
+  formData.append('access_key', 'ee0f5983-8a35-4c39-9585-c9d13707e7e0');
+  formData.append('subject', 'New Estimate Request – OE Services');
+  formData.append('from_name', 'OE Services Estimate Form');
+  formData.append('replyto', d.email);
+
+  // Customer info
+  formData.append('Name', d.fname + ' ' + d.lname);
+  formData.append('Phone', d.phone);
+  formData.append('Email', d.email);
+  formData.append('Address', d.address || 'Not provided');
+
+  // Scope of work
+  formData.append('Service', d.service);
+  formData.append('Property Type', d.property || 'Not specified');
+  formData.append('Timeline', d.timeline || 'Not specified');
+  formData.append('Description', d.description || 'None');
+
+  // Attach photos
+  photoFiles.forEach(file => {
+    formData.append('attachment', file);
+  });
+
+  // Attach video
+  if (videoBlob) {
+    const videoFile = videoBlob instanceof File
+      ? videoBlob
+      : new File([videoBlob], 'walkthrough-video.webm', { type: videoBlob.type || 'video/webm' });
+    formData.append('attachment', videoFile);
+  }
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
+    const result = await res.json();
+
+    if (result.success) {
+      document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
+      document.getElementById('nav-bar').style.display = 'none';
+      const success = document.getElementById('success-screen');
+      success.style.display = 'block';
+      document.getElementById('success-detail').innerHTML = [
+        ['Name', d.fname + ' ' + d.lname],
+        ['Phone', d.phone],
+        ['Email', d.email],
+        ['Service', d.service],
+      ].map(([l,v]) => `<div class="detail-row"><span class="detail-label">${l}</span><span class="detail-val">${v}</span></div>`).join('');
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Send estimate request ✓';
+    btn.style.opacity = '1';
+    alert('Something went wrong. Please try again or call us directly.');
+  }
 }
 
 updateProgress();
