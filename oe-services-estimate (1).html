@@ -724,7 +724,7 @@ function getFormData() {
 
 function submitForm() {
   const d = getFormData();
-  const subject = encodeURIComponent('New Estimate Request – OE Services');
+  const subject = encodeURIComponent(`New Estimate Request – ${d.fname} ${d.lname} (${d.zip})`);
   const body = encodeURIComponent(
     '📋 NEW ESTIMATE REQUEST — OE SERVICES\n' +
     '══════════════════════════════\n\n' +

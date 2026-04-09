@@ -830,7 +830,7 @@ async function submitForm() {
   const formData = new FormData();
   // Get your free access key at https://web3forms.com (enter ahernandez@oeservices.us)
   formData.append('access_key', 'ee0f5983-8a35-4c39-9585-c9d13707e7e0');
-  formData.append('subject', 'New Estimate Request – OE Services');
+  formData.append('subject', `New Estimate Request – ${d.fname} ${d.lname} (${d.zip})`);
   formData.append('from_name', 'OE Services Estimate Form');
   formData.append('replyto', d.email);
   formData.append('html', 'true');
