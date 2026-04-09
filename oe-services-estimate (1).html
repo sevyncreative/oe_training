@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>OE Services — Free Estimate Request</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --dark: #0E0E0E;
+    --dark2: #1A1A1A;
+    --dark3: #242424;
+    --dark4: #2E2E2E;
+    --text: #F0EDE8;
+    --text-muted: #9A9690;
+    --green: #2ECC8A;
+    --red: #E24B4A;
+    --border: rgba(201,168,76,0.2);
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* Header */
+  .header {
+    background: var(--dark2);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-brand { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: var(--gold); line-height: 1; }
+  .header-sub { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+
+  /* Progress bar */
+  .progress-wrap { background: var(--dark3); height: 3px; position: relative; }
+  .progress-bar { height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); width: 0%; transition: width 0.4s ease; }
+  .progress-steps { display: flex; justify-content: space-between; padding: 0.75rem 1.5rem 0; }
+  .step-dot { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dark4); border: 1.5px solid var(--text-muted); transition: all 0.3s; }
+  .step-dot.active .dot { background: var(--gold); border-color: var(--gold); }
+  .step-dot.done .dot { background: var(--green); border-color: var(--green); }
+  .step-label { font-size: 10px; color: var(--text-muted); letter-spacing: 0.5px; text-transform: uppercase; }
+  .step-dot.active .step-label { color: var(--gold); }
+  .step-dot.done .step-label { color: var(--green); }
+
+  /* Container */
+  .container { max-width: 500px; margin: 0 auto; padding: 1.5rem 1.25rem 5rem; }
+
+  /* Step panels */
+  .step-panel { display: none; animation: fadeIn 0.3s ease; }
+  .step-panel.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .step-heading { margin-bottom: 1.5rem; }
+  .step-num { font-size: 11px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 1px; color: var(--text); line-height: 1.1; }
+  .step-desc { font-size: 14px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+  /* Cards */
+  .card { background: var(--dark2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+
+  /* Fields */
+  .field { margin-bottom: 14px; }
+  .field:last-child { margin-bottom: 0; }
+  .field label { display: block; font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark3);
+    border: 1px solid var(--dark4);
+    border-radius: 8px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239A9690' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+  .field textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+  .field input::placeholder, .field textarea::placeholder { color: var(--dark4); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* Upload zone */
+  .upload-zone {
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    background: var(--dark3);
+    transition: all 0.2s;
+    margin-bottom: 12px;
+  }
+  .upload-zone:hover { border-color: var(--gold); background: rgba(201,168,76,0.04); }
+  .upload-zone:active { transform: scale(0.98); }
+  .upload-icon { font-size: 32px; margin-bottom: 8px; }
+  .upload-title { font-weight: 500; font-size: 15px; color: var(--text); }
+  .upload-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+  /* Photo grid */
+  .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+  .photo-thumb-wrap { position: relative; aspect-ratio: 1; }
+  .photo-thumb { width: 100%; height: 100%; border-radius: 8px; object-fit: cover; border: 1px solid var(--dark4); display: block; }
+  .photo-remove {
+    position: absolute; top: 3px; right: 3px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(226,75,74,0.9); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #fff; line-height: 1; font-weight: 700;
+  }
+  .photo-remove:hover { background: var(--red); }
+  .photo-count { font-size: 12px; color: var(--gold); margin-top: 6px; font-weight: 500; }
+  .retake-add-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 10px; padding: 8px 14px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: var(--dark3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+  }
+  .retake-add-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Video recording */
+  .video-container { margin-bottom: 12px; }
+  .record-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 14px;
+    font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+    background: var(--dark3); border: 1.5px solid var(--border);
+    border-radius: var(--radius); color: var(--text); cursor: pointer;
+    transition: all 0.2s;
+  }
+  .record-btn:hover { border-color: var(--gold); }
+  .record-btn.recording { border-color: var(--red); color: var(--red); background: rgba(226,75,74,0.08); animation: pulse-border 1s infinite; }
+  @keyframes pulse-border { 0%,100% { box-shadow: 0 0 0 0 rgba(226,75,74,0.3); } 50% { box-shadow: 0 0 0 6px rgba(226,75,74,0); } }
+  .rec-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); animation: blink 1s infinite; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .timer-bar-wrap { height: 4px; background: var(--dark4); border-radius: 2px; margin: 10px 0; overflow: hidden; display: none; }
+  .timer-bar { height: 100%; background: linear-gradient(90deg, var(--green), var(--gold)); border-radius: 2px; width: 100%; transition: width 1s linear; }
+  .timer-text { font-size: 12px; color: var(--red); font-weight: 500; text-align: center; margin-bottom: 8px; display: none; }
+  #camera-feed { width: 100%; border-radius: var(--radius); display: none; background: #000; max-height: 220px; object-fit: cover; margin-bottom: 8px; }
+  #recorded-video { width: 100%; border-radius: var(--radius); display: none; margin-bottom: 8px; }
+  .video-status { font-size: 12px; color: var(--green); margin-top: 6px; font-weight: 500; }
+  .remove-video-btn {
+    display: none; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 10px; margin-top: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: rgba(226,75,74,0.08); border: 1px solid rgba(226,75,74,0.4);
+    border-radius: var(--radius); color: var(--red); cursor: pointer; transition: all 0.2s;
+  }
+  .remove-video-btn:hover { background: rgba(226,75,74,0.15); }
+
+  .divider { text-align: center; font-size: 12px; color: var(--text-muted); margin: 10px 0; position: relative; }
+  .divider::before, .divider::after { content: ''; position: absolute; top: 50%; width: 40%; height: 1px; background: var(--dark4); }
+  .divider::before { left: 0; } .divider::after { right: 0; }
+
+  /* Navigation buttons */
+  .nav-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark2); border-top: 1px solid var(--border); padding: 1rem 1.25rem; display: flex; gap: 10px; max-width: 500px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: 100%; }
+  .btn-back {
+    flex: 1; padding: 14px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+    background: transparent; border: 1px solid var(--dark4); border-radius: var(--radius);
+    color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+  }
+  .btn-back:hover { border-color: var(--text-muted); color: var(--text); }
+  .btn-next {
+    flex: 2; padding: 14px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600;
+    background: var(--gold); border: none; border-radius: var(--radius);
+    color: var(--dark); cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px;
+  }
+  .btn-next:hover { background: var(--gold-light); }
+  .btn-next:active { transform: scale(0.98); }
+  .btn-next.submit { background: var(--green); }
+  .btn-next.submit:hover { background: #26b87a; }
+
+  /* Success */
+  .success-screen { display: none; text-align: center; padding: 3rem 1.5rem; animation: fadeIn 0.5s ease; }
+  .success-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(46,204,138,0.15); border: 2px solid var(--green); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 28px; }
+  .success-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 2px; color: var(--text); margin-bottom: 10px; }
+  .success-sub { font-size: 15px; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin: 0 auto; }
+  .success-detail { background: var(--dark2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-top: 1.5rem; text-align: left; }
+  .detail-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--dark3); font-size: 13px; }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label { color: var(--text-muted); }
+  .detail-val { color: var(--text); font-weight: 500; text-align: right; max-width: 60%; }
+
+  /* Qualifying banner */
+  .qualify-banner {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
+    border-radius: var(--radius); padding: 1rem 1.1rem; margin-bottom: 1rem;
+  }
+  .qualify-icon { font-size: 22px; line-height: 1; margin-top: 1px; flex-shrink: 0; }
+  .qualify-title { font-size: 14px; font-weight: 500; color: var(--gold); margin-bottom: 3px; }
+  .qualify-body { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Optgroup styling */
+  optgroup { font-weight: 600; color: var(--text-muted); }
+  option { font-weight: 400; }
+
+  /* Tooltip error */
+  .field.error input, .field.error select { border-color: var(--red); }
+  .err-msg { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
+  .field.error .err-msg { display: block; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">OE Services</div>
+  <div class="header-sub">Free Estimate Request</div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-bar" id="progress-bar"></div>
+</div>
+<div class="progress-steps">
+  <div class="step-dot active" data-step="1"><div class="dot"></div><span class="step-label">Info</span></div>
+  <div class="step-dot" data-step="2"><div class="dot"></div><span class="step-label">Scope</span></div>
+  <div class="step-dot" data-step="3"><div class="dot"></div><span class="step-label">Photos</span></div>
+  <div class="step-dot" data-step="4"><div class="dot"></div><span class="step-label">Video</span></div>
+  <div class="step-dot" data-step="5"><div class="dot"></div><span class="step-label">Review</span></div>
+</div>
+
+<div class="container">
+
+  <!-- Step 1: Contact Info -->
+  <div class="step-panel active" id="step-1">
+    <div class="step-heading">
+      <div class="step-num">Step 1 of 4</div>
+      <div class="step-title">Your contact info</div>
+      <div class="step-desc">We'll use this to send your estimate and follow up.</div>
+    </div>
+    <div class="card">
+      <div class="row2">
+        <div class="field" id="f-fname">
+          <label>First name</label>
+          <input type="text" id="fname" placeholder="John" autocomplete="given-name">
+          <div class="err-msg">Required</div>
+        </div>
+        <div class="field" id="f-lname">
+          <label>Last name</label>
+          <input type="text" id="lname" placeholder="Smith" autocomplete="family-name">
+          <div class="err-msg">Required</div>
+        </div>
+      </div>
+      <div class="field" id="f-phone">
+        <label>Phone number</label>
+        <input type="tel" id="phone" placeholder="(702) 555-0100" autocomplete="tel">
+        <div class="err-msg">Required</div>
+      </div>
+      <div class="field" id="f-email">
+        <label>Email address</label>
+        <input type="email" id="email" placeholder="john@email.com" autocomplete="email">
+        <div class="err-msg">Enter a valid email</div>
+      </div>
+      <div class="field">
+        <label>Street address</label>
+        <input type="text" id="street" placeholder="123 Main St" autocomplete="street-address">
+      </div>
+      <div class="field">
+        <label>City</label>
+        <input type="text" id="city" placeholder="Las Vegas" autocomplete="address-level2">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>State</label>
+          <select id="state" autocomplete="address-level1">
+            <option value="">State...</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+            <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+            <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+            <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+            <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+            <option>MT</option><option>NE</option><option selected>NV</option><option>NH</option><option>NJ</option>
+            <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+            <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+            <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Zip code</label>
+          <input type="text" id="zip" placeholder="89101" maxlength="10" inputmode="numeric" autocomplete="postal-code">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2: Scope -->
+  <div class="step-panel" id="step-2">
+    <div class="step-heading">
+      <div class="step-num">Step 2 of 4</div>
+      <div class="step-title">What can we help with?</div>
+      <div class="step-desc">OE Services specializes in <strong style="color:var(--gold);font-weight:500;">major installations and full-service projects</strong>. Select the category that best fits your needs.</div>
+    </div>
+
+    <div class="qualify-banner">
+      <span class="qualify-icon">⚡</span>
+      <div>
+        <div class="qualify-title">Built for serious projects</div>
+        <div class="qualify-body">We provide detailed written estimates for installations, upgrades, and commercial work — not ballpark numbers over the phone.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="field" id="f-service">
+        <label>Service category</label>
+        <select id="service-type">
+          <option value="">Choose a service category...</option>
+          <optgroup label="⚡ Electrical Services">
+            <option value="Main panel upgrade">Main panel upgrade</option>
+            <option value="EV charger installation">EV charger installation</option>
+            <option value="Generator installation">Generator installation</option>
+            <option value="Whole home rewire">Whole home rewire</option>
+            <option value="Commercial electrical services">Commercial electrical services</option>
+            <option value="Smart home / automation">Smart home / automation</option>
+          </optgroup>
+          <optgroup label="🏠 Home Repair Services">
+            <option value="Home Repair Services – General">General home repairs</option>
+            <option value="Home Repair Services – Interior">Interior repairs &amp; improvements</option>
+            <option value="Home Repair Services – Exterior">Exterior repairs &amp; improvements</option>
+          </optgroup>
+          <optgroup label="🏢 Commercial Installation">
+            <option value="Commercial Installation – New build">New commercial build-out</option>
+            <option value="Commercial Installation – Renovation">Commercial renovation</option>
+            <option value="Commercial Installation – Tenant improvement">Tenant improvement</option>
+          </optgroup>
+          <optgroup label="❓ Not Sure">
+            <option value="Other / Not sure">Other / Not sure — I'll describe below</option>
+          </optgroup>
+        </select>
+        <div class="err-msg">Please select a service category</div>
+      </div>
+
+      <div class="field">
+        <label>Property type</label>
+        <select id="property-type">
+          <option value="">Select property type...</option>
+          <option>Single family home</option>
+          <option>Condo / townhome</option>
+          <option>Multi-family / duplex</option>
+          <option>Commercial building</option>
+          <option>New construction</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Estimated project budget</label>
+        <select id="budget">
+          <option value="">Select a range...</option>
+          <option>Under $1,000</option>
+          <option>$1,000 – $5,000</option>
+          <option>$5,000 – $15,000</option>
+          <option>$15,000 – $50,000</option>
+          <option>$50,000+</option>
+          <option>I'm not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>When do you need this?</label>
+        <select id="timeline">
+          <option value="">Select timeline...</option>
+          <option>As soon as possible</option>
+          <option>Within 1 week</option>
+          <option>Within 2 weeks</option>
+          <option>Within a month</option>
+          <option>Planning / budgeting stage</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Describe the work (optional)</label>
+        <textarea id="description" placeholder="The more detail you share, the more accurate your estimate will be..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Photos -->
+  <div class="step-panel" id="step-3">
+    <div class="step-heading">
+      <div class="step-num">Step 3 of 4</div>
+      <div class="step-title">Add photos</div>
+      <div class="step-desc">Photos help us give you a more accurate estimate. Take up to 10 photos of the area or existing panel.</div>
+    </div>
+    <div class="upload-zone" onclick="document.getElementById('photo-input').click()">
+      <div class="upload-icon">📷</div>
+      <div class="upload-title">Tap to open camera or upload</div>
+      <div class="upload-sub">JPG, PNG — up to 10 photos</div>
+    </div>
+    <input type="file" id="photo-input" accept="image/*" multiple capture="environment" style="display:none" onchange="handlePhotos(event)">
+    <div class="photo-grid" id="photo-grid"></div>
+    <div class="photo-count" id="photo-count"></div>
+    <button class="retake-add-btn" id="add-more-btn" style="display:none" onclick="document.getElementById('photo-input').click()">+ Add more photos</button>
+    <p style="font-size:13px; color:var(--text-muted); margin-top:12px; text-align:center;">Photos are optional — you can skip this step</p>
+  </div>
+
+  <!-- Step 4: Video -->
+  <div class="step-panel" id="step-4">
+    <div class="step-heading">
+      <div class="step-num">Step 4 of 4</div>
+      <div class="step-title">Record a video</div>
+      <div class="step-desc">Walk us through the space — up to 25 seconds. Optional but helpful!</div>
+    </div>
+    <div class="card">
+      <div class="video-container">
+        <video id="camera-feed" autoplay muted playsinline></video>
+        <video id="recorded-video" controls></video>
+        <button class="record-btn" id="record-btn" onclick="toggleRecording()">
+          <span id="rec-icon">⏺</span>
+          <span id="rec-text">Start recording</span>
+        </button>
+        <div class="timer-text" id="timer-text">Recording... <span id="secs">25</span>s remaining</div>
+        <div class="timer-bar-wrap" id="timer-bar-wrap"><div class="timer-bar" id="timer-bar"></div></div>
+        <div class="video-status" id="video-status"></div>
+        <button class="remove-video-btn" id="remove-video-btn" onclick="removeVideo()">✕ Remove video &amp; retake</button>
+      </div>
+      <div class="divider">or</div>
+      <div class="upload-zone" onclick="document.getElementById('video-upload').click()" style="padding:1rem;">
+        <div class="upload-icon" style="font-size:22px;">📁</div>
+        <div class="upload-title" style="font-size:14px;">Upload a video file</div>
+        <div class="upload-sub">MP4, MOV, or any video format</div>
+      </div>
+      <input type="file" id="video-upload" accept="video/*" style="display:none" onchange="handleVideoUpload(event)">
+    </div>
+    <p style="font-size:13px; color:var(--text-muted); text-align:center;">Video is optional — you can skip this step</p>
+  </div>
+
+  <!-- Step 5: Review -->
+  <div class="step-panel" id="step-5">
+    <div class="step-heading">
+      <div class="step-num">Almost done!</div>
+      <div class="step-title">Review & send</div>
+      <div class="step-desc">Check your info before submitting.</div>
+    </div>
+    <div class="card" id="review-card"></div>
+  </div>
+
+  <!-- Success -->
+  <div class="success-screen" id="success-screen">
+    <div class="success-icon">✓</div>
+    <div class="success-title">Request sent!</div>
+    <div class="success-sub">Thanks! OE Services will review your estimate request and reach out to schedule your appointment.</div>
+    <div class="success-detail" id="success-detail"></div>
+  </div>
+
+</div>
+
+<!-- Nav bar -->
+<div class="nav-bar" id="nav-bar">
+  <button class="btn-back" id="btn-back" onclick="goBack()" style="display:none">Back</button>
+  <button class="btn-next" id="btn-next" onclick="goNext()">Continue →</button>
+</div>
+
+<script>
+let currentStep = 1;
+const totalSteps = 5;
+let photoFiles = [];
+let mediaRecorder = null;
+let recordedChunks = [];
+let recordingTimer = null;
+let timerInterval = null;
+let secondsLeft = 25;
+let cameraStream = null;
+let isRecording = false;
+let videoBlob = null;
+
+function updateProgress() {
+  const pct = ((currentStep - 1) / (totalSteps - 1)) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.querySelectorAll('.step-dot').forEach((dot, i) => {
+    dot.classList.remove('active', 'done');
+    if (i + 1 === currentStep) dot.classList.add('active');
+    else if (i + 1 < currentStep) dot.classList.add('done');
+  });
+  document.getElementById('btn-back').style.display = currentStep > 1 ? 'block' : 'none';
+  const nextBtn = document.getElementById('btn-next');
+  if (currentStep === totalSteps) {
+    nextBtn.textContent = 'Send estimate request ✓';
+    nextBtn.classList.add('submit');
+  } else {
+    nextBtn.textContent = 'Continue →';
+    nextBtn.classList.remove('submit');
+  }
+}
+
+function showStep(n) {
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('step-' + n);
+  if (panel) panel.classList.add('active');
+  if (n === totalSteps) buildReview();
+  window.scrollTo(0, 0);
+}
+
+function validateStep1() {
+  let ok = true;
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const setErr = (id, show) => {
+    document.getElementById(id).classList.toggle('error', show);
+    if (!show) return;
+    ok = false;
+  };
+  setErr('f-fname', !fname);
+  setErr('f-lname', !lname);
+  setErr('f-phone', !phone);
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  setErr('f-email', !emailOk);
+  return ok;
+}
+
+function validateStep2() {
+  const service = document.getElementById('service-type').value;
+  document.getElementById('f-service').classList.toggle('error', !service);
+  return !!service;
+}
+
+function goNext() {
+  if (currentStep === 1 && !validateStep1()) return;
+  if (currentStep === 2 && !validateStep2()) return;
+  if (currentStep === totalSteps) { submitForm(); return; }
+  currentStep++;
+  showStep(currentStep);
+  updateProgress();
+}
+
+function goBack() {
+  if (currentStep <= 1) return;
+  currentStep--;
+  showStep(currentStep);
+  updateProgress();
+}
+
+function handlePhotos(e) {
+  const newFiles = Array.from(e.target.files);
+  photoFiles = photoFiles.concat(newFiles).slice(0, 10);
+  renderPhotoGrid();
+  document.getElementById('photo-input').value = '';
+}
+
+function removePhoto(idx) {
+  photoFiles.splice(idx, 1);
+  renderPhotoGrid();
+}
+
+function renderPhotoGrid() {
+  const grid = document.getElementById('photo-grid');
+  grid.innerHTML = '';
+  photoFiles.forEach((f, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'photo-thumb-wrap';
+    const img = document.createElement('img');
+    img.className = 'photo-thumb';
+    img.src = URL.createObjectURL(f);
+    const btn = document.createElement('button');
+    btn.className = 'photo-remove';
+    btn.innerHTML = '✕';
+    btn.title = 'Remove photo';
+    btn.onclick = () => removePhoto(i);
+    wrap.appendChild(img);
+    wrap.appendChild(btn);
+    grid.appendChild(wrap);
+  });
+  const cnt = document.getElementById('photo-count');
+  const addBtn = document.getElementById('add-more-btn');
+  if (photoFiles.length > 0) {
+    cnt.textContent = photoFiles.length + ' photo' + (photoFiles.length !== 1 ? 's' : '') + ' selected';
+    if (addBtn) addBtn.style.display = photoFiles.length < 10 ? 'inline-flex' : 'none';
+  } else {
+    cnt.textContent = '';
+    if (addBtn) addBtn.style.display = 'none';
+  }
+}
+
+async function toggleRecording() {
+  if (!isRecording) {
+    try {
+      cameraStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: true });
+      const feed = document.getElementById('camera-feed');
+      feed.srcObject = cameraStream;
+      feed.style.display = 'block';
+      document.getElementById('recorded-video').style.display = 'none';
+      recordedChunks = [];
+      let options = {};
+      if (MediaRecorder.isTypeSupported('video/webm;codecs=vp8')) options = { mimeType: 'video/webm;codecs=vp8' };
+      else if (MediaRecorder.isTypeSupported('video/mp4')) options = { mimeType: 'video/mp4' };
+      mediaRecorder = new MediaRecorder(cameraStream, options);
+      mediaRecorder.ondataavailable = e => { if (e.data.size > 0) recordedChunks.push(e.data); };
+      mediaRecorder.onstop = () => {
+        videoBlob = new Blob(recordedChunks, { type: mediaRecorder.mimeType || 'video/webm' });
+        const url = URL.createObjectURL(videoBlob);
+        const vid = document.getElementById('recorded-video');
+        vid.src = url;
+        vid.style.display = 'block';
+        feed.style.display = 'none';
+        document.getElementById('video-status').textContent = '✓ Video recorded successfully';
+        document.getElementById('remove-video-btn').style.display = 'flex';
+        document.getElementById('record-btn').style.display = 'none';
+        if (cameraStream) cameraStream.getTracks().forEach(t => t.stop());
+      };
+      mediaRecorder.start(100);
+      isRecording = true;
+      secondsLeft = 25;
+      const btn = document.getElementById('record-btn');
+      btn.classList.add('recording');
+      document.getElementById('rec-icon').innerHTML = '<span class="rec-dot"></span>';
+      document.getElementById('rec-text').textContent = 'Tap to stop recording';
+      document.getElementById('timer-text').style.display = 'block';
+      document.getElementById('timer-bar-wrap').style.display = 'block';
+      document.getElementById('secs').textContent = secondsLeft;
+      const bar = document.getElementById('timer-bar');
+      bar.style.transition = 'none';
+      bar.style.width = '100%';
+      setTimeout(() => { bar.style.transition = 'width 25s linear'; bar.style.width = '0%'; }, 50);
+      timerInterval = setInterval(() => {
+        secondsLeft--;
+        document.getElementById('secs').textContent = secondsLeft;
+        if (secondsLeft <= 0) stopRecording();
+      }, 1000);
+    } catch(err) {
+      document.getElementById('video-status').textContent = 'Camera not accessible. Please use file upload below.';
+    }
+  } else {
+    stopRecording();
+  }
+}
+
+function stopRecording() {
+  isRecording = false;
+  clearInterval(timerInterval);
+  if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+  document.getElementById('record-btn').classList.remove('recording');
+  document.getElementById('rec-icon').textContent = '⏺';
+  document.getElementById('rec-text').textContent = 'Record another video';
+  document.getElementById('timer-text').style.display = 'none';
+  document.getElementById('timer-bar-wrap').style.display = 'none';
+}
+
+function handleVideoUpload(e) {
+  const f = e.target.files[0];
+  if (!f) return;
+  videoBlob = f;
+  const vid = document.getElementById('recorded-video');
+  vid.src = URL.createObjectURL(f);
+  vid.style.display = 'block';
+  document.getElementById('video-status').textContent = '✓ Video ready: ' + f.name;
+  document.getElementById('camera-feed').style.display = 'none';
+  document.getElementById('remove-video-btn').style.display = 'flex';
+  document.getElementById('record-btn').style.display = 'none';
+}
+
+function removeVideo() {
+  videoBlob = null;
+  recordedChunks = [];
+  const vid = document.getElementById('recorded-video');
+  vid.src = '';
+  vid.style.display = 'none';
+  document.getElementById('video-status').textContent = '';
+  document.getElementById('remove-video-btn').style.display = 'none';
+  document.getElementById('record-btn').style.display = 'flex';
+  document.getElementById('video-upload').value = '';
+  if (cameraStream) { cameraStream.getTracks().forEach(t => t.stop()); cameraStream = null; }
+}
+
+function buildReview() {
+  const data = getFormData();
+  const card = document.getElementById('review-card');
+  const rows = [
+    ['Name', data.fname + ' ' + data.lname],
+    ['Phone', data.phone],
+    ['Email', data.email],
+    ['Address', data.address || 'Not provided'],
+    ['Service', data.service],
+    ['Property', data.property || 'Not specified'],
+    ['Budget', data.budget || 'Not specified'],
+    ['Timeline', data.timeline || 'Not specified'],
+    ['Photos', photoFiles.length > 0 ? photoFiles.length + ' photo(s)' : 'None'],
+    ['Video', videoBlob ? 'Attached' : 'None'],
+  ];
+  card.innerHTML = rows.map(([l, v]) =>
+    `<div class="detail-row"><span class="detail-label">${l}</span><span class="detail-val">${v || '—'}</span></div>`
+  ).join('');
+}
+
+function getFormData() {
+  const street = document.getElementById('street').value.trim();
+  const city = document.getElementById('city').value.trim();
+  const state = document.getElementById('state').value;
+  const zip = document.getElementById('zip').value.trim();
+  const addressParts = [street, city, state, zip].filter(Boolean);
+  return {
+    fname: document.getElementById('fname').value.trim(),
+    lname: document.getElementById('lname').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    street, city, state, zip,
+    address: addressParts.join(', ') || 'Not provided',
+    service: document.getElementById('service-type').value,
+    property: document.getElementById('property-type').value,
+    budget: document.getElementById('budget').value,
+    timeline: document.getElementById('timeline').value,
+    description: document.getElementById('description').value.trim(),
+  };
+}
+
+function submitForm() {
+  const d = getFormData();
+  const subject = encodeURIComponent('New Estimate Request – OE Services');
+  const body = encodeURIComponent(
+    '📋 NEW ESTIMATE REQUEST — OE SERVICES\n' +
+    '══════════════════════════════\n\n' +
+    'CUSTOMER INFORMATION\n' +
+    '──────────────────\n' +
+    'Name:     ' + d.fname + ' ' + d.lname + '\n' +
+    'Phone:    ' + d.phone + '\n' +
+    'Email:    ' + d.email + '\n' +
+    'Address:  ' + (d.address || 'Not provided') + '\n\n' +
+    'SCOPE OF WORK\n' +
+    '──────────────────\n' +
+    'Service:  ' + d.service + '\n' +
+    'Property: ' + (d.property || 'Not specified') + '\n' +
+    'Budget:   ' + (d.budget || 'Not specified') + '\n' +
+    'Timeline: ' + (d.timeline || 'Not specified') + '\n' +
+    'Notes:    ' + (d.description || 'None') + '\n\n' +
+    'ATTACHMENTS\n' +
+    '──────────────────\n' +
+    'Photos:   ' + (photoFiles.length > 0 ? photoFiles.length + ' photo(s) attached via form' : 'None') + '\n' +
+    'Video:    ' + (videoBlob ? 'Video attached via form' : 'None') + '\n\n' +
+    '══════════════════════════════\n' +
+    'Submitted via OE Services estimate form'
+  );
+  window.location.href = 'mailto:info@originselectric.com?subject=' + subject + '&body=' + body;
+
+  document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
+  document.getElementById('nav-bar').style.display = 'none';
+  const success = document.getElementById('success-screen');
+  success.style.display = 'block';
+  const d2 = getFormData();
+  document.getElementById('success-detail').innerHTML = [
+    ['Name', d2.fname + ' ' + d2.lname],
+    ['Phone', d2.phone],
+    ['Email', d2.email],
+    ['Service', d2.service],
+  ].map(([l,v]) => `<div class="detail-row"><span class="detail-label">${l}</span><span class="detail-val">${v}</span></div>`).join('');
+}
+
+updateProgress();
+</script>
+</body>
+</html>
