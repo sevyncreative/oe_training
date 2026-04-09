@@ -121,8 +121,25 @@
 
   /* Photo grid */
   .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
-  .photo-thumb { aspect-ratio: 1; border-radius: 8px; object-fit: cover; border: 1px solid var(--dark4); }
+  .photo-thumb-wrap { position: relative; aspect-ratio: 1; }
+  .photo-thumb { width: 100%; height: 100%; border-radius: 8px; object-fit: cover; border: 1px solid var(--dark4); display: block; }
+  .photo-remove {
+    position: absolute; top: 3px; right: 3px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(226,75,74,0.9); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #fff; line-height: 1; font-weight: 700;
+  }
+  .photo-remove:hover { background: var(--red); }
   .photo-count { font-size: 12px; color: var(--accent); margin-top: 6px; font-weight: 500; }
+  .retake-add-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 10px; padding: 8px 14px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: var(--dark3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+  }
+  .retake-add-btn:hover { border-color: var(--accent); color: var(--accent); }
 
   /* Video recording */
   .video-container { margin-bottom: 12px; }
@@ -145,6 +162,14 @@
   #camera-feed { width: 100%; border-radius: var(--radius); display: none; background: #000; max-height: 220px; object-fit: cover; margin-bottom: 8px; }
   #recorded-video { width: 100%; border-radius: var(--radius); display: none; margin-bottom: 8px; }
   .video-status { font-size: 12px; color: var(--green); margin-top: 6px; font-weight: 500; }
+  .remove-video-btn {
+    display: none; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 10px; margin-top: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    background: rgba(226,75,74,0.08); border: 1px solid rgba(226,75,74,0.4);
+    border-radius: var(--radius); color: var(--red); cursor: pointer; transition: all 0.2s;
+  }
+  .remove-video-btn:hover { background: rgba(226,75,74,0.15); }
 
   .divider { text-align: center; font-size: 12px; color: var(--text-muted); margin: 10px 0; position: relative; }
   .divider::before, .divider::after { content: ''; position: absolute; top: 50%; width: 40%; height: 1px; background: var(--dark4); }
@@ -179,6 +204,20 @@
   .detail-row:last-child { border-bottom: none; }
   .detail-label { color: var(--text-muted); }
   .detail-val { color: var(--text); font-weight: 500; text-align: right; max-width: 60%; }
+
+  /* Qualifying banner */
+  .qualify-banner {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: rgba(62,156,143,0.07); border: 1px solid rgba(62,156,143,0.25);
+    border-radius: var(--radius); padding: 1rem 1.1rem; margin-bottom: 1rem;
+  }
+  .qualify-icon { font-size: 22px; line-height: 1; margin-top: 1px; flex-shrink: 0; }
+  .qualify-title { font-size: 14px; font-weight: 500; color: var(--accent); margin-bottom: 3px; }
+  .qualify-body { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Optgroup styling */
+  optgroup { font-weight: 600; color: var(--text-muted); }
+  option { font-weight: 400; }
 
   /* Tooltip error */
   .field.error input, .field.error select { border-color: var(--red); }
@@ -237,8 +276,34 @@
         <div class="err-msg">Enter a valid email</div>
       </div>
       <div class="field">
-        <label>Service address</label>
-        <input type="text" id="address" placeholder="123 Main St, Las Vegas, NV" autocomplete="street-address">
+        <label>Street address</label>
+        <input type="text" id="street" placeholder="123 Main St" autocomplete="street-address">
+      </div>
+      <div class="field">
+        <label>City</label>
+        <input type="text" id="city" placeholder="Las Vegas" autocomplete="address-level2">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>State</label>
+          <select id="state" autocomplete="address-level1">
+            <option value="">State...</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+            <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+            <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+            <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+            <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+            <option>MT</option><option>NE</option><option selected>NV</option><option>NH</option><option>NJ</option>
+            <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+            <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+            <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Zip code</label>
+          <input type="text" id="zip" placeholder="89101" maxlength="10" inputmode="numeric" autocomplete="postal-code">
+        </div>
       </div>
     </div>
   </div>
@@ -247,27 +312,46 @@
   <div class="step-panel" id="step-2">
     <div class="step-heading">
       <div class="step-num">Step 2 of 4</div>
-      <div class="step-title">Scope of work</div>
-      <div class="step-desc">Tell us what you need so we can prepare an accurate estimate.</div>
+      <div class="step-title">What can we help with?</div>
+      <div class="step-desc">OE Services specializes in <strong style="color:var(--accent);font-weight:500;">major installations and full-service projects</strong>. Select the category that best fits your needs.</div>
     </div>
+
+    <div class="qualify-banner">
+      <span class="qualify-icon">⚡</span>
+      <div>
+        <div class="qualify-title">Built for serious projects</div>
+        <div class="qualify-body">We provide detailed written estimates for installations, upgrades, and commercial work — not ballpark numbers over the phone.</div>
+      </div>
+    </div>
+
     <div class="card">
       <div class="field" id="f-service">
-        <label>Service type</label>
+        <label>Service category</label>
         <select id="service-type">
-          <option value="">Select a service...</option>
-          <option>Electrical panel upgrade</option>
-          <option>New outlet / circuit installation</option>
-          <option>Lighting installation</option>
-          <option>Ceiling fan installation</option>
-          <option>EV charger installation</option>
-          <option>Generator hookup</option>
-          <option>Wiring repair / troubleshooting</option>
-          <option>Home rewire</option>
-          <option>Commercial electrical</option>
-          <option>Smart home / automation</option>
-          <option>Other / not sure</option>
+          <option value="">Choose a service category...</option>
+          <optgroup label="⚡ Electrical Services">
+            <option value="Main panel upgrade">Main panel upgrade</option>
+            <option value="EV charger installation">EV charger installation</option>
+            <option value="Generator installation">Generator installation</option>
+            <option value="Whole home rewire">Whole home rewire</option>
+            <option value="Commercial electrical services">Commercial electrical services</option>
+            <option value="Smart home / automation">Smart home / automation</option>
+          </optgroup>
+          <optgroup label="🏠 Home Repair Services">
+            <option value="Home Repair Services – General">General home repairs</option>
+            <option value="Home Repair Services – Interior">Interior repairs &amp; improvements</option>
+            <option value="Home Repair Services – Exterior">Exterior repairs &amp; improvements</option>
+          </optgroup>
+          <optgroup label="🏢 Commercial Installation">
+            <option value="Commercial Installation – New build">New commercial build-out</option>
+            <option value="Commercial Installation – Renovation">Commercial renovation</option>
+            <option value="Commercial Installation – Tenant improvement">Tenant improvement</option>
+          </optgroup>
+          <optgroup label="❓ Not Sure">
+            <option value="Other / Not sure">Other / Not sure — I'll describe below</option>
+          </optgroup>
         </select>
-        <div class="err-msg">Please select a service</div>
+        <div class="err-msg">Please select a service category</div>
       </div>
       <div class="field">
         <label>Property type</label>
@@ -281,6 +365,18 @@
         </select>
       </div>
       <div class="field">
+        <label>Estimated project budget</label>
+        <select id="budget">
+          <option value="">Select a range...</option>
+          <option>Under $1,000</option>
+          <option>$1,000 – $5,000</option>
+          <option>$5,000 – $15,000</option>
+          <option>$15,000 – $50,000</option>
+          <option>$50,000+</option>
+          <option>I'm not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
         <label>When do you need this?</label>
         <select id="timeline">
           <option value="">Select timeline...</option>
@@ -288,12 +384,12 @@
           <option>Within 1 week</option>
           <option>Within 2 weeks</option>
           <option>Within a month</option>
-          <option>Just getting estimates</option>
+          <option>Planning / budgeting stage</option>
         </select>
       </div>
       <div class="field">
         <label>Describe the work (optional)</label>
-        <textarea id="description" placeholder="Any extra details that would help us prepare your estimate..."></textarea>
+        <textarea id="description" placeholder="The more detail you share, the more accurate your estimate will be..."></textarea>
       </div>
     </div>
   </div>
@@ -313,6 +409,7 @@
     <input type="file" id="photo-input" accept="image/*" multiple capture="environment" style="display:none" onchange="handlePhotos(event)">
     <div class="photo-grid" id="photo-grid"></div>
     <div class="photo-count" id="photo-count"></div>
+    <button class="retake-add-btn" id="add-more-btn" style="display:none" onclick="document.getElementById('photo-input').click()">+ Add more photos</button>
     <p style="font-size:13px; color:var(--text-muted); margin-top:12px; text-align:center;">Photos are optional — you can skip this step</p>
   </div>
 
@@ -334,6 +431,7 @@
         <div class="timer-text" id="timer-text">Recording... <span id="secs">25</span>s remaining</div>
         <div class="timer-bar-wrap" id="timer-bar-wrap"><div class="timer-bar" id="timer-bar"></div></div>
         <div class="video-status" id="video-status"></div>
+        <button class="remove-video-btn" id="remove-video-btn" onclick="removeVideo()">✕ Remove video &amp; retake</button>
       </div>
       <div class="divider">or</div>
       <div class="upload-zone" onclick="document.getElementById('video-upload').click()" style="padding:1rem;">
@@ -454,18 +552,44 @@ function goBack() {
 }
 
 function handlePhotos(e) {
-  const files = Array.from(e.target.files).slice(0, 10);
-  photoFiles = files;
+  const newFiles = Array.from(e.target.files);
+  photoFiles = photoFiles.concat(newFiles).slice(0, 10);
+  renderPhotoGrid();
+  document.getElementById('photo-input').value = '';
+}
+
+function removePhoto(idx) {
+  photoFiles.splice(idx, 1);
+  renderPhotoGrid();
+}
+
+function renderPhotoGrid() {
   const grid = document.getElementById('photo-grid');
   grid.innerHTML = '';
-  files.forEach(f => {
+  photoFiles.forEach((f, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'photo-thumb-wrap';
     const img = document.createElement('img');
     img.className = 'photo-thumb';
     img.src = URL.createObjectURL(f);
-    grid.appendChild(img);
+    const btn = document.createElement('button');
+    btn.className = 'photo-remove';
+    btn.innerHTML = '✕';
+    btn.title = 'Remove photo';
+    btn.onclick = () => removePhoto(i);
+    wrap.appendChild(img);
+    wrap.appendChild(btn);
+    grid.appendChild(wrap);
   });
   const cnt = document.getElementById('photo-count');
-  cnt.textContent = files.length > 0 ? files.length + ' photo' + (files.length !== 1 ? 's' : '') + ' selected' : '';
+  const addBtn = document.getElementById('add-more-btn');
+  if (photoFiles.length > 0) {
+    cnt.textContent = photoFiles.length + ' photo' + (photoFiles.length !== 1 ? 's' : '') + ' selected';
+    if (addBtn) addBtn.style.display = photoFiles.length < 10 ? 'inline-flex' : 'none';
+  } else {
+    cnt.textContent = '';
+    if (addBtn) addBtn.style.display = 'none';
+  }
 }
 
 async function toggleRecording() {
@@ -490,6 +614,8 @@ async function toggleRecording() {
         vid.style.display = 'block';
         feed.style.display = 'none';
         document.getElementById('video-status').textContent = '✓ Video recorded successfully';
+        document.getElementById('remove-video-btn').style.display = 'flex';
+        document.getElementById('record-btn').style.display = 'none';
         if (cameraStream) cameraStream.getTracks().forEach(t => t.stop());
       };
       mediaRecorder.start(100);
@@ -539,6 +665,21 @@ function handleVideoUpload(e) {
   vid.style.display = 'block';
   document.getElementById('video-status').textContent = '✓ Video ready: ' + f.name;
   document.getElementById('camera-feed').style.display = 'none';
+  document.getElementById('remove-video-btn').style.display = 'flex';
+  document.getElementById('record-btn').style.display = 'none';
+}
+
+function removeVideo() {
+  videoBlob = null;
+  recordedChunks = [];
+  const vid = document.getElementById('recorded-video');
+  vid.src = '';
+  vid.style.display = 'none';
+  document.getElementById('video-status').textContent = '';
+  document.getElementById('remove-video-btn').style.display = 'none';
+  document.getElementById('record-btn').style.display = 'flex';
+  document.getElementById('video-upload').value = '';
+  if (cameraStream) { cameraStream.getTracks().forEach(t => t.stop()); cameraStream = null; }
 }
 
 function buildReview() {
@@ -551,6 +692,7 @@ function buildReview() {
     ['Address', data.address || 'Not provided'],
     ['Service', data.service],
     ['Property', data.property || 'Not specified'],
+    ['Budget', data.budget || 'Not specified'],
     ['Timeline', data.timeline || 'Not specified'],
     ['Photos', photoFiles.length > 0 ? photoFiles.length + ' photo(s)' : 'None'],
     ['Video', videoBlob ? 'Attached' : 'None'],
@@ -561,14 +703,21 @@ function buildReview() {
 }
 
 function getFormData() {
+  const street = document.getElementById('street').value.trim();
+  const city = document.getElementById('city').value.trim();
+  const state = document.getElementById('state').value;
+  const zip = document.getElementById('zip').value.trim();
+  const addressParts = [street, city, state, zip].filter(Boolean);
   return {
     fname: document.getElementById('fname').value.trim(),
     lname: document.getElementById('lname').value.trim(),
     phone: document.getElementById('phone').value.trim(),
     email: document.getElementById('email').value.trim(),
-    address: document.getElementById('address').value.trim(),
+    street, city, state, zip,
+    address: addressParts.join(', ') || 'Not provided',
     service: document.getElementById('service-type').value,
     property: document.getElementById('property-type').value,
+    budget: document.getElementById('budget').value,
     timeline: document.getElementById('timeline').value,
     description: document.getElementById('description').value.trim(),
   };
@@ -597,6 +746,7 @@ async function submitForm() {
   // Scope of work
   formData.append('Service', d.service);
   formData.append('Property Type', d.property || 'Not specified');
+  formData.append('Budget', d.budget || 'Not specified');
   formData.append('Timeline', d.timeline || 'Not specified');
   formData.append('Description', d.description || 'None');
 
