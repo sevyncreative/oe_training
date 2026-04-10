@@ -723,49 +723,6 @@ function getFormData() {
   };
 }
 
-function escHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
-async function fileToBase64Thumbnail(file, maxWidth = 480) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    const url = URL.createObjectURL(file);
-    img.onload = () => {
-      const scale = Math.min(1, maxWidth / img.width);
-      const w = Math.round(img.width * scale);
-      const h = Math.round(img.height * scale);
-      const canvas = document.createElement('canvas');
-      canvas.width = w;
-      canvas.height = h;
-      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-      URL.revokeObjectURL(url);
-      resolve(canvas.toDataURL('image/jpeg', 0.72));
-    };
-    img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
-    img.src = url;
-  });
-}
-
-function videoFrameThumbnail(maxWidth = 480) {
-  const vid = document.getElementById('recorded-video');
-  if (!vid || !vid.videoWidth) return null;
-  try {
-    const scale = Math.min(1, maxWidth / vid.videoWidth);
-    const w = Math.round(vid.videoWidth * scale);
-    const h = Math.round(vid.videoHeight * scale);
-    const canvas = document.createElement('canvas');
-    canvas.width = w;
-    canvas.height = h;
-    canvas.getContext('2d').drawImage(vid, 0, 0, w, h);
-    return canvas.toDataURL('image/jpeg', 0.70);
-  } catch (e) { return null; }
-}
-
 async function submitForm() {
   const d = getFormData();
   const btn = document.getElementById('btn-next');
@@ -773,68 +730,25 @@ async function submitForm() {
   btn.textContent = 'Sending...';
   btn.style.opacity = '0.6';
 
-  // Build base64 thumbnails for inline embedding in the email
-  const photoThumbs = await Promise.all(photoFiles.map(f => fileToBase64Thumbnail(f)));
-  const videoThumb = videoFrameThumbnail();
-
-  const photosSection = photoThumbs.filter(Boolean).length > 0
-    ? `<h3 style="color:#1a56db;margin:20px 0 10px;font-size:16px;">Photos (${photoThumbs.filter(Boolean).length})</h3>
-       <div style="display:flex;flex-wrap:wrap;gap:8px;">
-         ${photoThumbs.filter(Boolean).map(src =>
-           `<img src="${src}" style="width:220px;height:165px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;">`
-         ).join('')}
-       </div>`
-    : '';
-
-  const videoSection = videoBlob
-    ? `<h3 style="color:#1a56db;margin:20px 0 10px;font-size:16px;">Video Walkthrough</h3>` +
-      (videoThumb
-        ? `<div style="position:relative;display:inline-block;">
-             <img src="${videoThumb}" style="max-width:480px;border-radius:8px;border:1px solid #e5e7eb;display:block;">
-             <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(0,0,0,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none;">
-               <span style="color:white;font-size:22px;margin-left:4px;">&#9654;</span>
-             </div>
-           </div>
-           <p style="color:#6b7280;font-size:13px;margin:6px 0 0;">Full video file attached below</p>`
-        : `<p style="color:#374151;font-size:14px;">Video walkthrough attached (see attachments)</p>`)
-    : '';
-
-  const emailHtml = `
-    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#111827;">
-      <div style="background:#1a56db;padding:20px 24px;border-radius:8px 8px 0 0;">
-        <h2 style="color:white;margin:0;font-size:20px;">New Estimate Request</h2>
-        <p style="color:#bfdbfe;margin:4px 0 0;font-size:14px;">OE Services</p>
-      </div>
-      <div style="background:#f9fafb;padding:24px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;">
-        <h3 style="color:#1a56db;margin:0 0 12px;font-size:16px;">Customer Information</h3>
-        <table style="width:100%;border-collapse:collapse;font-size:15px;">
-          <tr><td style="padding:6px 0;color:#6b7280;width:140px;">Name</td><td style="padding:6px 0;font-weight:600;">${escHtml(d.fname)} ${escHtml(d.lname)}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;">Phone</td><td style="padding:6px 0;">${escHtml(d.phone)}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;">Email</td><td style="padding:6px 0;">${escHtml(d.email)}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;">Address</td><td style="padding:6px 0;">${escHtml(d.address || 'Not provided')}</td></tr>
-        </table>
-        <h3 style="color:#1a56db;margin:20px 0 12px;font-size:16px;">Scope of Work</h3>
-        <table style="width:100%;border-collapse:collapse;font-size:15px;">
-          <tr><td style="padding:6px 0;color:#6b7280;width:140px;">Service</td><td style="padding:6px 0;font-weight:600;">${escHtml(d.service)}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;">Property Type</td><td style="padding:6px 0;">${escHtml(d.property || 'Not specified')}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;">Budget</td><td style="padding:6px 0;">${escHtml(d.budget || 'Not specified')}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;">Timeline</td><td style="padding:6px 0;">${escHtml(d.timeline || 'Not specified')}</td></tr>
-          <tr><td style="padding:6px 0;color:#6b7280;vertical-align:top;">Description</td><td style="padding:6px 0;">${escHtml(d.description || 'None')}</td></tr>
-        </table>
-        ${photosSection}
-        ${videoSection}
-      </div>
-    </div>
-  `;
-
   const formData = new FormData();
   // Get your free access key at https://web3forms.com (enter ahernandez@oeservices.us)
   formData.append('access_key', 'ee0f5983-8a35-4c39-9585-c9d13707e7e0');
   formData.append('subject', `New Estimate Request – ${d.fname} ${d.lname} (${d.zip})`);
   formData.append('from_name', 'OE Services Estimate Form');
   formData.append('replyto', d.email);
-  formData.append('html', 'true');
-  formData.append('message', emailHtml);
+
+  // Customer info
+  formData.append('Name', d.fname + ' ' + d.lname);
+  formData.append('Phone', d.phone);
+  formData.append('Email', d.email);
+  formData.append('Address', d.address || 'Not provided');
+
+  // Scope of work
+  formData.append('Service', d.service);
+  formData.append('Property Type', d.property || 'Not specified');
+  formData.append('Budget', d.budget || 'Not specified');
+  formData.append('Timeline', d.timeline || 'Not specified');
+  formData.append('Description', d.description || 'None');
 
   // Attach original photos
   photoFiles.forEach(file => {
